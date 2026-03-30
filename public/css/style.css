@@ -83,6 +83,7 @@ body{
 .listing-link{
     text-decoration: none;
 }
+/* card effect */
 .card-img-overlay{
     opacity: 0;
 }
@@ -96,4 +97,25 @@ body{
 .add-btn{
     background-color: #fe424d !important;
     border: none !important;
+}
+
+/* edit pages */
+.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+
+/* show pages */
+.show-img{
+    height: 30vh;
+}
+
+/* btns */
+.btns{
+    display: flex;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
 }
