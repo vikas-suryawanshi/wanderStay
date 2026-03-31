@@ -17,10 +17,10 @@
         </div>
     </div>
     <div class="btns mt-3 mb-3">
-        <a href="/listings/<%= listings._id%>/new " class="btn btn-dark col-1 edit-btn offset-2">Edit</a>
+        <a href="/listings/<%= listings._id%>/new " class="btn btn-dark edit-btn offset-2 col-1">Edit</a>
         <br/> <br/>
-        <form class="btns btn-dark offset-1 delete-btn btn-danger" method="post" action="/listings/<%=listings.id%>?_method=DELETE">
-            <button>delete</button>
+        <form  class="btn offset-1" method="post" action="/listings/<%=listings.id%>?_method=DELETE">
+            <button class="btn offset-1 btn-danger">delete</button>
         </form>
     </div>
 </div>
