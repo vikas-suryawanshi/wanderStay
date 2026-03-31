@@ -14,19 +14,13 @@ const listingSchema=new Schema({
         type:Number,
     },
     image: {
-        filename: {
-            type: String,
-            default: "listingimage"
-        },
-        url: {
-            type: String,
-            default: "https://unsplash.com/photos/white-concrete-building-under-blue-sky-during-daytime-mR1CIDduGLc",
-            set: (v) =>
-                v === "" 
-                ? "https://unsplash.com/photos/white-concrete-building-under-blue-sky-during-daytime-mR1CIDduGLc"
-                : v,
-        }
-    },
+        type: String,
+        default: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+        set: (v) =>
+            v === ""
+            ? "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+            : v,
+    },          
     location:{
         type:String,
     },
