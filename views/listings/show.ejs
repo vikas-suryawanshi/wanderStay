@@ -17,9 +17,9 @@
         </div>
     </div>
     <div class="btns mt-3 mb-3">
-        <a href="/listings/<%= listings._id%>/edit " class="btn btn-dark col-1 edit-btn offset-2">Edit</a>
+        <a href="/listings/<%= listings._id%>/new " class="btn btn-dark col-1 edit-btn offset-2">Edit</a>
         <br/> <br/>
-        <form class="btns btn-dark offset-1 delete-btn" method="post" action="/listings/<%=listings.id%>?_method=DELETE">
+        <form class="btns btn-dark offset-1 delete-btn btn-danger" method="post" action="/listings/<%=listings.id%>?_method=DELETE">
             <button>delete</button>
         </form>
     </div>
