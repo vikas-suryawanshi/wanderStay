@@ -6,31 +6,35 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input value="<%=listing.title%>" name="listing[title]" 
-                type="text" class="form-control">
+                type="text" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea name="listing[description]"
-                type="text" class="form-control"><%=listing.description%>
+                type="text" class="form-control" required><%=listing.description%>
                 </textarea>
             </div>       
             <div class="mb-3">
                 <label for="image" class="form-label"></label>
-                <input value="<%=listing.image%>" name="listing[image]" type="text" class="form-control">
+                <input value="<%=listing.image%>" name="listing[image]"
+                 type="text" class="form-control" required>
             </div>
             <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price</label>
-                        <input  value="<%=listing.price%>" name="listing[price]" type="number" class="form-control">
+                        <input  value="<%=listing.price%>" name="listing[price]"
+                         type="number" class="form-control" required>
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="country" class="form-label">Country</label>
-                        <input value="<%=listing.country%>" name="listing[country]" type="text" class="form-control">
+                        <input value="<%=listing.country%>" name="listing[country]"
+                         type="text" class="form-control" required>
                     </div>
             </div>
             <div class="mb-3">
                 <label for="location" class="form-label">Location</label>
-                <input value="<%=listing.location%>" name="listing[location]" type="text" class="form-control">
+                <input value="<%=listing.location%>" name="listing[location]"
+                 type="text" class="form-control" required>
             </div>
             <br/>
             <button class="btn btn-dark edit-btn mt-3 mb-3">Edit</button>
