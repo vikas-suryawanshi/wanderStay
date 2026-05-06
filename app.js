@@ -106,6 +106,11 @@ app.get("/",(req,res)=>{
     res.send("app is working");
 })
 
+// page not found middleware
+app.use((req,res,next)=>{
+    next(new ExpressError(404,"page not found"));
+})
+
 // for listning app
 app.listen(port,()=>{
     console.log("port is listeing on port is 8080");
