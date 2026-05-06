@@ -18,6 +18,7 @@ const ejsMate=require("ejs-mate");
 app.engine("ejs",ejsMate);
 // require utils folder
 const wrapAsync=require("./utils/wrapAsync.js");
+const ExpressError=require("./utils/ExpressError.js");
 
 // require listing
 const Listing = require("./models/listing");
