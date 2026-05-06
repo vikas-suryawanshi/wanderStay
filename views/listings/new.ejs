@@ -7,11 +7,13 @@
                 <label for="title" class="form-label">Title</label>
                 <input placeholder="enter title" name="listing[title]" type="text"
                 class="form-control" required>
+                <div class="valid-feedback">Give your listing a catchy title!</div>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea placeholder="enter description" 
                 name="listing[description]" type="text" class="form-control"required></textarea>
+                <div class="valid-feedback">Tell people something about this place.</div>
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
@@ -22,16 +24,19 @@
                 <div class="mb-3 col-md-4">
                     <label for="price" class="form-label">Price</label>
                     <input placeholder="1500" name="listing[price]" type="number" class="form-control" required>
+                    <div class="valid-feedback">Please enter a valid price for your listing.</div>
                 </div>
                 <div class="mb-3 col-md-8">
                     <label for="country" class="form-label">Country</label>
                     <input placeholder="india" name="listing[country]" type="text" class="form-control" required>
+                    <div class="valid-feedback">Please provide a country name!</div>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="location" class="form-label">Location</label>
                 <input placeholder="enter location" name="listing[location]"
                  type="text" class="form-control" required>
+                 <div class="valid-feedback">Please provide a location.</div>
             </div>
             <button class="btn btn-dark add-btn  mt-3 mb-3">Add</button>
         </form>
