@@ -57,14 +57,6 @@ app.get("/listings",wrapAsync(async (req,res)=>{
     res.render("listings/index.ejs",{allListings});
 }));
 
-// show routes
-
-app.get("/listings/:id",wrapAsync(async(req,res)=>{
-    let {id}=req.params;
-    const listings=await Listing.findById(id);
-    res.render("listings/show.ejs",{listings});
-}))
-
 // new route
 app.get("/listings/new",(req,res)=>{
     res.render("listings/new.ejs");
@@ -76,6 +68,14 @@ app.post("/listings",wrapAsync(async (req,res)=>{
     await newListing.save();
     res.redirect("/listings");
 }));
+
+// show routes
+
+app.get("/listings/:id",wrapAsync(async(req,res)=>{
+    let {id}=req.params;
+    const listings=await Listing.findById(id);
+    res.render("listings/show.ejs",{listings});
+}))
 
 // edit route
 app.get("/listings/:id/new",wrapAsync(async(req,res)=>{
