@@ -111,6 +111,12 @@ app.use((req,res,next)=>{
     next(new ExpressError(404,"page not found"));
 })
 
+// global middlewares
+app.use((err,req,res,next)=>{
+    let {status=500,message="something went wrong"}=err;
+    res.status(status).send(message);
+})
+
 // for listning app
 app.listen(port,()=>{
     console.log("port is listeing on port is 8080");
