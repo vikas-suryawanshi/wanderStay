@@ -19,6 +19,8 @@ app.engine("ejs",ejsMate);
 // require utils folder
 const wrapAsync=require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
+// require schema validation
+const {listingSchema}=require("./schemas/listingSchemas.js");
 
 // require listing
 const Listing = require("./models/listing");
