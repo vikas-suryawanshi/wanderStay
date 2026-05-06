@@ -9,6 +9,9 @@
                 <input value="<%=listing.title%>" name="listing[title]" 
                 type="text" class="form-control" required>
                 <div class="valid-feedback">Title updated perfectly!</div>
+                <div class="invalid-feedback">
+                    Please enter a title for your listing.
+                </div>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
@@ -16,12 +19,18 @@
                 type="text" class="form-control" required><%=listing.description%>
                 </textarea>
                 <div class="valid-feedback">Description looks great!</div>
+                <div class="invalid-feedback">
+                    Please enter a description for your listing.
+                </div>
             </div>       
             <div class="mb-3">
                 <label for="image" class="form-label"></label>
                 <input value="<%=listing.image%>" name="listing[image]"
                  type="text" class="form-control" required>
                  <div class="valid-feedback">Image link updated successfully!</div>
+                 <div class="invalid-feedback">
+                    Please enter a valid image link!
+                </div>
             </div>
             <div class="row">
                     <div class="mb-3 col-md-4">
@@ -29,12 +38,18 @@
                         <input  value="<%=listing.price%>" name="listing[price]"
                          type="number" class="form-control" required>
                          <div class="valid-feedback">Price looks good!</div>
+                         <div class="invalid-feedback">
+                            Please enter a price for your listing.
+                        </div>
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="country" class="form-label">Country</label>
                         <input value="<%=listing.country%>" name="listing[country]"
                          type="text" class="form-control" required>
                          <div class="valid-feedback">Country updated!</div>
+                         <div class="invalid-feedback">
+                            Please enter a country for your listing.
+                        </div>
                     </div>
             </div>
             <div class="mb-3">
@@ -42,6 +57,9 @@
                 <input value="<%=listing.location%>" name="listing[location]"
                  type="text" class="form-control" required>
                  <div class="valid-feedback">Location updated!</div>
+                 <div class="invalid-feedback">
+                    Please enter a location for your listing.
+                </div>
             </div>
             <br/>
             <button class="btn btn-dark edit-btn mt-3 mb-3">Edit</button>
