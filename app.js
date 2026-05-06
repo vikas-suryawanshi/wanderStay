@@ -114,7 +114,7 @@ app.use((req,res,next)=>{
 // global middlewares
 app.use((err,req,res,next)=>{
     let {status=500,message="something went wrong"}=err;
-    res.status(status).render("Error.ejs" ,{message});
+    res.status(status).render("error.ejs" ,{message});
 })
 
 // for listning app
