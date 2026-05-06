@@ -16,6 +16,8 @@ app.use(methodOveride("_method"));
 // require ejs mate
 const ejsMate=require("ejs-mate");
 app.engine("ejs",ejsMate);
+// require utils folder
+const wrapAsync=require("./utils/wrapAsync.js");
 
 // require listing
 const Listing = require("./models/listing");
