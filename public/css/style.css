@@ -122,4 +122,5 @@ body{
 
 .btn{
     display: flex;
+    justify-content: center;
 }
