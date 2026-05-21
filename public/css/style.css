@@ -127,4 +127,5 @@ body{
     font-weight: 400;
     stroke-width: 0ch;
     flex-flow: column;
+    border-right-color: #fe424d;
 }
