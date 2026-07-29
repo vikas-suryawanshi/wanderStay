@@ -24,6 +24,7 @@ const {listingSchema}=require("./schemas/listingSchemas.js");
 
 // require listing
 const Listing = require("./models/listing");
+const Review = require("./models/review.js");
 
 main()
 .then(()=>{
@@ -112,6 +113,19 @@ app.delete("/listings/:id",wrapAsync(async(req,res)=>{
     console.log(deleteLsiting);
     res.redirect("/listings");
 }));
+
+
+// post reviews route
+app.post("/listings/:id/reviews",async(req,res)=>{
+    let listing=await Listing.findById(req.params.id);
+    let newReviews= new Review(req.body.review);
+    listing.reviews.push(newReviews);
+
+    await listing.save();
+    await newReviews.save();
+
+    res.redirect(`/listings/${listing.id}`)
+})
 
 
 // basic route to test working app
