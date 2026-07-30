@@ -20,7 +20,7 @@ app.engine("ejs",ejsMate);
 const wrapAsync=require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
 // require schema validation
-const {listingSchema}=require("./schemas/listingSchemas.js");
+const {listingSchema,reviewSchema}=require("./schemas/listingSchemas.js");
 
 // require listing
 const Listing = require("./models/listing");
