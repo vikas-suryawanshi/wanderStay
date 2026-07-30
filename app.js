@@ -139,12 +139,12 @@ app.post("/listings/:id/reviews",reviewListing,wrapAsync(async(req,res)=>{
 }))
 
 // delete reviews route
-app.delete("/listings/:id/reviews/review:id",async(req,res)=>{
-    let {id, review:id}=req.params;
+app.delete("/listings/:id/reviews/:reviewId",async(req,res)=>{
+    let {id, reviewId}=req.params;
 
     await Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewId}});
     await Review.findByIdAndDelete(reviewId);
-    res.redirect(`/listings/${listing.id}`)
+    res.redirect(`/listings/${id}`)
 })
 
 
