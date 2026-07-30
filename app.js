@@ -64,7 +64,7 @@ const validateListing=(req,res,next)=>{
 }
 
 // validate review fn
-const vreviewListing=(req,res,next)=>{
+const reviewListing=(req,res,next)=>{
     let {error}=reviewSchema.validate(req.body);
     if(error){
         let errMsg=error.details.map((el)=>el.message).join(",");
@@ -127,7 +127,7 @@ app.delete("/listings/:id",wrapAsync(async(req,res)=>{
 
 
 // post reviews route
-app.post("/listings/:id/reviews",async(req,res)=>{
+app.post("/listings/:id/reviews",reviewListing,wrapAsync(async(req,res)=>{
     let listing=await Listing.findById(req.params.id);
     let newReviews= new Review(req.body.review);
     listing.reviews.push(newReviews);
@@ -136,7 +136,7 @@ app.post("/listings/:id/reviews",async(req,res)=>{
     await newReviews.save();
 
     res.redirect(`/listings/${listing.id}`)
-})
+}))
 
 
 // basic route to test working app
