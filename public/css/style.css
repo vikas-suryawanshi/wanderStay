@@ -117,6 +117,11 @@ body{
     background-color:#e63946 !important;
 }
 
+/* delete btn */
+.btn-danger{
+    padding:10px 24px;
+    border-radius:10px;
+}
 
 /* show pages */
 .show-img{
