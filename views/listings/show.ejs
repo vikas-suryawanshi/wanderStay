@@ -14,9 +14,9 @@
             </p>    
         </div>
     </div>
-    <div class="btns mt-3 mb-3">
-        <a href="/listings/<%= listings._id%>/edit " class="btn btn-dark edit-btn offset-2 col-1">Edit</a>
-        <form  class="btn offset-1" method="post" action="/listings/<%=listings.id%>?_method=DELETE">
+    <div class="btns mt-3 mb-3 d-flex gap-3">
+        <a href="/listings/<%= listings._id%>/edit " class="btn btn-dark edit-btn ">Edit</a>
+        <form  class="btn " method="post" action="/listings/<%=listings.id%>?_method=DELETE">
             <button class="btn offset-1 btn-danger">delete</button>
         </form>
     </div>
