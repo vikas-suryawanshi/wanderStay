@@ -15,9 +15,12 @@
         </div>
     </div>
     <div class="btns mt-3 mb-3 d-flex gap-3">
-        <a href="/listings/<%= listings._id%>/edit " class="btn btn-dark edit-btn ">Edit</a>
+        <a href="/listings/<%= listings._id%>/edit "
+             class="btn btn-dark edit-btn ">
+             <i class="fa-solid fa-pen-to-square me-2"></i>Edit</a>
         <form  class="btn " method="post" action="/listings/<%=listings.id%>?_method=DELETE">
-            <button class="btn offset-1 btn-danger">delete</button>
+            <button class="btn offset-1 btn-danger">
+                <i class="fa-solid fa-trash me-2"></i>delete</button>
         </form>
     </div>
     <div class="col-8 offset-2">
