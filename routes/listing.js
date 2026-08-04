@@ -23,18 +23,18 @@ const validateListing=(req,res,next)=>{
 
 // index route
 
-app.get("/listings",wrapAsync(async (req,res)=>{
+router.get("/",wrapAsync(async (req,res)=>{
     let allListings=await Listing.find({});
     res.render("listings/index.ejs",{allListings});
 }));
 
 // new route
-app.get("/listings/new",(req,res)=>{
+router.get("/new",(req,res)=>{
     res.render("listings/new.ejs");
 });
 
 // create routes
-app.post("/listings",validateListing,wrapAsync(async (req,res)=>{
+router.post("/",validateListing,wrapAsync(async (req,res)=>{
     const newListing=new Listing(req.body.listing);
     await newListing.save();
     res.redirect("/listings");
@@ -42,21 +42,21 @@ app.post("/listings",validateListing,wrapAsync(async (req,res)=>{
 
 // show routes
 
-app.get("/listings/:id",wrapAsync(async(req,res)=>{
+router.get("/:id",wrapAsync(async(req,res)=>{
     let {id}=req.params;
     const listings=await Listing.findById(id).populate("reviews");
     res.render("listings/show.ejs",{listings});
 }))
 
 // edit route
-app.get("/listings/:id/edit",wrapAsync(async(req,res)=>{
+router.get("/:id/edit",wrapAsync(async(req,res)=>{
     let {id}=req.params;
     const listing=await Listing.findById(id);
     res.render("listings/edit.ejs",{listing});
 }));
 
 // update routes
-app.put("/listings/:id",validateListing,wrapAsync(async(req,res)=>{
+router.put("/:id",validateListing,wrapAsync(async(req,res)=>{
     let {id}=req.params;
     await Listing.findByIdAndUpdate(id,(req.body.listing));
     res.redirect(`/listings`);
@@ -64,7 +64,7 @@ app.put("/listings/:id",validateListing,wrapAsync(async(req,res)=>{
 }));
 
 // delete route
-app.delete("/listings/:id",wrapAsync(async(req,res)=>{
+router.delete("/:id",wrapAsync(async(req,res)=>{
     let {id}=req.params;
     const deleteLsiting=await Listing.findByIdAndDelete(id);
     console.log(deleteLsiting);
