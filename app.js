@@ -27,7 +27,7 @@ const Listing = require("./models/listing");
 const Review = require("./models/review.js");
 // require routes folder
 const listings = require("./routes/listing.js");
-
+const reviews = require("./routes/review.js");
 main()
 .then(()=>{
     console.log("connected succesfully");
@@ -40,52 +40,8 @@ async function main() {
 }
 
 
-// testing data to enter in db
-app.get("/testlisting",async(req,res)=>{
-    let sampleListing= new Listing({
-        title:"my home",
-        description:"better for you",
-        price:5000,
-        location:"nanded,maharastra",
-        country:"india"
-    });
-    await sampleListing.save();
-    console.log(sampleListing);
-    res.send("added succesfully");
-})
-
 app.use("/listings",listings);
-
-// validate review fn
-const reviewListing=(req,res,next)=>{
-    let {error}=reviewSchema.validate(req.body);
-    if(error){
-        let errMsg=error.details.map((el)=>el.message).join(",");
-        throw new ExpressError(400,errMsg);
-    }else{
-        next();
-    }
-}
-// post reviews route
-app.post("/listings/:id/reviews",reviewListing,wrapAsync(async(req,res)=>{
-    let listing=await Listing.findById(req.params.id);
-    let newReviews= new Review(req.body.review);
-    listing.reviews.push(newReviews);
-
-    await listing.save();
-    await newReviews.save();
-
-    res.redirect(`/listings/${listing.id}`)
-}))
-
-// delete reviews route
-app.delete("/listings/:id/reviews/:reviewId",async(req,res)=>{
-    let {id, reviewId}=req.params;
-
-    await Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewId}});
-    await Review.findByIdAndDelete(reviewId);
-    res.redirect(`/listings/${id}`)
-})
+app.use("/listings/:id/reviews",reviews);
 
 
 // basic route to test working app
