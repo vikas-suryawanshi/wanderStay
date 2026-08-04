@@ -7,6 +7,17 @@ const {listingSchema,reviewSchema}=require("../schemas/listingSchemas.js");
 const Listing = require("../models/listing");
 const Review = require("../models/review.js");
 
+// validate review fn
+const reviewListing=(req,res,next)=>{
+    let {error}=reviewSchema.validate(req.body);
+    if(error){
+        let errMsg=error.details.map((el)=>el.message).join(",");
+        throw new ExpressError(400,errMsg);
+    }else{
+        next();
+    }
+}
+
 
 // post reviews route
 app.post("/listings/:id/reviews",reviewListing,wrapAsync(async(req,res)=>{
