@@ -20,7 +20,7 @@ const reviewListing=(req,res,next)=>{
 
 
 // post reviews route
-app.post("/listings/:id/reviews",reviewListing,wrapAsync(async(req,res)=>{
+router.post("/",reviewListing,wrapAsync(async(req,res)=>{
     let listing=await Listing.findById(req.params.id);
     let newReviews= new Review(req.body.review);
     listing.reviews.push(newReviews);
@@ -32,7 +32,7 @@ app.post("/listings/:id/reviews",reviewListing,wrapAsync(async(req,res)=>{
 }))
 
 // delete reviews route
-app.delete("/listings/:id/reviews/:reviewId",async(req,res)=>{
+router.delete("/:reviewId",async(req,res)=>{
     let {id, reviewId}=req.params;
 
     await Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewId}});
