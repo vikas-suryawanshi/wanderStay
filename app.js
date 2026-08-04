@@ -25,6 +25,8 @@ const {listingSchema,reviewSchema}=require("./schemas/listingSchemas.js");
 // require listing
 const Listing = require("./models/listing");
 const Review = require("./models/review.js");
+// require routes folder
+const listings = require("./routes/listing.js");
 
 main()
 .then(()=>{
@@ -51,6 +53,8 @@ app.get("/testlisting",async(req,res)=>{
     console.log(sampleListing);
     res.send("added succesfully");
 })
+
+app.use("/listings",listings);
 
 // validate review fn
 const reviewListing=(req,res,next)=>{
