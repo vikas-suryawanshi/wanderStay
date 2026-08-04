@@ -19,15 +19,10 @@ app.engine("ejs",ejsMate);
 // require utils folder
 const wrapAsync=require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
-// require schema validation
-const {listingSchema,reviewSchema}=require("./schemas/listingSchemas.js");
-
-// require listing
-const Listing = require("./models/listing");
-const Review = require("./models/review.js");
 // require routes folder
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
+// connect database
 main()
 .then(()=>{
     console.log("connected succesfully");
