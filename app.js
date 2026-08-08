@@ -22,6 +22,9 @@ const ExpressError=require("./utils/ExpressError.js");
 // require routes folder
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
+// express sesion
+const session = require("express-session");
+
 // connect database
 main()
 .then(()=>{
@@ -33,6 +36,8 @@ main()
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/WanderStay');
 }
+
+app.use(session());
 
 
 app.use("/listings",listings);
