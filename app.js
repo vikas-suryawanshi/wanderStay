@@ -24,6 +24,7 @@ const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
 // express sesion
 const session = require("express-session");
+const flash = require("connect-flash");
 
 // connect database
 main()
