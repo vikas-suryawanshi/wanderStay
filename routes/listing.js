@@ -46,6 +46,9 @@ router.post("/",validateListing,wrapAsync(async (req,res)=>{
 router.get("/:id",wrapAsync(async(req,res)=>{
     let {id}=req.params;
     const listings=await Listing.findById(id).populate("reviews");
+    if(!listings){
+        req.flash("error","if you requested listings are does not exist!")
+    }
     res.render("listings/show.ejs",{listings});
 }))
 
