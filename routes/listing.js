@@ -57,18 +57,18 @@ router.get("/:id",wrapAsync(async(req,res)=>{
 router.get("/:id/edit",wrapAsync(async(req,res)=>{
     let {id}=req.params;
     const listing=await Listing.findById(id);
+    if(!listing){
+        req.flash("error","if you requested listings are does not exist!")
+        return res.redirect(`/listings`)
+    }
     res.render("listings/edit.ejs",{listing});
 }));
 
 // update routes
 router.put("/:id",validateListing,wrapAsync(async(req,res)=>{
     let {id}=req.params;
-    await Listing.findByIdAndUpdate(id,(req.body.listing));
+    let listing = await Listing.findByIdAndUpdate(id,(req.body.listing));
     req.flash("success","listing update successfully!");
-    if(!_id){
-        req.flash("error","if you requested listings are does not exist!")
-        return res.redirect(`/listings`)
-    }
     res.redirect(`/listings/${id}`)
 
 }));
