@@ -49,7 +49,7 @@ router.get("/:id",wrapAsync(async(req,res)=>{
     if(!listings){
         req.flash("error","if you requested listings are does not exist!")
         return res.redirect(`/listings`)
-    }
+    }http://localhost:8080/listings/6a77096b510d17be23c71e59/edit?
     res.render("listings/show.ejs",{listings});
 }))
 
@@ -65,6 +65,10 @@ router.put("/:id",validateListing,wrapAsync(async(req,res)=>{
     let {id}=req.params;
     await Listing.findByIdAndUpdate(id,(req.body.listing));
     req.flash("success","listing update successfully!");
+    if(!listings){
+        req.flash("error","if you requested listings are does not exist!")
+        return res.redirect(`/listings`)
+    }
     res.redirect(`/listings/${id}`)
 
 }));
