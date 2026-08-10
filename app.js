@@ -20,8 +20,9 @@ app.engine("ejs",ejsMate);
 const wrapAsync=require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
 // require routes folder
-const listings = require("./routes/listing.js");
-const reviews = require("./routes/review.js");
+const listingsRouter = require("./routes/listing.js");
+const reviewsRouter = require("./routes/review.js");
+const userRouter = require("./routes/user.js");
 // express sesion
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -66,8 +67,9 @@ app.use((req,res,next)=>{
     next();
 })
 
-app.use("/listings",listings);
-app.use("/listings/:id/reviews",reviews);
+app.use("/listings",listingsRouter);
+app.use("/listings/:id/reviews",reviewsRouter);
+app.use("/",userRouter);
 
 
 // basic route to test working app
