@@ -25,6 +25,8 @@ const reviews = require("./routes/review.js");
 // express sesion
 const session = require("express-session");
 const flash = require("connect-flash");
+const passport = require("passport");
+const User = require("./models/user.js");
 
 // connect database
 main()
@@ -47,8 +49,16 @@ const sessionOption = {
         httpOnly:true,
     }
 }
+
+// use session and flash
 app.use(session(sessionOption));
 app.use(flash());
+
+// use passport initalize
+app.use(passport.initialize());
+app.use(passport.session());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next)=>{
     res.locals.success=req.flash("success");
