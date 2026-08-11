@@ -1,0 +1,21 @@
+<%-layout("/layouts/boilerplate.ejs") %>
+
+<div class="row">
+    <div class="col-6 offset-3 mt-3">
+        <h3>signup on wanderStay</h3> 
+        <form method="post" action="/signup" novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for="username" class="form-label">username</label>
+                <input name="username" type="text"
+                class="form-control" id="username" required>
+                <div class="invalid-feedback">enter a your username!</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">email</label>
+                <input name="email" type="email"
+                class="form-control" id="email" required>
+                <div class="invalid-feedback">enter a your email!</div>
+            </div>
+        </form>
+    </div>
+</div>            
