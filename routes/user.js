@@ -39,7 +39,8 @@ router.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedir
     ,failureFlash:true}),
     async(req,res)=>{
         req.flash("success", "welcome back to wanderStay");
-        res.redirect("/listings");
+        let redirectUrl = res.locals.redirectUrl || "/listings";
+        res.redirect(redirectUrl);
     }
 );
 
