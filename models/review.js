@@ -1,4 +1,5 @@
 const mongoose=require("mongoose");
+const { schema } = require("./listing");
 
 const Schema=mongoose.Schema;
 
@@ -12,6 +13,10 @@ const reviewSchema = Schema({
     created_At:{
         type:Date,
         default:Date.now(),
+    },
+    author:{
+        type:Schema.Types.ObjectId,
+        ref:"User",
     },
 });
 
