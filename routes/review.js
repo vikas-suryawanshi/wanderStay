@@ -6,18 +6,7 @@ const ExpressError=require("../utils/ExpressError.js");
 const {listingSchema,reviewSchema}=require("../schemas/listingSchemas.js");
 const Listing = require("../models/listing");
 const Review = require("../models/review.js");
-const {isLoggedIn} = require("../middleware.js");
-
-// validate review fn
-const reviewListing=(req,res,next)=>{
-    let {error}=reviewSchema.validate(req.body);
-    if(error){
-        let errMsg=error.details.map((el)=>el.message).join(",");
-        throw new ExpressError(400,errMsg);
-    }else{
-        next();
-    }
-}
+const {isLoggedIn,reviewListing} = require("../middleware.js");
 
 
 // post reviews route
