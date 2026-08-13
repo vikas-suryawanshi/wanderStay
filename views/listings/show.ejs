@@ -13,6 +13,7 @@
             <p class="card-text mt-2"><%= listings.country%></p> 
         </div>
     </div>
+    <% if(currUser && currUser._id.equals(listings.owner._id)) {%>
         <div class="btns mt-3 mb-3 col-6 offset-2 d-flex gap-5">
             <form method="GET" action="/listings/<%= listings._id %>/edit">
                 <button class="btn btn-primary">
@@ -25,6 +26,7 @@
                 </button>
             </form>
         </div>
+    <% } %>
         <div class="col-8 offset-2">
             <% if(currUser) {%>
                 <hr/>
