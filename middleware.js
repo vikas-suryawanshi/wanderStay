@@ -1,4 +1,5 @@
 const Listing = require("./models/listing");
+const {listingSchema,reviewSchema}=require("./schemas/listingSchemas.js");
 module.exports.isLoggedIn = (req,res,next)=>{
     if(!req.isAuthenticated()){
         req.session.redirectUrl=req.originalUrl;
@@ -26,4 +27,15 @@ module.exports.isOwner=async(req,res,next)=>{
         res.redirect(`/listings/${id}`);
     }
     next();
+}
+
+// validate listing middleware
+module.exports.validateListing=(req,res,next)=>{
+    let {error}=listingSchema.validate(req.body);
+    if(error){
+        let errMsg=error.details.map((el)=>el.message).join(",");
+        throw new ExpressError(400,errMsg);
+    }else{
+        next();
+    }
 }
