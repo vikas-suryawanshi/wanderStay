@@ -6,11 +6,11 @@ const ExpressError=require("../utils/ExpressError.js");
 const {listingSchema,reviewSchema}=require("../schemas/listingSchemas.js");
 const Listing = require("../models/listing");
 const Review = require("../models/review.js");
-const {isLoggedIn,reviewListing} = require("../middleware.js");
+const {isLoggedIn,validatereview} = require("../middleware.js");
 
 
 // post reviews route
-router.post("/",isLoggedIn,reviewListing,wrapAsync(async(req,res)=>{
+router.post("/",isLoggedIn,validatereview,wrapAsync(async(req,res)=>{
     let listing=await Listing.findById(req.params.id);
     let newReview= new Review(req.body.review);
     newReview.author = req.user._id;
