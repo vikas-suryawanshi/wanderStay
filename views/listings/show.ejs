@@ -52,7 +52,7 @@
                 <% for(review of listings.reviews){%>
                     <div class="card col-5 mb-3 ms-3">
                         <div class="card-body">
-                            <h5 class="card-title">Vikas</h5>
+                            <h5 class="card-title"><%= review.author.username%></h5>
                             <p class="card-text"><%=review.comment%></p>
                             <p class="card-text"><%=review.rating%> stars</p>
                             <form method="post" 
