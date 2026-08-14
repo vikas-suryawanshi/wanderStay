@@ -12,14 +12,15 @@ const {isLoggedIn,reviewListing} = require("../middleware.js");
 // post reviews route
 router.post("/",isLoggedIn,reviewListing,wrapAsync(async(req,res)=>{
     let listing=await Listing.findById(req.params.id);
-    let newReviews= new Review(req.body.review);
-    listing.reviews.push(newReviews);
+    let newReview= new Review(req.body.review);
+    newReview.author = req.user._id;
+    listing.reviews.push(newReview);
 
     await listing.save();
-    await newReviews.save();
+    await newReview.save();
     req.flash("success","new Review created!");
     res.redirect(`/listings/${listing.id}`)
-}))
+}));
 
 // delete reviews route
 router.delete("/:reviewId",isLoggedIn,async(req,res)=>{
