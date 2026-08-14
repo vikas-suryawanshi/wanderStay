@@ -32,12 +32,13 @@ module.exports.isOwner=async(req,res,next)=>{
 
 module.exports.isAuthor=async(req,res,next)=>{
     let {id,reviewId}=req.params;
-    let review = await Review.findById(id);
-    if(!review.author._id.equals(res.locals.currUser._id)){
-        req.flash("error","you don`t have a permitted to delete this review");
-        res.redirect(`/listings/${id}`);
-    }
-    next();
+    let review =await Review.findById(reviewId);
+        if(!review.author._id.equals(res.locals.currUser._id)){
+            req.flash("error",
+                "you don`t have permission to delete this review while you are not author to this review!");
+            return res.redirect(`/listings/${id}`);
+        }
+        next();
 }
 
 // validate listing middleware
