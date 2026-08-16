@@ -7,28 +7,29 @@ const {listingSchema,reviewSchema}=require("../schemas/listingSchemas.js");
 const Listing = require("../models/listing");
 const Review=require("../models/review.js");
 const {isLoggedIn ,isOwner,validateListing} = require("../middleware.js");
+const listingController = require("../controllers/listing.js");
 
 
 // index route
-router.get("/",wrapAsync());
+router.get("/",wrapAsync(listingController.index));
 
 // new route
-router.get("/new",isLoggedIn,);
+router.get("/new",isLoggedIn,listingController.createNewListing);
 
 // create routes
-router.post("/",validateListing,wrapAsync());
+router.post("/",validateListing,wrapAsync(listingController.newListing));
 
 // show routes
 
-router.get("/:id",wrapAsync())
+router.get("/:id",wrapAsync(listingController.showListing))
 
 // edit route
-router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync());
+router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(listingController.editListing));
 
 // update routes
-router.put("/:id",validateListing,wrapAsync());
+router.put("/:id",validateListing,wrapAsync(listingController.updateListing));
 
 // delete route
-router.delete("/:id",isLoggedIn,isOwner,wrapAsync());
+router.delete("/:id",isLoggedIn,isOwner,wrapAsync(listingController.destroyListing));
 
 module.exports=router;
