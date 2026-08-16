@@ -7,15 +7,16 @@ const {listingSchema,reviewSchema}=require("../schemas/listingSchemas.js");
 const Listing = require("../models/listing");
 const Review = require("../models/review.js");
 const {isLoggedIn,validatereview,isAuthor} = require("../middleware.js");
+const reviewController = require("../controllers/review.js");
 
 
 // post reviews route
 router.post("/",isLoggedIn,validatereview,
-    wrapAsync());
+    wrapAsync(reviewController.createReview));
 
 // delete reviews route
 router.delete("/:reviewId",isLoggedIn,isAuthor,
-    
+    reviewController.destroyReview
 )
 
 module.exports=router;
