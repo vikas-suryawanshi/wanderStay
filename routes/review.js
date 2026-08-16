@@ -10,26 +10,12 @@ const {isLoggedIn,validatereview,isAuthor} = require("../middleware.js");
 
 
 // post reviews route
-router.post("/",isLoggedIn,validatereview,wrapAsync(async(req,res)=>{
-    let listing=await Listing.findById(req.params.id);
-    let newReview= new Review(req.body.review);
-    newReview.author = req.user._id;
-    listing.reviews.push(newReview);
-
-    await listing.save();
-    await newReview.save();
-    req.flash("success","new Review created!");
-    res.redirect(`/listings/${listing.id}`)
-}));
+router.post("/",isLoggedIn,validatereview,
+    wrapAsync());
 
 // delete reviews route
-router.delete("/:reviewId",isLoggedIn,isAuthor,async(req,res)=>{
-    let {id, reviewId}=req.params;
-
-    await Listing.findByIdAndUpdate(id,{$pull:{reviews:reviewId}});
-    await Review.findByIdAndDelete(reviewId);
-    req.flash("success","Review deleted succesfully");
-    res.redirect(`/listings/${id}`)
-})
+router.delete("/:reviewId",isLoggedIn,isAuthor,
+    
+)
 
 module.exports=router;
