@@ -7,11 +7,9 @@ const {saveRedirectUrl} = require("../middleware.js");
 const userController = require("../controllers/users.js");
 
 
-
-router.get("/signup",userController.getSignupForm);
-
-
-router.post("/signup",wrapAsync(userController.signUp));
+router.route("/signup")
+.get(userController.getSignupForm)
+.post(wrapAsync(userController.signUp));
 
 
 router.get("/login",userController.getLoginForm);
