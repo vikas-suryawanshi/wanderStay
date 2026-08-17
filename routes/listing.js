@@ -19,17 +19,17 @@ router.route("/")
 // new route
 router.get("/new",isLoggedIn,listingController.createNewListing);
 
-// show routes
+// show routes,update,delete
+router.route("/:id")
+.get("/:id",wrapAsync(listingController.showListing))
+.put("/:id",validateListing,
+    wrapAsync(listingController.updateListing))
+.delete("/:id",isLoggedIn,isOwner,
+    wrapAsync(listingController.destroyListing));
 
-router.get("/:id",wrapAsync(listingController.showListing))
-
+    
 // edit route
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(listingController.editListing));
 
-// update routes
-router.put("/:id",validateListing,wrapAsync(listingController.updateListing));
-
-// delete route
-router.delete("/:id",isLoggedIn,isOwner,wrapAsync(listingController.destroyListing));
 
 module.exports=router;
