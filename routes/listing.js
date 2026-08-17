@@ -21,13 +21,13 @@ router.get("/new",isLoggedIn,listingController.createNewListing);
 
 // show routes,update,delete
 router.route("/:id")
-.get("/:id",wrapAsync(listingController.showListing))
-.put("/:id",validateListing,
+.get(wrapAsync(listingController.showListing))
+.put(validateListing,
     wrapAsync(listingController.updateListing))
-.delete("/:id",isLoggedIn,isOwner,
+.delete(isLoggedIn,isOwner,
     wrapAsync(listingController.destroyListing));
 
-    
+
 // edit route
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(listingController.editListing));
 
