@@ -10,7 +10,10 @@ module.exports.createNewListing = (req,res)=>{
 };
 
 module.exports.newListing = async (req,res)=>{
+    let {url} = req.file.path;
+    let {filename} = req.file.filename;
     const newListing=new Listing(req.body.listing);
+    newListing.image={url ,filename};
     newListing.owner=req.user._id;
     await newListing.save();
     req.flash("success","new listing created!");
