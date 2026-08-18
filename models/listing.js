@@ -15,12 +15,8 @@ const listingSchema=new Schema({
         type:Number,
     },
     image: {
-        type: String,
-        default: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-        set: (v) =>
-            v === ""
-            ? "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
-            : v,
+        url:String,
+        filename:String,
     },          
     location:{
         type:String,
