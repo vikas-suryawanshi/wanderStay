@@ -9,7 +9,8 @@ const Review=require("../models/review.js");
 const {isLoggedIn ,isOwner,validateListing} = require("../middleware.js");
 const listingController = require("../controllers/listing.js");
 const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
+const storage = require("../cloudnary.js");
+const upload = multer({ storage })
 
 
 // index route or create route
