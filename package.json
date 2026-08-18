@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "connect-flash": "^0.1.1",
+    "dot-env": "^0.0.1",
     "ejs": "^5.0.1",
     "ejs-mate": "^4.0.0",
     "express": "^5.2.1",
