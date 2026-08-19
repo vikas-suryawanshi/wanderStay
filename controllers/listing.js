@@ -44,6 +44,8 @@ module.exports.editListing = async(req,res)=>{
 
 module.exports.updateListing = async(req,res)=>{
     let {id}=req.params;
+    let url = req.file.path;
+    let filename = req.file.filename;
     let listing = await Listing.findByIdAndUpdate(id,(req.body.listing));
     req.flash("success","listing update successfully!");
     res.redirect(`/listings/${id}`)
