@@ -44,11 +44,13 @@ module.exports.editListing = async(req,res)=>{
 
 module.exports.updateListing = async(req,res)=>{
     let {id}=req.params;
-    let url = req.file.path;
-    let filename = req.file.filename;
     let upadetListing = await Listing.findByIdAndUpdate(id,(req.body.listing));
-    upadetListing.image={url ,filename};
-    await upadetListing.save();
+    if(req.file){
+        let url = req.file.path;
+        let filename = req.file.filename;
+        upadetListing.image={url ,filename};
+        await upadetListing.save();
+    };
     req.flash("success","listing update successfully!");
     res.redirect(`/listings/${id}`)
 
