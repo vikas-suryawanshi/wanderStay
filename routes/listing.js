@@ -10,7 +10,7 @@ const {isLoggedIn ,isOwner,validateListing} = require("../middleware.js");
 const listingController = require("../controllers/listing.js");
 const multer  = require('multer')
 const { storage } = require("../cloudnary.js");
-const upload = multer({ storage })
+const upload = multer({ storage });
 
 
 // index route or create route
@@ -33,7 +33,6 @@ router.route("/:id")
 
 // edit route
 router.get("/:id/edit",isLoggedIn,isOwner,
-    upload.single('listing[image]'),
     wrapAsync(listingController.editListing));
 
 
