@@ -32,7 +32,9 @@ router.route("/:id")
 
 
 // edit route
-router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(listingController.editListing));
+router.get("/:id/edit",isLoggedIn,isOwner,
+    upload.single('listing[image]'),
+    wrapAsync(listingController.editListing));
 
 
 module.exports=router;
