@@ -153,6 +153,6 @@ body{
     baseline-shift: inherit;
 }
 
-.login{
+.login,.signup{ 
     margin-bottom: 100px;
 }
