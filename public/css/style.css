@@ -152,3 +152,7 @@ body{
     border-right-width: 0cqb;
     baseline-shift: inherit;
 }
+
+.login{
+    margin-bottom: 100px;
+}
