@@ -20,7 +20,7 @@ router.route("/")
     wrapAsync(listingController.newListing));
 
 // new route
-router.get("/new",isLoggedIn,listingController.createNewListing);
+router.get("/new",isLoggedIn,listingController.renderNewForm);
 
 // show routes,update,delete
 router.route("/:id")
