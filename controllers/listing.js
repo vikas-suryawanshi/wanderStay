@@ -32,7 +32,7 @@ module.exports.showListing = async(req,res)=>{
     res.render("listings/show.ejs",{listings});
 };
 
-module.exports.editListing = async(req,res)=>{
+module.exports.renderEditForm = async(req,res)=>{
     let {id}=req.params;
     const listing=await Listing.findById(id);
     if(!listing){
