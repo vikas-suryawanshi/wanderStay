@@ -33,7 +33,7 @@ router.route("/:id")
 
 // edit route
 router.get("/:id/edit",isLoggedIn,isOwner,
-    wrapAsync(listingController.editListing));
+    wrapAsync(listingController.renderEditForm));
 
 
 module.exports=router;
