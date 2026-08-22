@@ -1,9 +1,9 @@
 <% layout("/layouts/boilerplate.ejs")  %>
 <div class="row mt-3">
-    <div class="col-8 offset-2">
+    <div class="col-8 offset-3">
         <h2><b><%=listings.title%></b></h2>
     </div>
-    <div class="card col-6 offset-2 show-card listing-card">
+    <div class="card col-6 offset-3 show-card listing-card">
         <img src="<%=listings.image.url%>" class="card-img-top show-img" alt="listings_image">
         <div class="card-body">
             <p class="card-text mt-2">Owned by:<%= listings.owner.username%></p>
@@ -14,7 +14,7 @@
         </div>
     </div>
     <% if(currUser && currUser._id.equals(listings.owner._id))  {%>
-        <div class="btns mt-3 mb-3 col-6 offset-2 d-flex gap-5">
+        <div class="btns mt-3 mb-3 col-6 offset-3 d-flex gap-5">
             <form method="GET" action="/listings/<%= listings._id %>/edit">
                 <button class="btn btn-primary">
                     <i class="fa-solid fa-pen-to-square me-2"></i>Edit
@@ -27,7 +27,7 @@
             </form>
         </div>
     <% } %>
-        <div class="col-8 offset-2">
+        <div class="col-8 offset-3">
             <% if(currUser) {%>
                 <hr/>
                 <h4>Leave a Review ⭐</h4>
