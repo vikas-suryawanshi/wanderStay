@@ -14,6 +14,13 @@ module.exports.renderNewForm = (req,res)=>{
 };
 
 module.exports.newListing = async (req,res)=>{
+    let responce = await geocoding.forwardGeocode({
+  query: req.body.Listing.location,
+  limit: 1,
+})
+  .send()
+  console.log(responce);
+  res.send("done!");
     let url = req.file.path;
     let filename = req.file.filename;
     const newListing=new Listing(req.body.listing);
