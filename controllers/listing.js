@@ -1,4 +1,5 @@
 const Listing = require("../models/listing");
+const mbxTilesets = require('@mapbox/mapbox-sdk/services/tilesets');
 
 module.exports.index = async (req,res)=>{
     let allListings=await Listing.find({});
