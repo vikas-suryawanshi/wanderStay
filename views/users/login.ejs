@@ -1,26 +1,5 @@
 <%-layout("/layouts/boilerplate.ejs") %>
 
-<div class="row">
-    <div class="col-6 offset-3 mt-3 login">
-        <h3>Login to WanderStay</h3> 
-        <form method="post" action="/login" novalidate class="needs-validation">
-            <div class="mb-3">
-                <label for="username" class="form-label">username</label>
-                <input name="username" type="text"
-                placeholder="enter your username"
-                class="form-control" id="username" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">password</label>
-                <input name="password" type="password"
-                class="form-control"  id="password" 
-                placeholder="enter your password" required>
-            </div>
-            <button class="btn btn-primary">login</button>
-        </form>
-    </div>
-</div>
-
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow" style="width: 400px;">
         <h2 class="text-center mb-4">Login</h2>
