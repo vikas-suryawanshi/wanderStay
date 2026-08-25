@@ -77,12 +77,6 @@ app.use("/listings",listingsRouter);
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",userRouter);
 
-
-// basic route to test working app
-app.get("/",(req,res)=>{
-    res.send("app is working");
-})
-
 // page not found middleware
 app.use((req,res,next)=>{
     next(new ExpressError(404,"page not found"));
