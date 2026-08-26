@@ -46,9 +46,12 @@ async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/WanderStay');
 }
 const sessionOption = {
-    secret: "mysupersecret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
+    Store:mongo.create({
+        mongoUrl:process.env.MONGO_URL,
+    }),
     cookie:{
         expires:Date.now()+7*24*60*60*1000,
         maxAge:7*24*60*60*1000,
