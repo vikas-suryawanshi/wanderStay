@@ -15,6 +15,9 @@
         opacity: 1;
         cursor: pointer;
     }
+    .tax-info{
+        display: none;
+    }
 </style>
 <div id="filters">
     <div class="filter">
@@ -71,7 +74,7 @@
                 <div class="card-body">
                     <p class="card-text"><b><%= listings.title %></b><br/>&#8377;
                         <%= listings.price.toLocaleString("en-IN") %>/night
-                        <i>&nbsp; +18% GST</i>
+                        <i class="tax-info">&nbsp; +18% GST</i>
                     </p>
 
                 </div>
