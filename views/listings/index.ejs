@@ -5,7 +5,7 @@
         <div><i class="fa-solid fa-border-all"></i></div>
         <p>All</p>
     </div>
-    <div class="filter">
+    <div class="filter" id="TrendingFilter">
         <div><i class="fa-solid fa-fire"></i></div>
         <P>Trending</P>
     </div>
@@ -52,7 +52,7 @@
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-2">
     <% for(let listings of allListings){%>
         <a href="/listings/<%=listings._id%>" class="listing-link"
-            data-category="<%= listings.category">
+            data-category="<%= listings.category%>">
             <div class="card listing-card">
                 <img src="<%= listings.image.url %>" class="card-img-top"
                 alt="listings-image" style="height: 20rem;">
@@ -69,3 +69,17 @@
     <%}%> 
 </div>
 <script src="./js/taxSwitch.js"></script>
+<script>
+    let Trending = document.getElementById("TrendingFilter");
+    let AllListingCard = document.getElementsByClassName("listing-link");
+    Trending.addEventListener("click",()=>{
+        Array.from(AllListingCard).forEach((listing)=>{
+            if(listing.dataset.category == "Trending"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
+
+</script>
