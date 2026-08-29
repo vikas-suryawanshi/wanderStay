@@ -18,7 +18,7 @@
         <div><i class="fa-solid fa-hotel"></i></div>
         <P>Rooms</P>
     </div>
-    <div class="filter">
+    <div class="filter" id="castlesFilter">
         <div><i class="fa-solid fa-chess-rook"></i></div>
         <P>Castles</P>
     </div>
@@ -102,6 +102,18 @@
     Rooms.addEventListener("click",()=>{
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Rooms"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
+
+    let castles = document.getElementById("castlesFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    Rooms.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Castles"){
                 listing.style.display = "block";
             }else{
                 listing.style.display = "none";
