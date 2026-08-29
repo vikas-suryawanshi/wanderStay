@@ -9,7 +9,7 @@
         <div><i class="fa-solid fa-fire"></i></div>
         <P>Trending</P>
     </div>
-    <div class="filter">
+    <div class="filter" id="villaFilter">
         <div><i class="fa-solid fa-house-chimney"></i></div>
         <P>Villa</P>
     </div>
@@ -70,6 +70,7 @@
 </div>
 <script src="./js/taxSwitch.js"></script>
 <script>
+    // for Trending filter 
     let Trending = document.getElementById("TrendingFilter");
     let AllListingCard = document.getElementsByClassName("listing-link");
     Trending.addEventListener("click",()=>{
@@ -82,4 +83,17 @@
         })
     })
 
+
+    // for villa filter
+    let villa = document.getElementById("villaFilter");
+    let allListingCard = document.getElementsByClassName("listing-link");
+    villa.addEventListener("click",()=>{
+        Array.from(allListingCard).forEach((listing)=>{
+            if(listing.dataset.category == "Villa"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
 </script>
