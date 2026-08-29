@@ -51,7 +51,8 @@
 </div>
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-2">
     <% for(let listings of allListings){%>
-        <a href="/listings/<%=listings._id%>" class="listing-link">
+        <a href="/listings/<%=listings._id%>" class="listing-link"
+            data-category="<%= listings.category">
             <div class="card listing-card">
                 <img src="<%= listings.image.url %>" class="card-img-top"
                 alt="listings-image" style="height: 20rem;">
