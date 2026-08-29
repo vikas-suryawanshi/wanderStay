@@ -30,11 +30,11 @@
         <div class=""><i class="fa-solid fa-umbrella-beach"></i></div>
         <p>Beach</p>
     </div>
-    <div class="filter">
+    <div class="filter" id="MountainFilter">
         <div class=""><i class="fa-solid fa-mountain"></i></div>
         <p>Mountain City</p>
     </div>
-    <div class="filter">
+    <div class="filter" id="CampingFilter">
         <div class=""><i class="fa-solid fa-tent"></i></div>
         <p>Camping</p>
     </div>
@@ -136,6 +136,19 @@
             }
         })
     })
+
+    let beach = document.getElementById("beachFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    beach.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Beach"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
+
 
     let beach = document.getElementById("beachFilter");
     allListing = document.getElementsByClassName("listing-link");
