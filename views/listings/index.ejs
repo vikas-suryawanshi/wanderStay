@@ -111,7 +111,7 @@
 
     let castles = document.getElementById("castlesFilter");
     allListing = document.getElementsByClassName("listing-link");
-    Rooms.addEventListener("click",()=>{
+    castles.addEventListener("click",()=>{
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Castles"){
                 listing.style.display = "block";
