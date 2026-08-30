@@ -23,3 +23,16 @@
             }
         })
     })
+
+    // for Rooms filter
+    let Rooms = document.getElementById("roomsFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    Rooms.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Rooms"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
