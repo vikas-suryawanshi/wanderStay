@@ -36,3 +36,16 @@
             }
         })
     })
+
+    // for castels Filter
+    let castles = document.getElementById("castlesFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    castles.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Castles"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
