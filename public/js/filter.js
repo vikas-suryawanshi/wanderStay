@@ -10,3 +10,16 @@
             }
         })
     })
+
+    // for villa filter
+    let villa = document.getElementById("villaFilter");
+    allListing= document.getElementsByClassName("listing-link");
+    villa.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Villa"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
