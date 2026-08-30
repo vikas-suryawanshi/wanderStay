@@ -62,3 +62,16 @@
             }
         })
     })
+
+    // for Beach Filter
+    let beach = document.getElementById("beachFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    beach.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Beach"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
