@@ -49,3 +49,16 @@
             }
         })
     })
+
+    // for iconic city
+    let iconicCity = document.getElementById("Iconic-CityFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    iconicCity.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Iconic Cities"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
