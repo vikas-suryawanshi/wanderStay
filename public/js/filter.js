@@ -101,3 +101,12 @@
             }
         })
     })
+
+    // for all listing show
+    let all = document.getElementById("All");
+    allListing = document.getElementsByClassName("listing-link");
+    all.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            listing.style.display = "block";
+        })
+    })
