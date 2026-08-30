@@ -88,3 +88,16 @@
             }
         })
     })
+
+    // for Camping Filter
+    let camping = document.getElementById("CampingFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    camping.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Camping"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
