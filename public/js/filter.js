@@ -75,3 +75,16 @@
             }
         })
     })
+
+    // for Mountain City filter
+    let mountainCity = document.getElementById("MountainFilter");
+    allListing = document.getElementsByClassName("listing-link");
+    mountainCity.addEventListener("click",()=>{
+        Array.from(allListing).forEach((listing)=>{
+            if(listing.dataset.category == "Mountain City"){
+                listing.style.display = "block";
+            }else{
+                listing.style.display = "none";
+            }
+        })
+    })
