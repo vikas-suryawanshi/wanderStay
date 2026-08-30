@@ -40,10 +40,10 @@
     </div>
     <div class="tax-switch">
         <div class="form-check-reverse form-switch">
-            <input class="form-check-input" 
-            type="checkbox" role="switch" 
+            <input class="form-check-input"
+            type="checkbox" role="switch"
             id="switchCheckDefault">
-            <label class="form-check-label" 
+            <label class="form-check-label"
             for="switchCheckDefault"
             >Display Price After Incliding GST</label>
         </div>
@@ -65,16 +65,16 @@
 
                 </div>
             </div>
-        </a>    
-    <%}%> 
+        </a>
+    <%}%>
 </div>
 <script src="./js/taxSwitch.js"></script>
 <script>
-    // for Trending filter 
+    // for Trending filter
     let Trending = document.getElementById("TrendingFilter");
-    let AllListingCard = document.getElementsByClassName("listing-link");
+    let allListing = document.getElementsByClassName("listing-link");
     Trending.addEventListener("click",()=>{
-        Array.from(AllListingCard).forEach((listing)=>{
+        Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Trending"){
                 listing.style.display = "block";
             }else{
@@ -86,7 +86,7 @@
 
     // for villa filter
     let villa = document.getElementById("villaFilter");
-    let allListingCard = document.getElementsByClassName("listing-link");
+    allListing= document.getElementsByClassName("listing-link");
     villa.addEventListener("click",()=>{
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Villa"){
@@ -99,7 +99,7 @@
 
     // for Rooms filter
     let Rooms = document.getElementById("roomsFilter");
-    let allListing = document.getElementsByClassName("listing-link");
+    allListing = document.getElementsByClassName("listing-link");
     Rooms.addEventListener("click",()=>{
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Rooms"){
