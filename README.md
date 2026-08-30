@@ -119,7 +119,7 @@ Computer Science Engineering Student
 
 GitHub: [@vikas-suryawanshi](https://github.com/vikas-suryawanshi)
 
-Linkdein: [@vikas-suryawanshi](https://www.linkedin.com/in/vikassuryawanshi6/)
+LinkedIn: [@vikas-suryawanshi](https://www.linkedin.com/in/vikassuryawanshi6/)
 ---
 
 > WanderStay is an educational project inspired by Airbnb, built to practice and improve full-stack web development skills.
