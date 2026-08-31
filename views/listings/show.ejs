@@ -14,7 +14,7 @@
             <p class="card-text mt-2"><%= listings.description%></p>
             <p class="card-text mt-2">&#8377; <%= listings.price.toLocaleString("en-IN")%>/night</p>
             <p class="card-text mt-2"><%= listings.location%></p>
-            <p class="card-text mt-2"><%= listings.country%></p> 
+            <p class="card-text mt-2"><%= listings.country%></p>
         </div>
     </div>
     <% if(currUser && currUser._id.equals(listings.owner._id))  {%>
@@ -41,10 +41,10 @@
                         <fieldset class="starability-slot">
                             <input type="radio" id="no-rate" class="input-no-rate"
                             name="review[rating]" value="0" checked aria-label="No rating." /> 
-                            <input type="radio" id="first-rate1" 
+                            <input type="radio" id="first-rate1"
                             name="review[rating]" value="1" />
                             <label for="first-rate1" title="Terrible">1 star</label>
-                            <input type="radio" id="first-rate2" 
+                            <input type="radio" id="first-rate2"
                             name="review[rating]" value="2" />
                             <label for="first-rate2" title="Not good">2 stars</label>
                             <input type="radio" id="first-rate3"
