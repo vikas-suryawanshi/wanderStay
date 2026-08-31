@@ -4,7 +4,7 @@
         for(let addGst of taxInfo){
             let price = Number(addGst.dataset.price);
             let finalPrice = price * 1.18;
-            if(taxSwitch == "checked"){
+            if(taxSwitch.checked){
                 addGst.innerText = finalPrice;
             }else{
                 addGst.innerText = price;
