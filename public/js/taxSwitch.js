@@ -4,7 +4,7 @@
         for(let info of taxInfo){
             let price = "<%= listings.price%>";
             if(taxSwitch == "checked"){
-                // let finalPrice = price * 1.18;
+                let finalPrice = price * 1.18;
                 
             }
         }
