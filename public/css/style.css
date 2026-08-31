@@ -183,9 +183,6 @@ body{
     }
 
     /* tax switch style */
-    .tax-info{
-        display: none;
-    }
     .tax-switch{
         border: 2px solid black;
         border-radius: 1rem;
