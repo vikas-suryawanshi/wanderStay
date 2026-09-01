@@ -26,7 +26,7 @@
             <div class="mb-3">
                 original image<br/>
                 <img src="<%= originalImageUrl%>">
-            </div>   
+            </div>
             <div class="mb-3">
                 <label for="image" class="form-label"></label>
                 <input name="listing[image]"
@@ -52,17 +52,19 @@
                         </div>
                     </div>
             </div>
-            <div class="mb-3">
-                <label for="location" class="form-label">Location</label>
-                <input value="<%=listing.location%>" name="listing[location]"
-                 type="text" class="form-control" required>
-                 <div class="valid-feedback">Location updated!</div>
-                 <div class="invalid-feedback">
-                    Please enter a location for your listing.
+            <div class="row">
+                <div class="mb-3 col-md-8">
+                    <label for="location" class="form-label">Location</label>
+                    <input value="<%=listing.location%>" name="listing[location]"
+                    type="text" class="form-control" required>
+                    <div class="valid-feedback">Location updated!</div>
+                    <div class="invalid-feedback">
+                        Please enter a location for your listing.
+                    </div>
                 </div>
             </div>
             <br/>
             <button class="btn btn-primary mt-3 mb-3">Update Listing</button>
         </form>
     </div>
-</div>     
+</div>
