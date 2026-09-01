@@ -56,6 +56,7 @@
                 <div class="mb-3 col-md-4">
                     <label for="category">Select Category</label>
                     <select name="listing[category]" id="category" class="form-select" required>
+                        <option value="<%= listing.category%>"><%= listing.category%></option>
                         <option value="Trending">Trending</option>
                         <option value="Villa">Villa</option>
                         <option value="Rooms">Rooms</option>
