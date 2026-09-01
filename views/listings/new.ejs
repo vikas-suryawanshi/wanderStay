@@ -2,35 +2,36 @@
 <div class="row">
     <div class="col-8 offset-2 mt-3">
         <h3><i class="fa-solid fa-house"></i> Create Your Listing</h3>
-        <form method="post" action="/listings" novalidate 
+        <form method="post" action="/listings" novalidate
         class="needs-validation mt-3" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input placeholder="enter title" name="listing[title]" type="text"
                 class="form-control" required>
-                <div class="invalid-feedback">Give your listing a catchy title!</div>
+                <div class="invalid-feedback">Give your property a catchy title!</div>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea placeholder="enter description" 
+                <textarea placeholder="enter description"
                 name="listing[description]" type="text" class="form-control"required></textarea>
-                <div class="invalid-feedback">Tell people something about this place.</div>
+                <div class="invalid-feedback">Tell people something about this property.</div>
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input name="listing[image]" 
-                type="file" class="form-control">
+                <label for="image" class="form-label">Upload New Image</label>
+                <input name="listing[image]"
+                type="file" class="form-control" required>
+                <div class="invalid-feedback"> Please upload your property image.</div>
             </div>
             <div class="row">
                 <div class="mb-3 col-md-4">
                     <label for="price" class="form-label">Price</label>
                     <input placeholder="1500" name="listing[price]" type="number" class="form-control" required>
-                    <div class="invalid-feedback">Please enter a valid price for your listing.</div>
+                    <div class="invalid-feedback">Please enter a valid price for your property.</div>
                 </div>
                 <div class="mb-3 col-md-8">
                     <label for="country" class="form-label">Country</label>
                     <input placeholder="india" name="listing[country]" type="text" class="form-control" required>
-                    <div class="invalid-feedback">Please provide a country name!</div>
+                    <div class="invalid-feedback">Please enter a country name.</div>
                 </div>
             </div>
             <div class="row">
@@ -39,6 +40,7 @@
                     >Select Category</label>
                     <select name="listing[category]"
                     class="form-select" id="Category" required>
+                        <option value="">select category</option>
                         <option value="Trending">Trending</option>
                         <option value="Rooms">Rooms</option>
                         <option value="Villa">Villa</option>
@@ -48,18 +50,19 @@
                         <option value="Beach">Beach</option>
                         <option value="Camping">Camping</option>
                     </select>
+                    <div class="invalid-feedback">Please select a category.</div>
                 </div>
                 <div class="mb-3 col-md-8">
                     <label for="location" class="form-label"
                     >Location</label>
-                    <input placeholder="enter location" 
+                    <input placeholder="enter location"
                     name="listing[location]"
                     type="text" class="form-control" required>
                     <div class="invalid-feedback"
-                    >Please provide a location.</div>
+                    >Please enter a location.</div>
                 </div>
             </div>
-            <button class="btn btn-dark add-btn  mt-3 mb-3">Add</button>
+            <button class="btn btn-dark add-btn  mt-3 mb-3">Create Listing</button>
         </form>
     </div>
 </div>
