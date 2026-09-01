@@ -6,7 +6,7 @@
             novalidate class="needs-validation" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input value="<%=listing.title%>" name="listing[title]" 
+                <input value="<%=listing.title%>" name="listing[title]"
                 type="text" class="form-control" required>
                 <div class="valid-feedback">Title updated perfectly!</div>
                 <div class="invalid-feedback">
@@ -53,6 +53,9 @@
                     </div>
             </div>
             <div class="row">
+                <div class="mb-3 col-md-4">
+
+                </div>
                 <div class="mb-3 col-md-8">
                     <label for="location" class="form-label">Location</label>
                     <input value="<%=listing.location%>" name="listing[location]"
