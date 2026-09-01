@@ -15,7 +15,7 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea name="listing[description]"
+                <textarea name="listing[description]" rows="5"
                 type="text" class="form-control" required><%=listing.description%>
                 </textarea>
                 <div class="valid-feedback">Description looks great!</div>
@@ -25,7 +25,9 @@
             </div>
             <div class="mb-3">
                 original image<br/>
-                <img src="<%= originalImageUrl%>">
+                <img src="<%= originalImageUrl%>"
+                width="300px"
+                height="200px">
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label"></label>
