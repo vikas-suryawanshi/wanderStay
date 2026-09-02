@@ -22,9 +22,9 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" 
-    data-bs-toggle="collapse" 
-    data-bs-target="#navbarNavAltMarkup" 
+    <button class="navbar-toggler" type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNavAltMarkup"
     aria-controls="navbarNavAltMarkup"
     aria-expanded="false" aria-label="Toggle navigation"
     >
@@ -36,10 +36,10 @@
       </div>
       <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search">
-          <input class="form-control me-2 search-inp" 
-          type="search" placeholder="Search Destination" 
+          <input class="form-control me-2 search-inp"
+          type="search" placeholder="Search Destination"
           aria-label="Search"/>
-          <button class="btn search-btn" 
+          <button class="btn search-btn"
           type="submit"><i class="fa-solid fa-magnifying-glass"
           ></i>Search</button>
         </form>
@@ -47,13 +47,13 @@
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Start Hosting</a>
         <% if(!currUser) {%>
-          <a class="nav-link" aria-current="page" 
+          <a class="nav-link" aria-current="page"
           href="/signup"><b>Sign Up</b></a>
           <a class="nav-link" href="/login"><b>login</b></a>
         <% } %>
-        <% if(currUser) {%>  
+        <% if(currUser) {%>
           <a class="nav-link" href="/logout"><b>logOut</b></a>
-        <% } %>  
+        <% } %>
       </div>
     </div>
   </div>
