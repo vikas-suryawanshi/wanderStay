@@ -35,8 +35,9 @@
         <a class="nav-link" href="/listings">ExploreX</a>
       </div>
       <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2 search-inp"
+        <form action="/listings" method="get"
+        class="d-flex" role="search">
+          <input class="form-control me-2 search-inp" name="search"
           type="search" placeholder="Search Destination"
           aria-label="Search"/>
           <button class="btn search-btn"
