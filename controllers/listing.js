@@ -27,6 +27,12 @@ module.exports.index = async (req,res)=>{
                         $regex:search,
                         $options:"i",
                     }
+                },
+                {
+                    location:{
+                        $regex:search,
+                        $options:"i",
+                    }
                 }
             ]
         });
