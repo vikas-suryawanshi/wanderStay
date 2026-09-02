@@ -9,10 +9,14 @@ module.exports.index = async (req,res)=>{
     let allListings=await Listing.find({});
     if(search){
         allListings=await Listing.find({
-            location:{
-                $regex:search,
-                $options:"i",
-            }
+            $or:[
+                {
+                    location:{
+                        $regex:search,
+                        $options:"i",
+                    }
+                }
+            ]
         });
     }
     res.render("listings/index.ejs",{allListings});
