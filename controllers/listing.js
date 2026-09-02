@@ -23,7 +23,7 @@ module.exports.index = async (req,res)=>{
                     }
                 },
                 {
-                    title:{
+                    category:{
                         $regex:search,
                         $options:"i",
                     }
