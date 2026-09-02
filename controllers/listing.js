@@ -21,6 +21,12 @@ module.exports.index = async (req,res)=>{
                         $regex:search,
                         $options:"i",
                     }
+                },
+                {
+                    title:{
+                        $regex:search,
+                        $options:"i",
+                    }
                 }
             ]
         });
