@@ -51,6 +51,7 @@
 </div>
 <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 mt-2">
     <% if(search && allListings.length === 0) {%>
+        <% search %>
     <% }else { %>
         <% for(let listings of allListings){%>
             <a href="/listings/<%=listings._id%>" class="listing-link"
