@@ -52,8 +52,9 @@
 <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 mt-2">
     <% if(search && allListings.length === 0) {%>
         <div class="row mt-3">
-            <div class="alert alert-info col-6 offset-3" role="alert">
-                <p class="alert-heading"><%= search %></p>
+            <div class="alert alert-info col-12 offset-11" role="alert">
+                <p>No listings found for "<%= search %>"<br/>
+                    Try searching for another destination, property, or category.</p>
             </div>
         </div>
     <% }else { %>
