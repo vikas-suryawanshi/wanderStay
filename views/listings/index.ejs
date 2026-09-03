@@ -50,23 +50,25 @@
     </div>
 </div>
 <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 mt-2">
-    <% if(search && allListings.length === 0) %>
-    <% for(let listings of allListings){%>
-        <a href="/listings/<%=listings._id%>" class="listing-link"
-            data-category="<%= listings.category%>">
-            <div class="card listing-card">
-                <img src="<%= listings.image.url %>" class="card-img-top"
-                alt="listings-image" style="height: 15rem;">
-                <div class="card-img-overlay"></div>
-                <div class="card-body">
-                    <p class="card-text ms-2"><b><%= listings.title %></b><br/>&#8377;
-                        <i class="tax-info" data-price="<%= listings.price%>"><%= listings.price.toLocaleString("en-IN") %></i>/night
-                    </p>
+    <% if(search && allListings.length === 0) {%>
+    <% }else { %>
+        <% for(let listings of allListings){%>
+            <a href="/listings/<%=listings._id%>" class="listing-link"
+                data-category="<%= listings.category%>">
+                <div class="card listing-card">
+                    <img src="<%= listings.image.url %>" class="card-img-top"
+                    alt="listings-image" style="height: 15rem;">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                        <p class="card-text ms-2"><b><%= listings.title %></b><br/>&#8377;
+                            <i class="tax-info" data-price="<%= listings.price%>"><%= listings.price.toLocaleString("en-IN") %></i>/night
+                        </p>
 
+                    </div>
                 </div>
-            </div>
-        </a>
-    <%}%>
+            </a>
+        <%}%>
+    <% } %>
 </div>
 <script src="./js/taxSwitch.js"></script>
 <script src="./js/filter.js"></script>
