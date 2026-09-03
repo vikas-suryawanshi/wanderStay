@@ -37,7 +37,7 @@ module.exports.index = async (req,res)=>{
             ]
         });
     }
-    res.render("listings/index.ejs",{allListings});
+    res.render("listings/index.ejs",{allListings,search});
 };
 
 module.exports.renderNewForm = (req,res)=>{
