@@ -53,10 +53,9 @@
     <% if(search && allListings.length === 0) {%>
         <div class="row mt-3">
             <div class="alert">
-                
+                <p><%= search %></p>
             </div>
         </div>
-        <%= search %>
     <% }else { %>
         <% for(let listings of allListings){%>
             <a href="/listings/<%=listings._id%>" class="listing-link"
