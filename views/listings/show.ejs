@@ -4,7 +4,7 @@
     const listing = <%- JSON.stringify(listings) %>;
 </script>
 <div class="row mt-3">
-    <div class="col-8 offset-3">
+    <div class="col-6 offset-3">
         <h2><b><%=listings.title%></b></h2>
     </div>
     <div class="card col-6 offset-3 show-card listing-card">
@@ -31,7 +31,7 @@
             </form>
         </div>
     <% } %>
-        <div class="col-8 offset-3">
+        <div class="col-6 offset-3">
             <% if(currUser) {%>
                 <hr/>
                 <h4>Leave a Review ⭐</h4>
@@ -48,7 +48,7 @@
                             name="review[rating]" value="2" />
                             <label for="first-rate2" title="Not good">2 stars</label>
                             <input type="radio" id="first-rate3"
-                             name="review[rating]" value="3" />
+                            name="review[rating]" value="3" />
                             <label for="first-rate3" title="Average">3 stars</label>
                             <input type="radio" id="first-rate4"
                             name="review[rating]" value="4" />
@@ -90,7 +90,10 @@
                 </div>
             <% } %>
         </div>
-    </div>
-    <div id="map" class="offset-3"></div>
-    <script src="/js/map.js"></script>
 </div>
+<div class="row">
+    <div class="offset-3 col-6">
+        <div id="map"></div>
+    </div>
+</div>
+<script src="/js/map.js"></script>
