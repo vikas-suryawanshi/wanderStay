@@ -38,7 +38,8 @@
         <form action="/listings" method="get"
         class="d-flex" role="search">
           <input class="form-control me-2 search-inp" name="search"
-          value="<%= search %>" type="search" placeholder="Search Destination"
+          value="<%= typeof search !== 'undefined' ? search : '' %>"
+          type="search" placeholder="Search Destination"
           aria-label="Search"/>
           <button class="btn search-btn"
           type="submit"><i class="fa-solid fa-magnifying-glass"
