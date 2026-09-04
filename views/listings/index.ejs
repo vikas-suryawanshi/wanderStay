@@ -49,7 +49,9 @@
         </div>
     </div>
 </div>
-
+    <%if(search && allListings.length>0){%>
+        <p>Show listings for "<%= search %>"</p>
+    <%}%>
     <% if(search && allListings.length === 0) {%>
         <div class="row mt-4">
             <div class="alert alert-info mx-auto col-lg-5" role="alert">
