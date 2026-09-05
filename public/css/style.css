@@ -119,7 +119,8 @@ body{
 
 /* show pages */
 .show-img{
-    height: 30vh;
+    height: 40vh;
+    width: 100%;
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover !important;
