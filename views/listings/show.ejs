@@ -11,11 +11,15 @@
         <div class="card col-6 offset-3 show-card listing-card">
             <img src="<%=listings.image.url%>" class="card-img-top show-img" alt="listings_image">
             <div class="card-body">
-                <p class="card-text mt-2">Owned by:<%= listings.owner.username%></p>
-                <p class="card-text mt-2"><%= listings.description%></p>
-                <p class="card-text mt-2">&#8377; <%= listings.price.toLocaleString("en-IN")%>/night</p>
-                <p class="card-text mt-2"><%= listings.location%></p>
-                <p class="card-text mt-2"><%= listings.country%></p>
+                <p class="card-text mt-2">
+                    <span class="text-muted">Owned By:</span>
+                    <span class="fw-semibold ms-1"><%= listings.owner.username%></span>
+                </p>
+                <p class="card-text mt-3"><%= listings.description%></p>
+                <p class="card-text fw-bold fs-5 mt-3">&#8377; <%= listings.price.toLocaleString("en-IN")%><span class="fw-normal fs-6">/night</span></p>
+                <p class="card-text mt-2"
+                ><%= listings.location%>, <%= listings.country%>
+                </p>
             </div>
         </div>
         <% if(currUser && currUser._id.equals(listings.owner._id))  {%>
