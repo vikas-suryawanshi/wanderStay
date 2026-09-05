@@ -6,19 +6,23 @@
 <div class="container">
     <div class="row mt-4">
         <div class="col-12 col-md-8 offset-md-2">
-            <h2><b><%=listings.title%></b></h2>
+            <h2 class="fw-semibold mb-2">
+                <%=listings.title%>
+            </h2>
         </div>
-        <div class="card col-12 col-md-8 offset-md-2 show-card listing-card">
+        <div class="card col-12 col-md-8 offset-md-2 show-card listing-card shadow-sm rounded-3">
             <img src="<%=listings.image.url%>" class="card-img-top show-img" alt="listings_image">
-            <div class="card-body">
+            <div class="card-body p-4">
                 <p class="card-text mt-2">
+                    <i class="fa-solid fa-user me-2"></i>
                     <span class="text-muted">Owned By:</span>
                     <span class="fw-semibold ms-1"><%= listings.owner.username%></span>
                 </p>
-                <p class="card-text mt-3"><%= listings.description%></p>
+                <p class="card-text mt-3 text-muted"><%= listings.description%></p>
                 <p class="card-text fw-bold fs-5 mt-3">&#8377; <%= listings.price.toLocaleString("en-IN")%><span class="fw-normal fs-6">/night</span></p>
-                <p class="card-text mt-2"
-                ><%= listings.location%>, <%= listings.country%>
+                <p class="card-text mt-3">
+                     <i class="fa-solid fa-location-dot me-2"></i>
+                    <%= listings.location%>, <%= listings.country%>
                 </p>
             </div>
         </div>
