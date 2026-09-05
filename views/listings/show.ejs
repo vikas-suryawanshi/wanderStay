@@ -23,14 +23,15 @@
             </div>
         </div>
         <% if(currUser && currUser._id.equals(listings.owner._id))  {%>
-            <div class="btns mt-3 mb-3 col-6 offset-3 d-flex gap-5">
+            <div class="btns mt-3 mb-3 col-6 offset-3 d-flex gap-3 justify-content-center">
                 <form method="GET" action="/listings/<%= listings._id %>/edit">
-                    <button class="btn btn-primary">
+                    <button class="btn btn-outline-primary px-4">
                         <i class="fa-solid fa-pen-to-square me-2"></i>Edit
                     </button>
                 </form>
                 <form method="POST" action="/listings/<%= listings.id %>?_method=DELETE">
-                    <button type="submit" class="btn btn-danger">
+                    <button type="submit" class="btn btn-outline-danger px-4
+                    justify-content-center">
                         <i class="fa-solid fa-trash me-2"></i>Delete
                     </button>
                 </form>
