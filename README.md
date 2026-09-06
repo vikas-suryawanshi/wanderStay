@@ -110,6 +110,9 @@ I am continuously improving WanderStay and adding new features as I work on the 
 * 📅 Booking & Reservation System
 * 🏠 Host Dashboard
 * 👤 User Dashboard
+* 📆 Booking Availability Calendar
+* 💳 Payment Integration
+* 🔔 Notifications System
 * ❤️ Wishlist
 * 📅 Booking system
 * 👤 User profiles
