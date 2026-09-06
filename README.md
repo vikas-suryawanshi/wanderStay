@@ -39,15 +39,22 @@ The project currently includes **user authentication, listing management, review
 
 ## Tech Stack
 
+* **HTML**
+* **CSS**
+* **JavaScript**
+* **Bootstrap**
 * **Node.js**
 * **Express.js**
+* **EJS**
 * **MongoDB**
 * **Mongoose**
-* **EJS**
+* **RESTful APIs & Routing**
 * **Passport.js**
 * **Express Session**
 * **Connect Flash**
-* **HTML & CSS**
+* **Multer**
+* **Cloudinary**
+* **Git & GitHub**
 
 ---
 
