@@ -115,8 +115,8 @@ I am continuously improving WanderStay and adding new features as I work on the 
 * 💳 Payment Integration
 * 🔔 Notifications System
 * 👤 User Profiles
-* 📅 Booking system
-* 👤 User profiles
+* 🧠 Property Recommendation System
+* 📊 Host Property Analytics
 * 🤖 AI-based travel features
 
 ---
