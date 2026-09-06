@@ -28,6 +28,7 @@ The project currently includes **user authentication, listing management, review
 * 💬 Success and error flash messages
 * 📦 MongoDB database
 * 📱 Responsive UI
+* ⭐ Reviews displayed on listing
 
 ---
 
