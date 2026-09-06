@@ -29,8 +29,8 @@ The project currently includes **user authentication, listing management, review
 * 📦 MongoDB database
 * 📱 Responsive UI
 * ⭐ Reviews displayed on listing
-- 🖼️ Image upload
-- 🗺️ Maps & location features
+* 🖼️ Image upload
+* 🗺️ Maps & location features
 
 ---
 
