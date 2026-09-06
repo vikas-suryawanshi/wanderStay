@@ -107,9 +107,9 @@ I am continuously improving WanderStay and adding new features as I work on the 
 
 ## Future Plans
 
-* 🖼️ Image upload
-* 🗺️ Maps & location features
-* 🔎 Search and filters
+* 📅 Booking & Reservation System
+* 🏠 Host Dashboard
+* 👤 User Dashboard
 * ❤️ Wishlist
 * 📅 Booking system
 * 👤 User profiles
