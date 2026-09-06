@@ -63,14 +63,63 @@ The project currently includes **user authentication, listing management, review
 ```text
 WanderStay
 │
+├── controllers/
+│   ├── listing.js
+│   ├── review.js
+│   └── users.js
+│
+├── init/
+│   ├── data.js
+│   └── index.js
+│
 ├── models/
-├── routes/
-├── views/
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
 ├── public/
+│   ├── css/
+│   └── js/
+│
+├── routes/
+│   ├── listing.js
+│   ├── review.js
+│   └── user.js
+│
+├── Schema/
+│   └── Schema.js
+│
 ├── utils/
+│   ├── ExpressError.js
+│   └── wrapAsync.js
+│
+├── views/
+│   ├── includes/
+│   │   ├── flash.ejs
+│   │   ├── footer.ejs
+│   │   └── navbar.ejs
+│   │
+│   ├── layouts/
+│   │   └── boilerplate.ejs
+│   │
+│   ├── listings/
+│   │   ├── edit.ejs
+│   │   ├── index.ejs
+│   │   ├── new.ejs
+│   │   └── show.ejs
+│   │
+│   ├── users/
+│   │   ├── login.ejs
+│   │   └── signup.ejs
+│   │
+│   └── error.ejs
+│
+├── .gitignore
 ├── app.js
+├── cloudinary.js
 ├── middleware.js
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
