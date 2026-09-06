@@ -127,9 +127,9 @@ I am continuously improving WanderStay and adding new features as I work on the 
 
 Computer Science Engineering Student
 
-GitHub: [@vikas-suryawanshi](https://github.com/vikas-suryawanshi)
-
-LinkedIn: [@vikas-suryawanshi](https://www.linkedin.com/in/vikassuryawanshi6/)
+- 💻 GitHub: [@vikas-suryawanshi](https://github.com/vikas-suryawanshi)
+- 🔗 LinkedIn: [@vikas-suryawanshi](https://www.linkedin.com/in/vikassuryawanshi6/)
+- 🧩 LeetCode: [@vikas-suryawanshi](https://leetcode.com/u/Vikassuryawanshi/)
 ---
 
 > WanderStay is an educational project inspired by Airbnb, built to practice and improve full-stack web development skills.
