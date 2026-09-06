@@ -31,6 +31,9 @@ The project currently includes **user authentication, listing management, review
 * ⭐ Reviews displayed on listing
 * 🖼️ Image upload
 * 🗺️ Maps & location features
+* 🔎 Search listings
+* 🏷️ Category-wise listing filtering
+* 💰 GST toggle with updated price display
 
 ---
 
