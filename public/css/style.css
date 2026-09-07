@@ -152,6 +152,10 @@ body{
 .login,.signup{
     margin-bottom: 100px;
 }
+.signup .form-control:focus{
+    border-color: #fe424d !important;
+    box-shadow: 0 0 0 0.15rem rgba(254, 66, 77, 0.15) !important;
+}
 
 /* map */
 #map{
