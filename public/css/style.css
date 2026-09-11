@@ -19,10 +19,6 @@ body{
     object-fit: contain;
 }
 
-.fa-compass{
-    color: #fe424d !important;
-    font-size: 2rem;
-}
 .nav-link{
     color: #222222 !important;
 }
