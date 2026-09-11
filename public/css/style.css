@@ -14,7 +14,7 @@ body{
 }
 
 .navbar-brand img{
-    width: 20px;
+    width: 120px;
     height: auto;
     object-fit: contain;
 }
