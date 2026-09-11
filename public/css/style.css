@@ -14,7 +14,9 @@ body{
 }
 
 .navbar-brand img{
-    
+    width: 20px;
+    height: auto;
+    object-fit: contain;
 }
 
 .fa-compass{
