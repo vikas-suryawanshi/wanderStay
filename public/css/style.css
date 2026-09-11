@@ -13,6 +13,10 @@ body{
     background-color: white !important;
 }
 
+.navbar-brand img{
+    
+}
+
 .fa-compass{
     color: #fe424d !important;
     font-size: 2rem;
