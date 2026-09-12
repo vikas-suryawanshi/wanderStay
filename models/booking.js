@@ -14,4 +14,14 @@ const bookingSchema = new Schema({
         ref:"Listing",
         required:true,
     },
+
+    checkIn:{
+        type:Date,
+        required:true,
+    },
+
+    checkOut:{
+        type:Date,
+        required:true,
+    }
 });
