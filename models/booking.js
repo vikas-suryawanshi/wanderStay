@@ -43,4 +43,6 @@ const bookingSchema = new Schema({
         default:"pending",
     },
 
-});
+},{timestamps:true});
+
+const Booking = new mongoose.model("Booking",bookingSchema);
