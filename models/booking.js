@@ -1,4 +1,3 @@
-const { required } = require("joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -46,3 +45,5 @@ const bookingSchema = new Schema({
 },{timestamps:true});
 
 const Booking = new mongoose.model("Booking",bookingSchema);
+
+module.exports = Booking;
