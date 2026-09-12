@@ -23,5 +23,18 @@ const bookingSchema = new Schema({
     checkOut:{
         type:Date,
         required:true,
-    }
+    },
+
+    guests:{
+        type:Number,
+        required:true,
+        min:1,
+    },
+
+    totalPrice:{
+        type:Number,
+        required:true,
+        min:0,
+    },
+
 });
