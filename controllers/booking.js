@@ -1,5 +1,5 @@
 const Listing = require("../models/listing");
-const Listing = require("../models/listing");
+const Booking = require("../models/booking");
 
 module.exports.createBooking = async(req,res)=>{
     let listing = await Listing.findById(req.params.id);
@@ -13,5 +13,13 @@ module.exports.createBooking = async(req,res)=>{
         req.flash("error","please all field fill correctly & try again.");
         return res.redirect(`/listings/${req.params.id}`);
     }
+    checkIn = new Date(checkIn);
+    checkOut = new Date(checkOut);
+
+    if(checkIn>=checkOut){
+        req.flash("error","please select valid date");
+        return res.redirect(`/listings/${req.params.id}`);
+    }
+
     let user = req.user._id;
 }
