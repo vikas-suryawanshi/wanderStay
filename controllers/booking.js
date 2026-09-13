@@ -21,5 +21,12 @@ module.exports.createBooking = async(req,res)=>{
         return res.redirect(`/listings/${req.params.id}`);
     }
 
+    let existingBookings = await Booking.find({
+        listing: req.params.id,
+        status:{
+            $ne: "cancelled",
+        }
+    })
+
     let user = req.user._id;
 }
