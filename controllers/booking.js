@@ -27,6 +27,12 @@ module.exports.createBooking = async(req,res)=>{
             $ne: "cancelled",
         }
     })
+    for(const booking of existingBookings){
+        if(!(booking.checkOut<=checkIn || checkOut<=booking.checkIn)){
+            req.flash("error","These dates are already booked.");
+            return res.redirect(`/listings/${req.params.id}`);
+        }
+    }
 
     let user = req.user._id;
 }
