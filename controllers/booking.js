@@ -7,7 +7,7 @@ module.exports.createBooking = async(req,res)=>{
         req.flash("error","this listing is not avalble");
         return res.redirect("/listings");
     }
-
+    let user = req.user._id;
     let {checkIn,checkOut,guests} = req.body;
     if(!checkIn || !checkOut || !guests){
         req.flash("error","please all field fill correctly & try again.");
@@ -33,6 +33,6 @@ module.exports.createBooking = async(req,res)=>{
             return res.redirect(`/listings/${req.params.id}`);
         }
     }
-
-    let user = req.user._id;
+    let numberOfNights = (checkOut-checkIn)/(24*60*60*1000);
+    let totalPrice = listing.price * numberOfNights;
 }
