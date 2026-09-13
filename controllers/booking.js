@@ -1,24 +1,23 @@
 const Listing = require("../models/listing");
 const Booking = require("../models/booking");
-const { newListing } = require("./listing");
 
 module.exports.createBooking = async(req,res)=>{
     let listing = await Listing.findById(req.params.id);
     if(!listing){
-        req.flash("error","this listing is not avalble");
+        req.flash("error","This listing is no longer available.");
         return res.redirect("/listings");
     }
     let user = req.user._id;
     let {checkIn,checkOut,guests} = req.body;
     if(!checkIn || !checkOut || !guests){
-        req.flash("error","please all field fill correctly & try again.");
+        req.flash("error","Please fill in all booking details correctly.");
         return res.redirect(`/listings/${req.params.id}`);
     }
     checkIn = new Date(checkIn);
     checkOut = new Date(checkOut);
 
     if(checkIn>=checkOut){
-        req.flash("error","please select valid date");
+        req.flash("error","Please select valid check-in and check-out dates.");
         return res.redirect(`/listings/${req.params.id}`);
     }
 
@@ -30,7 +29,7 @@ module.exports.createBooking = async(req,res)=>{
     })
     for(const booking of existingBookings){
         if(!(booking.checkOut<=checkIn || checkOut<=booking.checkIn)){
-            req.flash("error","These dates are already booked.");
+            req.flash("error","These dates are not available. Please select different dates.");
             return res.redirect(`/listings/${req.params.id}`);
         }
     }
@@ -47,6 +46,6 @@ module.exports.createBooking = async(req,res)=>{
 
     })
     await booking.save();
-    req.flash("success","you are succesfully resever this listing");
+    req.flash("success","Your booking was created successfully!");
     return res.redirect(`/listings/${req.params.id}`);
 }
