@@ -4,9 +4,7 @@ const wrapAsync=require("../utils/wrapAsync.js");
 const bookingController = require("../controllers/booking.js");
 
 router.route("/listings/:id/book")
-.get(async(req,res)=>{
-    res.render("listings/booking.ejs");
-})
+.get()
 .post(wrapAsync(bookingController.createBooking));
 
 module.exports=router;

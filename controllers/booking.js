@@ -1,6 +1,10 @@
 const Listing = require("../models/listing");
 const Booking = require("../models/booking");
 
+module.exports.getBookingForm = async(req,res)=>{
+    res.render("listings/booking.ejs");
+};
+
 module.exports.createBooking = async(req,res)=>{
     let listing = await Listing.findById(req.params.id);
     if(!listing){
