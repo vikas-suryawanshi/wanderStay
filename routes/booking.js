@@ -5,3 +5,5 @@ const bookingController = require("../controllers/booking.js");
 
 router.route("/listings/:id/book")
 .post(wrapAsync(bookingController.createBooking));
+
+module.exports=router;
