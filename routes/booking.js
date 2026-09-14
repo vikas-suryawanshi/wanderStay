@@ -1,4 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const bookingController = require("../controllers/booking.js"); 
+const bookingController = require("../controllers/booking.js");
+
+router.route("/listings/:id/book")
+.post((bookingController.createBooking));
