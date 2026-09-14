@@ -26,6 +26,7 @@ const ExpressError=require("./utils/ExpressError.js");
 const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const bookingRouter = require("./routes/booking.js");
 // express sesion
 const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
@@ -80,6 +81,7 @@ app.use((req,res,next)=>{
 app.use("/listings",listingsRouter);
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",userRouter);
+app.use("/",bookingRouter);
 
 // page not found middleware
 app.use((req,res,next)=>{
