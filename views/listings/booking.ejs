@@ -2,18 +2,20 @@
 
 <h3>Reserve Your Stay</h3>
 <form>
-        <label for="checkIn">select checkIn</label>
+        <label for="checkIn" class="form-label">select checkIn</label>
         <input name="booking[checkIn]" id="checkIn"
             type="date" class="form-control" required
         >
 
-        <label for="checkOut">select checkOut</label>
+        <label for="checkOut" class="form-label">select checkOut</label>
         <input name="booking[checkOut]" id="checkOut"
             type="date" class="form-control" required
         >
 
-        <label for="guests">select Guests</label>
+        <label for="guests" class="form-label">select Guests</label>
         <input name="booking[guests]" id="guests"
             type="number" class="form-control" required
         >
+
+        <button class="btn btn-success">Submit</button>
 </form>
