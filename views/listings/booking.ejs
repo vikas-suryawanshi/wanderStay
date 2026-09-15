@@ -3,17 +3,17 @@
 <h3>Reserve Your Stay</h3>
 <form method="post" action="/listings/<%= listings._id %>/book">
         <label for="checkIn" class="form-label">select checkIn</label>
-        <input name="booking[checkIn]" id="checkIn"
+        <input name="checkIn" id="checkIn"
             type="date" class="form-control" required
         >
 
         <label for="checkOut" class="form-label">select checkOut</label>
-        <input name="booking[checkOut]" id="checkOut"
+        <input name="checkOut" id="checkOut"
             type="date" class="form-control" required
         >
 
         <label for="guests" class="form-label">select Guests</label>
-        <input name="booking[guests]" id="guests"
+        <input name="guests" id="guests"
             type="number" class="form-control" required
         >
 
