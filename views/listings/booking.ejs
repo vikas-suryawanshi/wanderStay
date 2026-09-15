@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate.ejs")  %>
 
 <h3>Reserve Your Stay</h3>
-<form>
+<form method="post" action="/listings/<%= listings._id %>/book">
         <label for="checkIn" class="form-label">select checkIn</label>
         <input name="booking[checkIn]" id="checkIn"
             type="date" class="form-control" required
