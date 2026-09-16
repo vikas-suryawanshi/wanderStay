@@ -39,7 +39,20 @@
                 </div>
                 <div class="card-body p-4 p-md-5">
                     <form method="post" action="/listings/<%= listings._id %>/book">
+                        <div class="mb-4">
+                            <label for="checkIn" class="form-label fw-semibold"
+                            >Check-in</label>
 
+                            <input name="checkIn" id="checkIn" type="date"
+                                class="form-control booking-input" required >
+                        </div>
+                        <div class="mb-4">
+                            <label for="checkIn" class="form-label fw-semibold"
+                            >Check-in</label>
+
+                            <input name="checkIn" id="checkIn" type="date"
+                                class="form-control booking-input" required >
+                        </div>
                     </form>
                 </div>
             </div>
