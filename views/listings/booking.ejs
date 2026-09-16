@@ -38,7 +38,8 @@
                     </div>
                 </div>
                 <div class="card-body p-4 p-md-5">
-                    <form method="post" action="/listings/<%= listings._id %>/book">
+                    <form method="post" action="/listings/<%= listings._id %>/book"
+                        class="needs-validation" novalidate>
                         <div class="mb-4">
                             <label for="checkIn" class="form-label fw-semibold"
                             >Check-in</label>
@@ -46,6 +47,7 @@
                             <input name="checkIn" id="checkIn" type="date"
                                 class="form-control booking-input" required >
                         </div>
+                        <div class="invalid-feedback">please enter a valid checkIn date.</div>
                         <div class="mb-4">
                             <label for="checkOut" class="form-label fw-semibold"
                             >Check-out</label>
@@ -53,6 +55,7 @@
                             <input name="checkOut" id="checkOut" type="date"
                                 class="form-control booking-input" required >
                         </div>
+                        <div class="invalid-feedback">please enter a valid checkOut date.</div>
                         <div class="mb-4">
                             <label for="guests" class="form-label fw-semibold"
                             >guests</label>
@@ -60,6 +63,7 @@
                                 class="form-control booking-input"
                                 min="1" value="1" required>
                         </div>
+                        <div class="invalid-feedback">please give the no.of guests stay in this.</div>
                         <button
                             type="submit"
                             class="btn btn-dark w-100 booking-btn"
