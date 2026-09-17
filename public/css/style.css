@@ -224,3 +224,8 @@ body{
 .booking-listing-preview{
     border-bottom: 1px solid #eee;
 }
+.booking-listing-img{
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
