@@ -229,3 +229,10 @@ body{
     height: 260px;
     object-fit: cover;
 }
+.booking-input{
+    height: 52px;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    padding: 0 15px;
+    font-size: 1rem;
+}
