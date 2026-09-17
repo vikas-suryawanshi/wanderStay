@@ -223,11 +223,13 @@ body{
 /* listing preview */
 .booking-listing-preview{
     border-bottom: 1px solid #eee;
+    padding: 10px;
 }
 .booking-listing-img{
     width: 100%;
     height: 260px;
     object-fit: cover;
+    border-radius: 10px;
 }
 .booking-input{
     height: 52px;
