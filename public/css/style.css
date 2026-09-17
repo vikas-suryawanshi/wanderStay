@@ -236,3 +236,8 @@ body{
     padding: 0 15px;
     font-size: 1rem;
 }
+
+.booking-input:focus{
+    border-color: #222;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
