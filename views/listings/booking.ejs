@@ -46,24 +46,24 @@
 
                             <input name="checkIn" id="checkIn" type="date"
                                 class="form-control booking-input" required >
+                                <div class="invalid-feedback">please enter a valid checkIn date.</div>
                         </div>
-                        <div class="invalid-feedback">please enter a valid checkIn date.</div>
                         <div class="mb-4">
                             <label for="checkOut" class="form-label fw-semibold"
                             >Check-out</label>
 
                             <input name="checkOut" id="checkOut" type="date"
                                 class="form-control booking-input" required >
+                                <div class="invalid-feedback">please enter a valid checkOut date.</div>
                         </div>
-                        <div class="invalid-feedback">please enter a valid checkOut date.</div>
                         <div class="mb-4">
                             <label for="guests" class="form-label fw-semibold"
                             >guests</label>
                             <input name="guests" id="guests" type="number"
                                 class="form-control booking-input"
                                 min="1" value="1" required>
+                                <div class="invalid-feedback">please give the no.of guests stay in this.</div>
                         </div>
-                        <div class="invalid-feedback">please give the no.of guests stay in this.</div>
                         <button
                             type="submit"
                             class="btn btn-dark w-100 booking-btn"
