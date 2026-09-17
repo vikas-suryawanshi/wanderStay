@@ -220,3 +220,7 @@ body{
 .booking-card:hover{
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10) !important;
 }
+/* listing preview */
+.booking-listing-preview{
+    border-bottom: 1px solid #eee;
+}
