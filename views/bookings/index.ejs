@@ -1,6 +1,6 @@
 <% for(const booking of myBookings) {%>
     <div class="booking-card">
-        <img>
+        <img alt="booking-image" src="<%= booking.listing.image.url %>">
         <h4><%= booking.listing.title %></h4>
         <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
         <div class="booking-information-section">
