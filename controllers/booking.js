@@ -54,3 +54,7 @@ module.exports.createBooking = async(req,res)=>{
     req.flash("success","Your booking was created successfully!");
     return res.redirect(`/listings/${req.params.id}`);
 }
+
+module.exports.myBookings = async(req,res)=>{
+    
+}
