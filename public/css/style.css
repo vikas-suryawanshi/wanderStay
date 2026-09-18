@@ -269,3 +269,20 @@ body{
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
+
+.myBooking-image-section{
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.myBooking-image-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.myBooking-content{
+    flex: 1;
+    padding: 1.5rem;
+}
