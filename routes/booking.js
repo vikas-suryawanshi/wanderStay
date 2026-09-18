@@ -7,4 +7,7 @@ router.route("/listings/:id/book")
 .get(wrapAsync(bookingController.getBookingForm))
 .post(wrapAsync(bookingController.createBooking));
 
+router.route("/bookings")
+.get(wrapAsync(bookingController.myBookings));
+
 module.exports=router;
