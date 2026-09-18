@@ -1,14 +1,17 @@
-<% for(const booking of myBookings) {%>
-    <div class="booking-card">
-        <img alt="booking-image" src="<%= booking.listing.image.url %>">
-        <h4><%= booking.listing.title %></h4>
-        <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
-        <div class="booking-information-section">
-            <span>Check-in: <%= booking.checkIn %></span>
-            <span>Check-out: <%= booking.checkOut %></span>
-            <span>guests: <%= booking.guests %></span>
-            <span>totalPrice: <%= booking.totalPrice%></span>
+<div class="container">
+    <h2>My Bookings</h2>
+    <% for(const booking of myBookings) {%>
+        <div class="booking-card">
+            <img alt="booking-image" src="<%= booking.listing.image.url %>">
+            <h4><%= booking.listing.title %></h4>
+            <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
+            <div class="booking-information-section">
+                <span>Check-in: <%= booking.checkIn %></span>
+                <span>Check-out: <%= booking.checkOut %></span>
+                <span>guests: <%= booking.guests %></span>
+                <span>totalPrice: <%= booking.totalPrice%></span>
+            </div>
+            <span>Status: <%= booking.status%></span>
         </div>
-        <span>Status: <%= booking.status%></span>
-    </div>
-<% } %>
+    <% } %>
+</div>
