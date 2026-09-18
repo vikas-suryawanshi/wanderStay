@@ -10,10 +10,20 @@
                 <h4><%= booking.listing.title %></h4>
                 <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
                 <div class="myBooking-information-section">
-                    <span>Check-in: <%= booking.checkIn %></span>
-                    <span>Check-out: <%= booking.checkOut %></span>
+                    <span>Check-in: <%= booking.checkIn.toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                        })  %>
+                    </span>
+                    <span>Check-out: <%= booking.checkOut.toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                        })  %>
+                    </span>
                     <span>guests: <%= booking.guests %></span>
-                    <span>totalPrice: <%= booking.totalPrice%></span>
+                    <span>totalPrice: <%= booking.totalPrice.toLocaleString("en-IN") %></span>
                 </div>
                 <span>Status: <%= booking.status%></span>
             </div>
