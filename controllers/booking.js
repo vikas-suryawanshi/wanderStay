@@ -56,5 +56,7 @@ module.exports.createBooking = async(req,res)=>{
 }
 
 module.exports.myBookings = async(req,res)=>{
-    
+    let user = req.user._id;
+    let myBookings = await Booking.find({user:user}).populate("listing");
+    res.render("bookings/index.ejs", { myBookings });
 }
