@@ -255,3 +255,17 @@ body{
 .booking-btn:hover {
     transform: translateY(-1px);
 }
+
+/* ================================
+    My Bookings
+================================ */
+.myBooking-card{
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
