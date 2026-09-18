@@ -3,13 +3,13 @@
     <h2>My Bookings</h2>
     <% for(const booking of myBookings) {%>
         <div class="myBooking-card">
-            <div class="booking-image-section">
+            <div class="myBooking-image-section">
                 <img alt="booking-image" src="<%= booking.listing.image.url %>">
             </div>
-            <div class="booking-content">
+            <div class="myBooking-content">
                 <h4><%= booking.listing.title %></h4>
                 <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
-                <div class="booking-information-section">
+                <div class="myBooking-information-section">
                     <span>Check-in: <%= booking.checkIn %></span>
                     <span>Check-out: <%= booking.checkOut %></span>
                     <span>guests: <%= booking.guests %></span>
