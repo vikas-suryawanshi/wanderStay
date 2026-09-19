@@ -2,7 +2,14 @@
 <div class="container">
     <h2>My Bookings</h2>
     <% if(myBookings.length === 0) {%>
-        <p>no listings booked</p>
+        <div class="">
+            <div class="">
+                <i class="fa-solid fa-house"></i>
+            </div>
+            <h3>No bookings yet</h3>
+            <p>You haven't booked a stay yet. Explore our stays and plan your next trip.</p>
+            <a href="/listings" class="btn btn-dark">Explore Stays</a>
+        </div>
     <% } else {%>
         <% for(const booking of myBookings) {%>
             <div class="myBooking-card">
