@@ -5,7 +5,7 @@ const bookingController = require("../controllers/booking.js");
 const {isLoggedIn} = require("../middleware.js");
 
 router.route("/listings/:id/book")
-.get(wrapAsync(bookingController.getBookingForm))
+.get(isLoggedIn,wrapAsync(bookingController.getBookingForm))
 .post(isLoggedIn,wrapAsync(bookingController.createBooking));
 
 router.route("/bookings")
