@@ -9,6 +9,6 @@ router.route("/listings/:id/book")
 .post(isLoggedIn,wrapAsync(bookingController.createBooking));
 
 router.route("/bookings")
-.get(wrapAsync(bookingController.myBookings));
+.get(isLoggedIn,wrapAsync(bookingController.myBookings));
 
 module.exports=router;
