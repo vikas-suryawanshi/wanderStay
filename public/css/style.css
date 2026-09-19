@@ -345,3 +345,17 @@ body{
     background: #cff4fc;
     color: #055160;
 }
+
+/* ================================
+    Empty Bookings State
+================================ */
+.empty-bookings{
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 50px 30px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
