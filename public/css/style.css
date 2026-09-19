@@ -359,3 +359,14 @@ body{
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
+
+.empty-bookings-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+}
