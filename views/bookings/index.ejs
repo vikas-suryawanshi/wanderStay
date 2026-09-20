@@ -12,48 +12,51 @@
         </div>
     <% } else {%>
         <% for(const booking of myBookings) {%>
-            <div class="myBooking-card">
-                <div class="myBooking-image-section">
-                    <img alt="booking-image" src="<%= booking.listing.image.url %>">
-                </div>
-                <div class="myBooking-content">
-                    <h4><%= booking.listing.title %></h4>
-                    <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
-                    <div class="myBooking-information-section">
-                        <span>
-                            <small>Check-in</small>
-                            <strong>
-                                <%= booking.checkIn.toLocaleDateString("en-IN", {
-                                    day: "2-digit",
-                                    month: "short",
-                                    year: "numeric"
-                                })%>
-                            </strong>
-                        </span>
-                        <span>
-                            <small>Check-out</small>
-                            <strong>
-                                <%= booking.checkOut.toLocaleDateString("en-IN", {
-                                    day: "2-digit",
-                                    month: "short",
-                                    year: "numeric"
-                                })%>
-                            </strong>
-                        </span>
-                        <span>
-                            <small>Guests</small>
-                            <strong><%= booking.guests %></strong>
-                        </span>
-                        <span>
-                            <small>Total Price</small>
-                            <strong>&#8377; <%= booking.totalPrice.toLocaleString("en-IN") %></strong>
+            <a href="/bookings/<%= booking._id %>"
+                class="listing-link rounded-3">
+                <div class="myBooking-card">
+                    <div class="myBooking-image-section">
+                        <img alt="booking-image" src="<%= booking.listing.image.url %>">
+                    </div>
+                    <div class="myBooking-content">
+                        <h4><%= booking.listing.title %></h4>
+                        <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
+                        <div class="myBooking-information-section">
+                            <span>
+                                <small>Check-in</small>
+                                <strong>
+                                    <%= booking.checkIn.toLocaleDateString("en-IN", {
+                                        day: "2-digit",
+                                        month: "short",
+                                        year: "numeric"
+                                    })%>
+                                </strong>
+                            </span>
+                            <span>
+                                <small>Check-out</small>
+                                <strong>
+                                    <%= booking.checkOut.toLocaleDateString("en-IN", {
+                                        day: "2-digit",
+                                        month: "short",
+                                        year: "numeric"
+                                    })%>
+                                </strong>
+                            </span>
+                            <span>
+                                <small>Guests</small>
+                                <strong><%= booking.guests %></strong>
+                            </span>
+                            <span>
+                                <small>Total Price</small>
+                                <strong>&#8377; <%= booking.totalPrice.toLocaleString("en-IN") %></strong>
+                            </span>
+                        </div>
+                        <span class="myBooking-status = <%= booking.status%>">
+                            Status: <%= booking.status%>
                         </span>
                     </div>
-                    <span class="myBooking-status = <%= booking.status%>">
-                        Status: <%= booking.status%>
-                    </span>
                 </div>
-            </div>
+            </a>
         <% } %>
     <% } %>
 </div>
