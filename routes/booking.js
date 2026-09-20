@@ -11,4 +11,6 @@ router.route("/listings/:id/book")
 router.route("/bookings")
 .get(isLoggedIn,wrapAsync(bookingController.myBookings));
 
+router.route("/bookings/:id")
+.get(isLoggedIn,wrapAsync(bookingController.showBooking));
 module.exports=router;
