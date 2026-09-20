@@ -399,3 +399,139 @@ body{
     border-radius: 10px;
     font-weight: 500;
 }
+
+
+/* ================================
+    Booking Details
+================================ */
+.booking-details-card{
+    display: flex;
+    width: 100%;
+    margin: 30px 0 50px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.booking-details-card .image-section{
+    width: 380px;
+    min-height: 420px;
+    flex-shrink: 0;
+}
+
+.booking-details-card .image-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.booking-details-card .content-section{
+    flex: 1;
+    padding: 2rem;
+}
+
+.booking-details-card .content-section h4{
+    margin-bottom: 8px;
+    font-size:26px;
+    font-weight: 600;
+    color: #222;
+}
+.booking-details-card .content-section > p{
+    margin-bottom: 28px;
+    color: #6c757d;
+    font-size: 15px;
+}
+.booking-information {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.booking-information span {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 16px;
+    background: #f8f8f8;
+    border-radius: 12px;
+}
+.booking-information small {
+    margin-bottom: 6px;
+    color: #777;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.booking-information strong {
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Booking status */
+
+.booking-information .myBooking-status {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: #f1f3f5;
+    color: #333;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Status colors */
+
+.booking-information .myBooking-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.booking-information .myBooking-status.confirmed {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.booking-information .myBooking-status.cancelled {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.booking-information .myBooking-status.completed {
+    background: #cff4fc;
+    color: #055160;
+}
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .booking-details-card {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .booking-details-card .image-section {
+        width: 100%;
+        min-height: 280px;
+        height: 280px;
+    }
+
+    .booking-details-card .content-section {
+        padding: 24px;
+    }
+
+    .booking-details-card .content-section h4 {
+        font-size: 22px;
+    }
+
+    .booking-information {
+        grid-template-columns: 1fr;
+    }
+
+}
