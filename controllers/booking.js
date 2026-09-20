@@ -60,3 +60,9 @@ module.exports.myBookings = async(req,res)=>{
     let myBookings = await Booking.find({user:user}).populate("listing");
     res.render("bookings/index.ejs", { myBookings });
 }
+
+module.exports.showBooking = async(req,res)=>{
+    let {id} = req.params.id;
+    let {user} = req.user._id;
+    const booking = await Booking.findById(id,user);
+}
