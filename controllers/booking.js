@@ -62,7 +62,12 @@ module.exports.myBookings = async(req,res)=>{
 }
 
 module.exports.showBooking = async(req,res)=>{
-    let {id} = req.params.id;
-    let {user} = req.user._id;
-    const booking = await Booking.findById(id,user).populate("listing");
+    let {id} = req.params;
+    let user = req.user._id;
+    const booking = await Booking.findOne({_id:id,user:user}).populate("listing");
+    if(!booking){
+        req.flash("error","your booking is uncoorect please try again.")
+        return res.redirect(`/bookings`);
+    }
+    res.render("bookings/show.ejs",{booking});
 }
