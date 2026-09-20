@@ -1,40 +1,46 @@
 <% layout("/layouts/boilerplate.ejs")  %>
 <div class="container">
     <h3>Booking Details</h3>
-    <div class="card">
-        <img alt="booking-image" src="<%= booking.listing.image.url %>">
-        <h4><%= booking.listing.title %></h4>
-        <p>Location: <%= booking.listing.location %>, <%= booking.listing.country %></p>
-        <span>
-            <small>Check-in</small>
-            <strong>
-                <%= booking.checkIn.toLocaleDateString("en-IN", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                })%>
-            </strong>
-        </span>
-        <span>
-            <small>Check-out</small>
-            <strong>
-                <%= booking.checkOut.toLocaleDateString("en-IN", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                })%>
-            </strong>
-        </span>
-        <span>
-            <small>Guests</small>
-            <strong><%= booking.guests %></strong>
-        </span>
-        <span>
-            <small>Total Price</small>
-            <strong>&#8377; <%= booking.totalPrice.toLocaleString("en-IN") %></strong>
-        </span>
-        <span class="myBooking-status <%= booking.status%>">
-            Status: <%= booking.status%>
-        </span>
+    <div class="booking-details-card">
+        <div class="image-section">
+            <img alt="booking-image" src="<%= booking.listing.image.url %>">
+        </div>
+        <div class="content-section">
+            <h4><%= booking.listing.title %></h4>
+            <p>Location: <%= booking.listing.location %>, <%= booking.listing.country %></p>
+            <div class="booking-information">
+                <span>
+                    <small>Check-in</small>
+                    <strong>
+                        <%= booking.checkIn.toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                        })%>
+                    </strong>
+                </span>
+                <span>
+                    <small>Check-out</small>
+                    <strong>
+                        <%= booking.checkOut.toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                        })%>
+                    </strong>
+                </span>
+                <span>
+                    <small>Guests</small>
+                    <strong><%= booking.guests %></strong>
+                </span>
+                <span>
+                    <small>Total Price</small>
+                    <strong>&#8377; <%= booking.totalPrice.toLocaleString("en-IN") %></strong>
+                </span>
+                <span class="myBooking-status <%= booking.status%>">
+                    Status: <%= booking.status%>
+                </span>
+            </div>
+        </div>
     </div>
 </div>
