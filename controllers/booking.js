@@ -80,8 +80,9 @@ module.exports.cancelBooking = async(req,res)=>{
         req.flash("error","your booking is uncoorect please try again.")
         return res.redirect(`/bookings`);
     }
-    if(booking.status === "pending")
-    booking.status = "cancelled";
-    await booking.save();
+    if(booking.status === "pending" || booking.status === "confirmed"){
+        booking.status = "cancelled";
+        await booking.save();
+    }
     res.redirect(`/bookings/${req.params.id}`);
 }
