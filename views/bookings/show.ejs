@@ -41,7 +41,7 @@
                     Status: <%= booking.status%>
                 </span>
                 <% if(booking.status === "pending" || booking.status === "confirmed") {%>
-                    <form>
+                    <form method="post" action="/bookings/<%= booking._id %>/cancel">
                         <button class="btn btn-danger">Cancel</button>
                     </form>
                 <% } %>
