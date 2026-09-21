@@ -71,3 +71,8 @@ module.exports.showBooking = async(req,res)=>{
     }
     res.render("bookings/show.ejs",{booking});
 }
+
+module.exports.cancelBooking = async(req,res)=>{
+    let {id} = req.params;
+    let user = req.user._id;
+}
