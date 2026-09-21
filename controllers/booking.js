@@ -75,4 +75,13 @@ module.exports.showBooking = async(req,res)=>{
 module.exports.cancelBooking = async(req,res)=>{
     let {id} = req.params;
     let user = req.user._id;
+    const booking = await Booking.findOne({_id:id,user:user})
+    if(!booking){
+        req.flash("error","your booking is uncoorect please try again.")
+        return res.redirect(`/bookings`);
+    }
+    if(booking.status === "pending")
+    booking.status = "cancelled";
+    await booking.save();
+    res.redirect(`/bookings/${req.params.id}`);
 }
