@@ -90,6 +90,6 @@ module.exports.cancelBooking = async(req,res)=>{
     res.redirect(`/bookings/${req.params.id}`);
 }
 
-module.exports.updateBookingController = async(req,res)=>{
+module.exports.updateBookingStatus = async(req,res)=>{
     let {id} = req.params;
 }
