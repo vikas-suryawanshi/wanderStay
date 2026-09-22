@@ -99,12 +99,21 @@ module.exports.updateBookingStatus = async(req,res)=>{
         return res.redirect(`/bookings/${req.params.id}`);
     }
     if(booking.status == status){
-        req.flash("error","status change succesfully");
+        req.flash("error","this status is allready existed");
+        res.redirect(`/bookings/${req.params.id}`);
     }
-    if(booking.status === "pending" || booking.status === "confirmed"){
-        booking.status = status;
-        await booking.save();
-        req.flash("sucess","status can be change succesfully");
+    if(booking.status === "pending"){
+        if(status === "confirmed" || status === "cancelled"){
+            booking.status = status;
+            await booking.save();
+            req.flash("sucess","status can be change succesfully");
+        }
+    }else if (booking.status === "confirmed"){
+        if(status === "cancelled" || status === "completed"){
+            booking.status = status;
+            await booking.save();
+            req.flash("sucess","status can be change succesfully");
+        }
     }else{
         req.flash("status reqest are wrong");
     }
