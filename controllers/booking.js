@@ -107,4 +107,5 @@ module.exports.updateBookingStatus = async(req,res)=>{
     }else{
         req.flash("status reqest are wrong");
     }
+    res.redirect(`/bookings/${req.params.id}`);
 }
