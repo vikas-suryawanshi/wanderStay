@@ -95,32 +95,32 @@ module.exports.updateBookingStatus = async(req,res)=>{
     let status = req.body.status;
     const booking = await Booking.findById(id);
     if(!booking){
-        req.flash("error","this booking is not Existed.");
+        req.flash("error","Booking not found. Please try again.");
         return res.redirect(`/bookings/${req.params.id}`);
     }
     if(booking.status === status){
-        req.flash("error","this status is allready existed");
+        req.flash("error","The booking is already in this status.");
         return res.redirect(`/bookings/${req.params.id}`);
     }
     if(booking.status === "pending"){
         if(status === "confirmed" || status === "cancelled"){
             booking.status = status;
             await booking.save();
-            req.flash("success","status can be change succesfully");
+            req.flash("success","Booking status updated successfully.");
         }else{
-            req.flash("error","status reqest are wrong");
+            req.flash("error","This status change is not allowed.");
         }
     }else if (booking.status === "confirmed"){
         if(status === "cancelled" || status === "completed"){
             booking.status = status;
             await booking.save();
-            req.flash("success","status can be change succesfully");
+            req.flash("success","Booking status updated successfully.");
         }
         else{
-            req.flash("error","status reqest are wrong");
+            req.flash("error","This status change is not allowed.");
         }
     }else {
-        req.flash("error", "status request is wrong");
+        req.flash("error", "This status change is not allowed.");
     }
     res.redirect(`/bookings/${req.params.id}`);
 }
