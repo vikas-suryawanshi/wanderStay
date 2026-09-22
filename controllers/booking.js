@@ -92,4 +92,6 @@ module.exports.cancelBooking = async(req,res)=>{
 
 module.exports.updateBookingStatus = async(req,res)=>{
     let {id} = req.params;
+    let status = req.body;
+    const booking = await Booking.findById(id);
 }
