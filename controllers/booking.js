@@ -91,5 +91,5 @@ module.exports.cancelBooking = async(req,res)=>{
 }
 
 module.exports.updateBookingController = async(req,res)=>{
-    
+    let {id} = req.params;
 }
