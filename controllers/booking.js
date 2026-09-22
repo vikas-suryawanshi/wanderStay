@@ -98,24 +98,29 @@ module.exports.updateBookingStatus = async(req,res)=>{
         req.flash("error","this booking is not Existed.");
         return res.redirect(`/bookings/${req.params.id}`);
     }
-    if(booking.status == status){
+    if(booking.status === status){
         req.flash("error","this status is allready existed");
-        res.redirect(`/bookings/${req.params.id}`);
+        return res.redirect(`/bookings/${req.params.id}`);
     }
     if(booking.status === "pending"){
         if(status === "confirmed" || status === "cancelled"){
             booking.status = status;
             await booking.save();
-            req.flash("sucess","status can be change succesfully");
+            req.flash("success","status can be change succesfully");
+        }else{
+            req.flash("error","status reqest are wrong");
         }
     }else if (booking.status === "confirmed"){
         if(status === "cancelled" || status === "completed"){
             booking.status = status;
             await booking.save();
-            req.flash("sucess","status can be change succesfully");
+            req.flash("success","status can be change succesfully");
         }
-    }else{
-        req.flash("status reqest are wrong");
+        else{
+            req.flash("error","status reqest are wrong");
+        }
+    }else {
+        req.flash("error", "status request is wrong");
     }
     res.redirect(`/bookings/${req.params.id}`);
 }
