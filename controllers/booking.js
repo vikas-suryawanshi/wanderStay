@@ -92,9 +92,12 @@ module.exports.cancelBooking = async(req,res)=>{
 
 module.exports.updateBookingStatus = async(req,res)=>{
     let {id} = req.params;
-    let status = req.body;
+    let status = req.body.status;
     const booking = await Booking.findById(id);
     if(!booking){
         req.flash("error","this booking is not Existed.");
+    }
+    if(booking.status == status){
+        req.flash("error","status change succesfully");
     }
 }
