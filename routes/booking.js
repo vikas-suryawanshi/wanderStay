@@ -17,3 +17,6 @@ module.exports=router;
 
 router.route("/bookings/:id/cancel")
 .post(isLoggedIn,wrapAsync(bookingController.cancelBooking));
+
+router.route("/bookings/:id/status")
+.post(isLoggedIn,wrapAsync(bookingController.updateBookingStatus));
