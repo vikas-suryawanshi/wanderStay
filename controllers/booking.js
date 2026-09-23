@@ -64,10 +64,14 @@ module.exports.myBookings = async(req,res)=>{
 module.exports.showBooking = async(req,res)=>{
     let {id} = req.params;
     let user = req.user._id;
-    const booking = await Booking.findOne({_id:id,user:user}).populate("listing");
+    const booking = await Booking.findById(id).populate("listing");
     if(!booking){
-        req.flash("error","your booking is uncoorect please try again.")
+        req.flash("error", "Booking not found. Please try again.");
         return res.redirect(`/bookings`);
+    }
+    if(!(user.equals(booking.user)  || user.equals(booking.listing.owner))){
+        req.flash("error", "You are not authorized to view this booking.");
+        return res.redirect("/bookings");
     }
     res.render("bookings/show.ejs",{booking});
 }
