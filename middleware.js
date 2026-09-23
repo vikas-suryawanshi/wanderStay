@@ -1,4 +1,5 @@
 const Listing = require("./models/listing");
+const Booking = require("./models/booking.js");
 const Review = require("./models/review.js");
 const {listingSchema,reviewSchema}=require("./Schema/Schema.js");
 const ExpressError=require("./utils/ExpressError.js");
@@ -64,3 +65,7 @@ module.exports.validatereview=(req,res,next)=>{
     }
 }
 
+module.exports.isBookingOwner = (req,res,next)=>{
+    let {id} = req.params;
+    const booking = await B
+}
