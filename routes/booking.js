@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const wrapAsync=require("../utils/wrapAsync.js");
 const bookingController = require("../controllers/booking.js");
-const {isLoggedIn} = require("../middleware.js");
+const {isLoggedIn,isBookingOwner} = require("../middleware.js");
 
 router.route("/listings/:id/book")
 .get(isLoggedIn,wrapAsync(bookingController.getBookingForm))
@@ -19,4 +19,4 @@ router.route("/bookings/:id/cancel")
 .post(isLoggedIn,wrapAsync(bookingController.cancelBooking));
 
 router.route("/bookings/:id/status")
-.post(isLoggedIn,wrapAsync(bookingController.updateBookingStatus));
+.post(isLoggedIn,isBookingOwner,wrapAsync(bookingController.updateBookingStatus));
