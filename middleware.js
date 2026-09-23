@@ -65,7 +65,12 @@ module.exports.validatereview=(req,res,next)=>{
     }
 }
 
-module.exports.isBookingOwner = (req,res,next)=>{
+module.exports.isBookingOwner = async(req,res,next)=>{
     let {id} = req.params;
-    const booking = await B
+    const booking = await Booking.findById(id).populate("listing");
+    if(!booking.listing.owner._id.equals(res.locals.currUser._id)){
+        req.flash("error","you dont permiited to change are booking status");
+        return res.redirect(`/bookings/${req.params.id}`);
+    }
+    next();
 }
