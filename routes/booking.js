@@ -13,10 +13,12 @@ router.route("/bookings")
 
 router.route("/bookings/:id")
 .get(isLoggedIn,wrapAsync(bookingController.showBooking));
-module.exports=router;
+
 
 router.route("/bookings/:id/cancel")
 .post(isLoggedIn,wrapAsync(bookingController.cancelBooking));
 
 router.route("/bookings/:id/status")
 .post(isLoggedIn,isBookingOwner,wrapAsync(bookingController.updateBookingStatus));
+
+module.exports=router;
