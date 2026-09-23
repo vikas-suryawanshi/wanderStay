@@ -63,22 +63,22 @@
                                 Cancel Booking
                             </button>
                         </form>
-                    <%}%>
-                <% }else if(booking.status === "confirmed") {%>
-                    <form method="post" action="/bookings/<%= booking._id %>/status">
-                        <input type="hidden" name="status" value="completed">
-                        <button class="btn btn-success">
-                            Mark as Completed
-                        </button>
-                    </form>
+                    <%}else if(booking.status === "confirmed") {%>
+                        <form method="post" action="/bookings/<%= booking._id %>/status">
+                            <input type="hidden" name="status" value="completed">
+                            <button class="btn btn-success">
+                                Mark as Completed
+                            </button>
+                        </form>
 
-                    <form method="post" action="/bookings/<%= booking._id%>/status">
-                        <input type="hidden" name="status" value="cancelled">
-                        <button class="btn btn-danger">
-                            Cancel Booking
-                        </button>
-                    </form>
-                <% } %>
+                        <form method="post" action="/bookings/<%= booking._id%>/status">
+                            <input type="hidden" name="status" value="cancelled">
+                            <button class="btn btn-danger">
+                                Cancel Booking
+                            </button>
+                        </form>
+                    <% } %>
+                <% }%>
             </div>
         </div>
     </div>
