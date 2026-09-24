@@ -1,0 +1,9 @@
+body{
+    font-family: "plus jakarta sans" ,sans-serif !important;
+    min-width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.container{
+    flex: 1 !important;
+}
