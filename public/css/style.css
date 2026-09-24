@@ -535,3 +535,11 @@ body{
     }
 
 }
+/* Guest Actions */
+
+.guest-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+}
