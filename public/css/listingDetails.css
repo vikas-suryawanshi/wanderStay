@@ -1,0 +1,26 @@
+/* show pages */
+.show-img{
+    height: 40vh;
+    width: 100%;
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+/* btns */
+.btns{
+    display: flex;
+}
+.btns form{
+    margin:0;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+/* map */
+#map{
+    height: 300px;
+    border-radius: 1rem;
+}
