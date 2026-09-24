@@ -1,0 +1,24 @@
+.navbar{
+    background-color: white !important;
+}
+
+.navbar-brand img{
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+.tax-switch{
+    border: 2px solid black;
+    border-radius: 1.2rem;
+    padding: 0.7rem;
+    height: 3rem;
+    margin-left: 1.6rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1.8rem;
+}
