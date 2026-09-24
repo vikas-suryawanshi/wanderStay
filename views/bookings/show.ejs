@@ -40,46 +40,54 @@
                 <span class="myBooking-status <%= booking.status%>">
                     Status: <%= booking.status%>
                 </span>
-                <div class="guest-actions">
-                    <% if(currUser._id.equals(booking.user._id)) {%>
+                <% if(currUser._id.equals(booking.user._id)) {%>
+                    <div class="guest-actions">
                         <% if(booking.status === "pending" || booking.status === "confirmed") {%>
                             <form method="post" action="/bookings/<%= booking._id %>/cancel">
                                 <button class="btn btn-danger">Cancel</button>
                             </form>
                         <% } %>
-                    <%}%>
+                    </div>
+                <%}%>
+
+                <div class="guest-information">
+                    <h6>guest Name: <%= booking.user.fullName%></h6>
+                    <p>email: <%= booking.user.email%></p>
+                    <p>guest: <%= booking.guests%></p>
                 </div>
 
                 <% if(currUser._id.equals(booking.listing.owner._id)) {%>
-                    <% if(booking.status === "pending") {%>
-                        <form method="post" action="/bookings/<%= booking._id %>/status">
-                            <input type="hidden" name="status" value="confirmed">
-                            <button class="btn btn-primary">
-                                Confirm Booking
-                            </button>
-                        </form>
+                    <div class="host-actions">
+                        <% if(booking.status === "pending") {%>
+                            <form method="post" action="/bookings/<%= booking._id %>/status">
+                                <input type="hidden" name="status" value="confirmed">
+                                <button class="btn btn-primary">
+                                    Confirm Booking
+                                </button>
+                            </form>
 
-                        <form method="post" action="/bookings/<%= booking._id %>/status">
-                            <input type="hidden" name="status" value="cancelled">
-                            <button class="btn btn-danger">
-                                Cancel Booking
-                            </button>
-                        </form>
-                    <%}else if(booking.status === "confirmed") {%>
-                        <form method="post" action="/bookings/<%= booking._id %>/status">
-                            <input type="hidden" name="status" value="completed">
-                            <button class="btn btn-success">
-                                Mark as Completed
-                            </button>
-                        </form>
+                            <form method="post" action="/bookings/<%= booking._id %>/status">
+                                <input type="hidden" name="status" value="cancelled">
+                                <button class="btn btn-danger">
+                                    Cancel Booking
+                                </button>
+                            </form>
+                        <%}else if(booking.status === "confirmed") {%>
+                            <form method="post" action="/bookings/<%= booking._id %>/status">
+                                <input type="hidden" name="status" value="completed">
+                                <button class="btn btn-success">
+                                    Mark as Completed
+                                </button>
+                            </form>
 
-                        <form method="post" action="/bookings/<%= booking._id%>/status">
-                            <input type="hidden" name="status" value="cancelled">
-                            <button class="btn btn-danger">
-                                Cancel Booking
-                            </button>
-                        </form>
-                    <% } %>
+                            <form method="post" action="/bookings/<%= booking._id%>/status">
+                                <input type="hidden" name="status" value="cancelled">
+                                <button class="btn btn-danger">
+                                    Cancel Booking
+                                </button>
+                            </form>
+                        <% } %>
+                    </div>
                 <% }%>
             </div>
         </div>

@@ -64,7 +64,7 @@ module.exports.myBookings = async(req,res)=>{
 module.exports.showBooking = async(req,res)=>{
     let {id} = req.params;
     let user = req.user._id;
-    const booking = await Booking.findById(id).populate("listing");
+    const booking = await Booking.findById(id).populate("listing").populate("user");
     if(!booking){
         req.flash("error", "Booking not found. Please try again.");
         return res.redirect(`/bookings`);
