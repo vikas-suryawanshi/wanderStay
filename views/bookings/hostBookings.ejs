@@ -10,21 +10,23 @@
         <button class="booking-filter">Completed</button>
         <button class="booking-filter">Cancelled</button>
     </div>
-    <% for(booking of hostBookings) {%>
-        <div class="host-booking-card">
-            <div class="host-booking-image">
-                <img src="<%= booking.listing.image.url %>" alt="booking-image">
-            </div>
-            <div class="host-booking-content">
-                <h3><%= booking.listing.title %></h3>
-                <p><%= booking.user.fullName %></p>
-                <div class="booking-info">
-                    <p><%= booking.checkIn.toLocaleDateString()%> → <%= booking.checkOut.toLocaleDateString() %></p>
-                    <p><%=booking.guests%> Guests</p>
+    <div class="host-booking-grid">
+        <% for(booking of hostBookings) {%>
+            <div class="host-booking-card">
+                <div class="host-booking-image">
+                    <img src="<%= booking.listing.image.url %>" alt="booking-image">
                 </div>
-                <span class="booking-status <%= booking.status%>"><%= booking.status %></span>
-                <span class="view-booking">View booking →</span>
+                <div class="host-booking-content">
+                    <h3><%= booking.listing.title %></h3>
+                    <p><%= booking.user.fullName %></p>
+                    <div class="booking-info">
+                        <p><%= booking.checkIn.toLocaleDateString()%> → <%= booking.checkOut.toLocaleDateString() %></p>
+                        <p><%=booking.guests%> Guests</p>
+                    </div>
+                    <span class="booking-status <%= booking.status%>"><%= booking.status %></span>
+                    <span class="view-booking">View booking →</span>
+                </div>
             </div>
-        </div>
-    <% } %>
+        <% } %>
+    </div>
 </div>
