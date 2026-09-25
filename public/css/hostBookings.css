@@ -132,3 +132,33 @@
     color: #222;
     cursor: pointer;
 }
+
+@media (max-width: 992px) {
+    .host-booking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .host-booking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .host-booking-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 1.6rem;
+    }
+
+    .host-booking-content {
+        padding: 1rem;
+    }
+
+    .host-booking-image {
+        height: 200px;
+    }
+}
