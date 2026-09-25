@@ -84,3 +84,51 @@
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
+.booking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.booking-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #444;
+}
+.booking-status {
+    display: inline-block;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.booking-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.booking-status.confirmed {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.booking-status.completed {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.booking-status.cancelled {
+    background: #f8d7da;
+    color: #842029;
+}
+.view-booking {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+}
