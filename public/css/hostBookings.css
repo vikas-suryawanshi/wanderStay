@@ -37,3 +37,50 @@
     color: #fff;
     border-color: #222;
 }
+
+.host-booking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.host-booking-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.host-booking-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.host-booking-image {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+}
+
+.host-booking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.host-booking-content {
+    padding: 1.2rem;
+}
+
+.host-booking-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.host-booking-content > p {
+    color: #6a6a6a;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
