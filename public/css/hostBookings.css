@@ -8,3 +8,32 @@
     color: #6a6a6a;
     margin-bottom: 2rem;
 }
+
+.filter-section {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 0.3rem;
+}
+
+.booking-filter {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.booking-filter:hover {
+    border-color: #222;
+}
+
+.booking-filter.active {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}
