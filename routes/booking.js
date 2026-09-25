@@ -21,4 +21,7 @@ router.route("/bookings/:id/cancel")
 router.route("/bookings/:id/status")
 .post(isLoggedIn,isBookingOwner,wrapAsync(bookingController.updateBookingStatus));
 
+router.route("/host/bookings")
+.get(isLoggedIn,wrapAsync(bookingController.hostBookings));
+
 module.exports=router;
