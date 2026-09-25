@@ -128,3 +128,11 @@ module.exports.updateBookingStatus = async(req,res)=>{
     }
     res.redirect(`/bookings/${req.params.id}`);
 }
+
+module.exports.hostBookings = async(req,res)=>{
+    let owner = req.user._id;
+    const hostListings = await Listing.find({owner:owner});
+    const listingIds = hostListings.map(listing => listing._id);
+    const hostBookings = await Booking.find({listing:{$in:listingIds}}).populate("listing").populate("user");
+    res.render("bookings/hostBookings.ejs",{hostBookings});
+}
