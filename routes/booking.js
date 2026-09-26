@@ -24,4 +24,7 @@ router.route("/bookings/:id/status")
 router.route("/host/bookings")
 .get(isLoggedIn,wrapAsync(bookingController.hostBookings));
 
+router.route("/host/bookings/:id")
+.get(isLoggedIn,wrapAsync(bookingController.showHostBooking));
+
 module.exports=router;
