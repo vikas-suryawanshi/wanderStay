@@ -1,5 +1,6 @@
 const Listing = require("../models/listing");
 const Booking = require("../models/booking");
+const Booking = require("../models/booking");
 
 module.exports.getBookingForm = async(req,res)=>{
     let listings = await Listing.findById(req.params.id);
@@ -135,4 +136,19 @@ module.exports.hostBookings = async(req,res)=>{
     const listingIds = hostListings.map(listing => listing._id);
     const hostBookings = await Booking.find({listing:{$in:listingIds}}).populate("listing").populate("user");
     res.render("bookings/hostBookings.ejs",{hostBookings});
+}
+
+module.exports.showHostBooking = async(req,res)=>{
+    let {id} = req.params;
+    let currUser = req.user._id;
+    const booking = await Booking.findById(id).populate("listing").populate("user");
+    if(!booking){
+        req.flash("error","Booking not found. Please try again.");
+        return res.redirect("/host/bookings");
+    }
+    if(!(currUser.equals(booking.listing.owner._id))){
+        req.flash("error", "You are not authorized to view this booking.");
+        return res.redirect("/host/bookings");
+    }
+    res.render("bookings/hostBookingDetails",{booking});
 }
