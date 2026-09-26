@@ -2,6 +2,16 @@
 
 <div class="container">
     <h1>Host Bookings</h1>
+    <% if(hostBookings.length === 0) {%>
+        <div class="empty-bookings">
+            <div class="empty-bookings-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <h3>No bookings yet</h3>
+            <p>Your properties haven't received any reservations yet.</p>
+            <a href="/listings" class="btn btn-dark">View My Listings</a>
+        </div>
+    <% } %>
     <p>Manage your property reservations</p>
     <div class="filter-section">
         <button class="booking-filter active">All</button>
