@@ -1,6 +1,5 @@
 const Listing = require("../models/listing");
 const Booking = require("../models/booking");
-const Booking = require("../models/booking");
 
 module.exports.getBookingForm = async(req,res)=>{
     let listings = await Listing.findById(req.params.id);
