@@ -149,5 +149,5 @@ module.exports.showHostBooking = async(req,res)=>{
         req.flash("error", "You are not authorized to view this booking.");
         return res.redirect("/host/bookings");
     }
-    res.render("bookings/hostBookingDetails",{booking});
+    res.render("bookings/hostBookingsDetails",{booking});
 }
