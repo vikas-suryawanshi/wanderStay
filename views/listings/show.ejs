@@ -24,9 +24,11 @@
                     <i class="fa-solid fa-location-dot me-2"></i>
                     <%= listings.location%>, <%= listings.country%>
                 </p>
+                <% if(currUser) {%>
                     <form method="get" action="/listings/<%= listings.id %>/book">
                         <button class="btn btn-primary">Reserve Your Stay</button>
                     </form>
+                <% } %>
             </div>
         </div>
         <% if(currUser && currUser._id.equals(listings.owner._id))  {%>
