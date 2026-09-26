@@ -69,7 +69,7 @@ module.exports.showBooking = async(req,res)=>{
         req.flash("error", "Booking not found. Please try again.");
         return res.redirect(`/bookings`);
     }
-    if(!(user.equals(booking.user)  || user.equals(booking.listing.owner))){
+    if(!(user.equals(booking.user._id))){
         req.flash("error", "You are not authorized to view this booking.");
         return res.redirect("/bookings");
     }
