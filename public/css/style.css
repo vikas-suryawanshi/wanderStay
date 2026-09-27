@@ -8,6 +8,7 @@
 @import url("./myBookings.css");
 @import url("./bookingDetails.css");
 @import url("./hostBookings.css");
+@import url("./hostBookingDetails.css");
 
 .btn{
     display: flex;
