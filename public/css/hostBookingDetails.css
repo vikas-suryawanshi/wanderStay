@@ -108,3 +108,126 @@
     font-weight: 500;
 }
 
+/* stay details */
+.booking-stay-info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+}
+
+.stay-info-item{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.stay-info-item label,
+.price-info-item label,
+.meta-info-item label {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 500;
+}
+
+.stay-info-item span,
+.price-info-item span,
+.meta-info-item span {
+    color: #333;
+}
+
+/* price */
+.price-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-info-item span{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* booking information */
+
+.meta-info-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* host actions */
+.booking-host-actions {
+    border-bottom: none;
+}
+.booking-host-actions form{
+    display: inline-block;
+    margin-right: 0.6rem
+}
+.booking-host-actions button{
+    min-height: 100px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .host-booking-details-card {
+        border-radius: 16px;
+    }
+
+    .booking-property-section {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .booking-property-image {
+        height: 240px;
+    }
+
+    .booking-guest-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .booking-stay-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .booking-property-section,
+    .booking-guest-section,
+    .booking-stay-section,
+    .booking-price-section,
+    .booking-info-section,
+    .booking-host-actions {
+        padding: 1.2rem;
+    }
+
+    .booking-property-info h1 {
+        font-size: 1.35rem;
+    }
+
+    .booking-property-image {
+        height: 210px;
+    }
+
+    .price-info-item,
+    .meta-info-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .booking-host-actions form {
+        display: block;
+        margin: 0 0 0.7rem;
+    }
+
+    .booking-host-actions button {
+        width: 100%;
+    }
+}
