@@ -9,10 +9,21 @@
             <div class="booking-property-image">
                 <img src="<%= booking.listing.image.url %>" alt="property-image">
             </div>
-            <div class="booking property-info">
+            <div class="booking-property-info">
                 <h1><%= booking.listing.title %></h1>
                 <p><%= booking.listing.country %>,<%= booking.listing.location%></p>
                 <span class="booking-status <%= booking.status%>"><%= booking.status %></span>
+            </div>
+        </div>
+        <div class="booking-guest-section">
+            <h2>Guest Details</h2>
+            <div class="booking-guest-info">
+                <div class="guest-name">Guest Name</div>
+                <p><%= booking.user.fullName%></p>
+                <div class="guest-email">Guest Email</div>
+                <p><%= booking.user.email%></p>
+                <div class="guests">Guests</div>
+                <p><%= booking.guests%></p>
             </div>
         </div>
     </div>
