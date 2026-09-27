@@ -31,13 +31,13 @@
     border-bottom: 1px solid #eeeeee;
 }
 
-.booking.property.image {
+.booking-property-image {
     width: 100%;
     height: 220px;
     overflow: hidden;
     border-radius: 14px;
 }
-.booking.property.image img{
+.booking-property-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -59,7 +59,7 @@
 }
 
 /* status */
-.booking.status {
+.booking-status {
     width: fit-content;
     padding: 0.4rem 0.8rem;
     border-radius: 999px;
@@ -71,7 +71,7 @@
 /* details section */
 .booking-guest-section,
 .booking-stay-section,
-.booing-price-section,
+.booking-price-section,
 .booking-info-section,
 .booking-host-actions {
     padding: 1.5rem;
@@ -80,7 +80,7 @@
 
 .booking-guest-section h2,
 .booking-stay-section h2,
-.booing-price-section h2,
+.booking-price-section h2,
 .booking-info-section h2,
 .booking-host-actions h2 {
     font-size: 1.1rem;
@@ -161,10 +161,10 @@
 }
 .booking-host-actions form{
     display: inline-block;
-    margin-right: 0.6rem
+    margin-right: 0.6rem;
 }
 .booking-host-actions button{
-    min-height: 100px;
+    min-width: 100px;
 }
 
 /* Responsive */
