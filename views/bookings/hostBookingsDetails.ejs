@@ -12,7 +12,7 @@
             <div class="booking-property-info">
                 <h1><%= booking.listing.title %></h1>
                 <p><%= booking.listing.country %>,<%= booking.listing.location%></p>
-                <span class="booking-status <%= booking.status%>"><%= booking.status %></span>
+                <span class="booking-status <%= booking.status%>"><%= booking.status%></span>
             </div>
         </div>
         <div class="booking-guest-section">
@@ -56,6 +56,29 @@
                     <span id="booked-on"><%= booking.createdAt %></span>
                 </div>
             </div>
+        </div>
+        <div class="booking-host-actions">
+            <h2>Booking Actions</h2>
+            <% if(booking.status === "pending") {%>
+                <form method="post" action="/bookings/<%= booking._id%>/status">
+                    <input type="hidden" name="status" value="confirmed">
+                    <button class="btn btn-secondary">Confirm</button>
+                </form>
+                <form method="post" action="/bookings/<%= booking._id%>/status">
+                    <input type="hidden" name="status" value="cancelled">
+                    <button class="btn btn-danger">Cancel</button>
+                </form>
+            <% } %>
+            <% if(booking.status === "confirmed") {%>
+                <form method="post" action="/bookings/<%= booking._id%>/status">
+                    <input type="hidden" name="status" value="completed">
+                    <button class="btn btn-primary">Complete</button>
+                </form>
+                <form method="post" action="/bookings/<%= booking._id%>/status">
+                    <input type="hidden" name="status" value="cancelled">
+                    <button class="btn btn-danger">Cancel</button>
+                </form>
+            <% } %>
         </div>
     </div>
 </div>
