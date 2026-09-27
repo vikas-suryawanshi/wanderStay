@@ -58,3 +58,53 @@
     margin-bottom: 1rem;
 }
 
+/* status */
+.booking.status {
+    width: fit-content;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* details section */
+.booking-guest-section,
+.booking-stay-section,
+.booing-price-section,
+.booking-info-section,
+.booking-host-actions {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.booking-guest-section h2,
+.booking-stay-section h2,
+.booing-price-section h2,
+.booking-info-section h2,
+.booking-host-actions h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+/* guest details */
+.booking-guest-info{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+}
+
+.booking-guest-info p {
+    margin: 0.35rem 0 0;
+    color: #444;
+}
+
+.guest-name,
+.guest-email,
+.guests {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 500;
+}
+
