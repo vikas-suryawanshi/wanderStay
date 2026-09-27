@@ -1,5 +1,14 @@
 <% layout("/layouts/boilerplate.ejs")  %>
 
 <div class="container">
-    
+    <a href="/host/bookings" class="back-link">
+        ← Back to Host Bookings
+    </a>
+    <div class="host-booking-details-card">
+        <div class="booking-property-section">
+            <div class="booking-property-image">
+                <img src="<%= booking.listing.image.url %>" alt="property-image">
+            </div>
+        </div>
+    </div>
 </div>
