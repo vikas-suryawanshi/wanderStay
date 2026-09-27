@@ -26,5 +26,36 @@
                 <p><%= booking.guests%></p>
             </div>
         </div>
+        <div class="booking-stay-section">
+            <h2>Stay Details</h2>
+            <div class="booking-stay-info">
+                <div class="stay-info-item">
+                    <label for="Check-in">Check-in</label>
+                    <span id="Check-in"><%= booking.checkIn %></span>
+                </div>
+                <div class="stay-info-item">
+                    <label for="Check-out">Check-out</label>
+                    <span id="Check-out"><%= booking.checkOut%></span>
+                </div>
+            </div>
+        </div>
+        <div class="booking-price-section">
+            <h2>Payment Details</h2>
+            <div class="booking-price-info">
+                <div class="price-info-item">
+                    <label for="total-price">Total Price</label>
+                    <span id="total-price"><%= booking.totalPrice%></span>
+                </div>
+            </div>
+        </div>
+        <div class="booking-info-section">
+            <h2>Booking Information</h2>
+            <div class="booking-meta-info">
+                <div class="meta-info-item">
+                    <label for="booked-on">Booked On</label>
+                    <span id="booked-on"><%= booking.createdAt %></span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
