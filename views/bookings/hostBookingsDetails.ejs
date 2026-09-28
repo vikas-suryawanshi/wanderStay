@@ -38,11 +38,19 @@
             <div class="booking-stay-info">
                 <div class="stay-info-item">
                     <label for="Check-in">Check-in</label>
-                    <p id="Check-in"><%= booking.checkIn.toLocaleDateString() %></p>
+                    <p id="Check-in"><%= booking.checkIn.toLocaleDateString("en-US",{
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
+                    }) %></p>
                 </div>
                 <div class="stay-info-item">
                     <label for="Check-out">Check-out</label>
-                    <p id="Check-out"><%= booking.checkOut.toLocaleDateString()%></p>
+                    <p id="Check-out"><%= booking.checkOut.toLocaleDateString("en-US",{
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
+                    }) %></p>
                 </div>
             </div>
         </div>
@@ -60,7 +68,11 @@
             <div class="booking-meta-info">
                 <div class="meta-info-item">
                     <label for="booked-on">Booking Date</label>
-                    <p id="booked-on"><%= booking.createdAt.toLocaleDateString() %></p>
+                    <p id="booked-on"><%= booking.createdAt.toLocaleDateString("en-US",{
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric"
+                    }) %></p>
                 </div>
             </div>
         </div>
