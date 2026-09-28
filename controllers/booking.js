@@ -94,17 +94,17 @@ module.exports.cancelBooking = async(req,res)=>{
     res.redirect(`/bookings/${req.params.id}`);
 }
 
-module.exports.updateBookingStatus = async(req,res)=>{
+module.exports.updateHostBookingStatus = async(req,res)=>{
     let {id} = req.params;
     let status = req.body.status;
     const booking = await Booking.findById(id);
     if(!booking){
         req.flash("error","Booking not found. Please try again.");
-        return res.redirect(`/bookings/${req.params.id}`);
+        return res.redirect(`/host/bookings/${req.params.id}`);
     }
     if(booking.status === status){
         req.flash("error","The booking is already in this status.");
-        return res.redirect(`/bookings/${req.params.id}`);
+        return res.redirect(`/host/bookings/${req.params.id}`);
     }
     if(booking.status === "pending"){
         if(status === "confirmed" || status === "cancelled"){
@@ -126,7 +126,7 @@ module.exports.updateBookingStatus = async(req,res)=>{
     }else {
         req.flash("error", "This status change is not allowed.");
     }
-    res.redirect(`/bookings/${req.params.id}`);
+    res.redirect(`/host/bookings/${req.params.id}`);
 }
 
 module.exports.hostBookings = async(req,res)=>{
