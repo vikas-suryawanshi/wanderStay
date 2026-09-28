@@ -4,6 +4,7 @@
     <a href="/host/bookings" class="back-link">
         ← Back to Host Bookings
     </a>
+    <h1>Booking Details</h1>
     <div class="host-booking-details-card">
         <div class="booking-property-section">
             <div class="booking-property-image">
@@ -11,19 +12,25 @@
             </div>
             <div class="booking-property-info">
                 <h1><%= booking.listing.title %></h1>
-                <p><%= booking.listing.country %>,<%= booking.listing.location%></p>
+                <p><%= booking.listing.location%>, <%= booking.listing.country %></p>
                 <span class="booking-status <%= booking.status%>"><%= booking.status%></span>
             </div>
         </div>
         <div class="booking-guest-section">
             <h2>Guest Details</h2>
             <div class="booking-guest-info">
-                <div class="guest-name">Guest Name</div>
-                <p><%= booking.user.fullName%></p>
-                <div class="guest-email">Guest Email</div>
-                <p><%= booking.user.email%></p>
-                <div class="guests">Guests</div>
-                <p><%= booking.guests%></p>
+                <div class="guest-name">
+                    <label for="guest-name"> Guest Name </label>
+                    <p id="guest-name"><%= booking.user.fullName%></p>
+                </div>
+                <div class="guest-email">
+                    <label for="guest-email"> Guest Email</label>
+                    <p id="guest-email"><%= booking.user.email%></p>
+                </div>
+                <div class="guests">
+                    <label for="guests">Number of Guests</label>
+                    <p id="guests"><%= booking.guests%></p>
+                </div>
             </div>
         </div>
         <div class="booking-stay-section">
@@ -31,11 +38,11 @@
             <div class="booking-stay-info">
                 <div class="stay-info-item">
                     <label for="Check-in">Check-in</label>
-                    <span id="Check-in"><%= booking.checkIn %></span>
+                    <p id="Check-in"><%= booking.checkIn.toLocaleDateString() %></p>
                 </div>
                 <div class="stay-info-item">
                     <label for="Check-out">Check-out</label>
-                    <span id="Check-out"><%= booking.checkOut%></span>
+                    <p id="Check-out"><%= booking.checkOut.toLocaleDateString()%></p>
                 </div>
             </div>
         </div>
@@ -43,8 +50,8 @@
             <h2>Payment Details</h2>
             <div class="booking-price-info">
                 <div class="price-info-item">
-                    <label for="total-price">Total Price</label>
-                    <span id="total-price"><%= booking.totalPrice%></span>
+                    <label for="total-price">Total Amount</label>
+                    <p id="total-price">₹<%= booking.totalPrice.toLocaleString("en-IN")%></p>
                 </div>
             </div>
         </div>
@@ -52,31 +59,31 @@
             <h2>Booking Information</h2>
             <div class="booking-meta-info">
                 <div class="meta-info-item">
-                    <label for="booked-on">Booked On</label>
-                    <span id="booked-on"><%= booking.createdAt %></span>
+                    <label for="booked-on">Booking Date</label>
+                    <p id="booked-on"><%= booking.createdAt.toLocaleDateString() %></p>
                 </div>
             </div>
         </div>
         <div class="booking-host-actions">
-            <h2>Booking Actions</h2>
+            <h2>Manage Booking</h2>
             <% if(booking.status === "pending") {%>
-                <form method="post" action="/bookings/<%= booking._id%>/status">
+                <form method="post" action="/host/bookings/<%= booking._id%>/status">
                     <input type="hidden" name="status" value="confirmed">
-                    <button class="btn btn-secondary">Confirm</button>
+                    <button type="submit" class="btn btn-secondary">Confirm Booking</button>
                 </form>
-                <form method="post" action="/bookings/<%= booking._id%>/status">
+                <form method="post" action="/host/bookings/<%= booking._id%>/status">
                     <input type="hidden" name="status" value="cancelled">
-                    <button class="btn btn-danger">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Decline Booking</button>
                 </form>
             <% } %>
             <% if(booking.status === "confirmed") {%>
-                <form method="post" action="/bookings/<%= booking._id%>/status">
+                <form method="post" action="/host/bookings/<%= booking._id%>/status">
                     <input type="hidden" name="status" value="completed">
-                    <button class="btn btn-primary">Complete</button>
+                    <button type="submit" class="btn btn-primary">Mark as Completed</button>
                 </form>
-                <form method="post" action="/bookings/<%= booking._id%>/status">
+                <form method="post" action="/host/bookings/<%= booking._id%>/status">
                     <input type="hidden" name="status" value="cancelled">
-                    <button class="btn btn-danger">Cancel</button>
+                    <button type="submit" class="btn btn-danger">Cancel Booking</button>
                 </form>
             <% } %>
         </div>
