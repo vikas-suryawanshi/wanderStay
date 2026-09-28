@@ -1,7 +1,8 @@
 /* back link  */
 .back-link{
     display: inline-block;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     color: #222;
     text-decoration: none;
     font-weight: 500;
@@ -9,6 +10,12 @@
 
 .back-link:hover{
     text-decoration: underline;
+}
+
+.container > h1{
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 /* Main grid */
@@ -100,12 +107,15 @@
     color: #444;
 }
 
-.guest-name,
-.guest-email,
-.guests {
+.booking-guest-info label {
     font-size: 0.8rem;
     color: #777;
     font-weight: 500;
+}
+.booking-guest-info p{
+    margin: 0.35rem 0 0;
+    color: #333;
+    font-size: 1rem;
 }
 
 /* stay details */
@@ -129,10 +139,12 @@
     font-weight: 500;
 }
 
-.stay-info-item span,
-.price-info-item span,
-.meta-info-item span {
+.stay-info-item p,
+.price-info-item p,
+.meta-info-item p {
+    margin: 0;
     color: #333;
+    font-size: 1rem;
 }
 
 /* price */
@@ -142,13 +154,14 @@
     align-items: center;
 }
 
-.price-info-item span{
+.price-info-item p{
     font-size: 1.2rem;
     font-weight: 600;
+    margin: 0;
+    color: #333;
 }
 
 /* booking information */
-
 .meta-info-item{
     display: flex;
     justify-content: space-between;
@@ -164,7 +177,7 @@
     margin-right: 0.6rem;
 }
 .booking-host-actions button{
-    min-width: 100px;
+    min-width: 140px;
 }
 
 /* Responsive */
