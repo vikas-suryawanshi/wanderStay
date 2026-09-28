@@ -79,8 +79,10 @@
             </div>
         </div>
         <div class="booking-host-actions">
-            <h2>Manage Booking</h2>
-            <% if(booking.status === "pending") {%>
+            <%if(booking.status === "pending" || booking.status === "confirmed"){%>
+                <h2>Manage Booking</h2>
+            <% } %>
+            <%if(booking.status === "pending"){%>
                 <form method="post" action="/host/bookings/<%= booking._id%>/status">
                     <input type="hidden" name="status" value="confirmed">
                     <button type="submit" class="btn btn-secondary">Confirm Booking</button>
