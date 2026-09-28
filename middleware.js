@@ -70,11 +70,11 @@ module.exports.isBookingOwner = async(req,res,next)=>{
     const booking = await Booking.findById(id).populate("listing");
     if(!booking){
         req.flash("error","Booking not found. Please try again.");
-        return res.redirect(`/bookings/${req.params.id}`);
+        return res.redirect(`/host/bookings/${req.params.id}`);
     }
     if(!booking.listing.owner._id.equals(res.locals.currUser._id)){
         req.flash("error","You are not authorized to change this booking status.");
-        return res.redirect(`/bookings/${req.params.id}`);
+        return res.redirect(`/host/bookings/${req.params.id}`);
     }
     next();
 }
