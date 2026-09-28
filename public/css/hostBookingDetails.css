@@ -56,23 +56,27 @@
     justify-content: center;
 }
 .booking-property-info h1{
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
 }
 .booking-property-info p{
     color: #6a6a6a;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
+    font-size: 0.95rem;
 }
 
 /* status */
 .booking-status {
+    display: inline-block;
     width: fit-content;
-    padding: 0.4rem 0.8rem;
+    padding: 0.45rem 0.85rem;
     border-radius: 999px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
     text-transform: capitalize;
+    letter-spacing: 0.2px;
 }
 
 /* details section */
@@ -90,9 +94,10 @@
 .booking-price-section h2,
 .booking-info-section h2,
 .booking-host-actions h2 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.25rem;
+    color: #222;
 }
 
 /* guest details */
@@ -103,8 +108,10 @@
 }
 
 .booking-guest-info p {
-    margin: 0.35rem 0 0;
-    color: #444;
+    margin: 0.4rem 0 0;
+    color: #222;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .booking-guest-info label {
@@ -143,8 +150,9 @@
 .price-info-item p,
 .meta-info-item p {
     margin: 0;
-    color: #333;
-    font-size: 1rem;
+    color: #222;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 /* price */
@@ -155,10 +163,10 @@
 }
 
 .price-info-item p{
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
     margin: 0;
-    color: #333;
+    color: #222;
 }
 
 /* booking information */
@@ -177,7 +185,10 @@
     margin-right: 0.6rem;
 }
 .booking-host-actions button{
-    min-width: 140px;
+    min-width: 150px;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
 }
 
 /* Responsive */
@@ -185,6 +196,8 @@
 @media (max-width: 768px) {
 
     .host-booking-details-card {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
         border-radius: 16px;
     }
 
@@ -237,10 +250,11 @@
 
     .booking-host-actions form {
         display: block;
-        margin: 0 0 0.7rem;
+        margin: 0 0 0.8rem;
     }
 
     .booking-host-actions button {
         width: 100%;
+        padding: 0.7rem 1rem;
     }
 }
