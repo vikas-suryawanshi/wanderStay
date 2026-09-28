@@ -18,13 +18,13 @@ router.route("/bookings/:id")
 router.route("/bookings/:id/cancel")
 .post(isLoggedIn,wrapAsync(bookingController.cancelBooking));
 
-router.route("/bookings/:id/status")
-.post(isLoggedIn,isBookingOwner,wrapAsync(bookingController.updateBookingStatus));
-
 router.route("/host/bookings")
 .get(isLoggedIn,wrapAsync(bookingController.hostBookings));
 
 router.route("/host/bookings/:id")
 .get(isLoggedIn,wrapAsync(bookingController.showHostBooking));
+
+router.route("/host/bookings/:id/status")
+.post(isLoggedIn,isBookingOwner,wrapAsync(bookingController.updateHostBookingStatus));
 
 module.exports=router;
