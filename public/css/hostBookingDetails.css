@@ -1,8 +1,8 @@
 /* back link  */
 .back-link{
-    display: inline-block;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    display: block;
+    max-width: 900px;
+    margin: 2rem auto 0.8rem;
     color: #222;
     text-decoration: none;
     font-weight: 500;
@@ -13,8 +13,9 @@
 }
 
 .container > h1{
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
