@@ -1,8 +1,11 @@
 /* back link  */
-.back-link{
-    display: block;
+.booking-details-header{
     max-width: 900px;
-    margin: 2rem auto 0.8rem;
+    margin: 2rem auto 2rem;
+}
+.back-link{
+    display: inline-block;
+    margin-bottom: 1.2rem;
     color: #222;
     text-decoration: none;
     font-weight: 500;
@@ -12,9 +15,8 @@
     text-decoration: underline;
 }
 
-.container > h1{
-    max-width: 900px;
-    margin: 0 auto 2rem;
+.booking-details-title{
+    margin: 0 ;
     font-size: 2rem;
     font-weight: 600;
 }
@@ -55,17 +57,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 }
 .booking-property-info h1{
     font-size: 1.7rem;
     font-weight: 600;
-    margin-bottom: 0.6rem;
+    margin: 0 0 0.5rem;
     line-height: 1.3;
 }
 .booking-property-info p{
     color: #6a6a6a;
-    margin-bottom: 1.1rem;
+    margin: 0 0 0.8rem;
     font-size: 0.95rem;
+}
+.booking-property-info .booking-status{
+    margin: 0;
 }
 
 /* status */
