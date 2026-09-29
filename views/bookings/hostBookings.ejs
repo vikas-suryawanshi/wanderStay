@@ -14,11 +14,11 @@
     <% } else{%>
         <p>Manage your property reservations</p>
         <div class="filter-section">
-            <button class="booking-filter active">All</button>
-            <button class="booking-filter" id="Pending">Pending</button>
-            <button class="booking-filter">Confirmed</button>
-            <button class="booking-filter">Completed</button>
-            <button class="booking-filter">Cancelled</button>
+            <button class="booking-filter active" data-filter="All">All</button>
+            <button class="booking-filter" data-filter="pending">Pending</button>
+            <button class="booking-filter" data-filter="confirmed">Confirmed</button>
+            <button class="booking-filter" data-filter="completed">Completed</button>
+            <button class="booking-filter" data-filter="cancelled">cancelled</button>
         </div>
         <div class="host-booking-grid">
             <% for(booking of hostBookings) {%>
@@ -45,3 +45,4 @@
         </div>
     <% } %>
 </div>
+<script src=".js/statusFilter.js"></script>
