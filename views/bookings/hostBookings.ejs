@@ -15,7 +15,7 @@
         <p>Manage your property reservations</p>
         <div class="filter-section">
             <button class="booking-filter active">All</button>
-            <button class="booking-filter">Pending</button>
+            <button class="booking-filter" id="Pending">Pending</button>
             <button class="booking-filter">Confirmed</button>
             <button class="booking-filter">Completed</button>
             <button class="booking-filter">Cancelled</button>
@@ -23,7 +23,8 @@
         <div class="host-booking-grid">
             <% for(booking of hostBookings) {%>
                 <a href="/host/bookings/<%= booking._id %>"
-                    class="listing-link rounded-3">
+                    class="listing-link rounded-3"
+                    data-status = "<%= booking.status%>">
                     <div class="host-booking-card">
                         <div class="host-booking-image">
                             <img src="<%= booking.listing.image.url %>" alt="booking-image">
