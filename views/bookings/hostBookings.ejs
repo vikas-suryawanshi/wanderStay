@@ -14,7 +14,7 @@
     <% } else{%>
         <p>Manage your property reservations</p>
         <div class="filter-section">
-            <button class="booking-filter active" data-filter="All">All</button>
+            <button class="booking-filter active" data-filter="all">All</button>
             <button class="booking-filter" data-filter="pending">Pending</button>
             <button class="booking-filter" data-filter="confirmed">Confirmed</button>
             <button class="booking-filter" data-filter="completed">Completed</button>
@@ -43,6 +43,10 @@
                 </a>
             <% } %>
         </div>
+        <div class="no-filter-results" style="display: none;">
+            <h3>No bookings found</h3>
+            <p>There are no bookings with this status.</p>
+        </div>
     <% } %>
 </div>
-<script src=".js/statusFilter.js"></script>
+<script src="/js/hostBookings.js"></script>
