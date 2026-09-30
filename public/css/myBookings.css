@@ -1,14 +1,19 @@
 .myBooking-card{
-    display: flex;
     width: 100%;
-    margin-bottom: 1.5rem;
+    max-width: 380px;
+    margin: 0 auto 1.5rem;
     background: #fff;
     border: 1px solid #e5e5e5;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transdorm 0.2s ease, box-shadow 0.2s ease;
 }
 
+.myBooking-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
 .myBooking-image-section{
     width: 280px;
     flex-shrink: 0;
