@@ -46,30 +46,26 @@
 .myBooking-information-section{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 .myBooking-information-section span{
     display: flex;
     flex-direction: column;
-    padding: 12px 14px;
-    background: #f8f8f8;
+    padding: 10px 12px;
+    background: #f7f7f7;
     border-radius: 10px;
-    font-size: 14px;
-    color: #555;
 }
 .myBooking-information-section small {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 13px;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
     color: #777;
     font-weight: 500;
 }
 
 .myBooking-information-section strong {
-    display: block;
-    font-size: 16px;
+    font-size: 0.9px;
     color: #222;
     font-weight: 600;
 }
