@@ -15,9 +15,15 @@
             </div>
             <div class="login-form-group">
                 <label for="password">Password</label>
-                <input id="password" type="password"
-                name="password"
-                placeholder="Enter your password" required>
+                <div class="password-input-wrapper">
+                    <input id="password" type="password"
+                    name="password"
+                    placeholder="Enter your password" required>
+
+                    <button type="button" id="toggle-password">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
             </div>
             <button type="submit" class="login-btn">
                 Login
@@ -28,3 +34,4 @@
         </div>
     </div>
 </div>
+<script src="/js/login.js"></script>
