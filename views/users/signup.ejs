@@ -1,36 +1,38 @@
 <%-layout("/layouts/boilerplate.ejs") %>
 
 <div class="row signup-card">
-    <div class="col-12 col-md-6 offset-md-3 mt-5 signup card shadow-sm rounded-3 p-4">
-        <h3 class="mb-4">Welcome to WanderStay</h3>
-        <form method="post" action="/signup" novalidate class="needs-validation">
-            <div class="mb-3">   
-                <label for="username" class="form-label fw-semibold">Username</label>
-                <input name="username" type="text"
-                class="form-control rounded-3" id="username"
-                placeholder="Enter username" required>
-                <div class="invalid-feedback">enter a your username!</div>
-            </div>
-            <div class="mb-3">
-                <label for="fullName" class="form-label fw-semibold">FullName</label>
-                <input name="fullName" type="text" placeholder="Enter Username" id="fullName" class="form-control rounded-3" required>
-                <div class="invalid-feedback">Please enter your fullName!</div>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label fw-semibold">Email</label>
-                <input name="email" type="email"
-                class="form-control rounded-3" id="email"
-                placeholder="Enter email" required>
-                <div class="invalid-feedback">enter a your email!</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label fw-semibold">Password</label>
-                <input name="password" type="password"
-                class="form-control rounded-3" id="password"
-                placeholder="Enter password" required>
-                <div class="invalid-feedback">enter a your password!</div>
-            </div>
-            <button class="signup-btn">signUp</button>
-        </form>
+    <div class="signup-card">
+        <div class="col-12 col-md-6 offset-md-3 mt-5 signup card shadow-sm rounded-3 p-4">
+            <h3 class="mb-4">Welcome to WanderStay</h3>
+            <form method="post" action="/signup" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label for="username" class="form-label fw-semibold">Username</label>
+                    <input name="username" type="text"
+                    class="form-control rounded-3" id="username"
+                    placeholder="Enter username" required>
+                    <div class="invalid-feedback">enter a your username!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="fullName" class="form-label fw-semibold">FullName</label>
+                    <input name="fullName" type="text" placeholder="Enter Username" id="fullName" class="form-control rounded-3" required>
+                    <div class="invalid-feedback">Please enter your fullName!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold">Email</label>
+                    <input name="email" type="email"
+                    class="form-control rounded-3" id="email"
+                    placeholder="Enter email" required>
+                    <div class="invalid-feedback">enter a your email!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label fw-semibold">Password</label>
+                    <input name="password" type="password"
+                    class="form-control rounded-3" id="password"
+                    placeholder="Enter password" required>
+                    <div class="invalid-feedback">enter a your password!</div>
+                </div>
+                <button class="signup-btn">signUp</button>
+            </form>
+        </div>
     </div>
 </div>
