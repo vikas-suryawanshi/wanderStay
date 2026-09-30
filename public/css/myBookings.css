@@ -1,3 +1,22 @@
+.my-bookings-header{
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+}
+
+.my-bookings-title{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #222;
+}
+
+.my-bookings-header > p{
+    margin: 0.4rem 0 0;
+    color: #6c6c6c;
+    font-size: 0.95rem;
+}
 .myBooking-card{
     width: 100%;
     max-width: 380px;
@@ -7,7 +26,7 @@
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    transition: transdorm 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .myBooking-card:hover{
@@ -65,7 +84,7 @@
 }
 
 .myBooking-information-section strong {
-    font-size: 0.9px;
+    font-size: 0.9rem;
     color: #222;
     font-weight: 600;
 }
@@ -98,15 +117,30 @@
     color: #055160;
 }
 
+.my-bookings-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.my-bookings-grid .myBooking-card {
+    margin: 0;
+}
+
+/* responsive structure */
+@media (max-width: 992px) {
+    .my-bookings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .my-bookings-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
     /* Empty Bookings State */
-.my-bookings-title {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-}
 .empty-bookings{
     max-width: 650px;
     margin: 60px auto;
