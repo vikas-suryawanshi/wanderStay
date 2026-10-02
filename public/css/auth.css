@@ -236,3 +236,21 @@
 }
 
 /* signup button */
+.signup-btn{
+    width: 100%;
+    height: 48px;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    background: #ff385c;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2 ease, transform 0.2s ease;
+}
+
+.signup-btn:hover{
+    background: #e31c5f;
+    transform: translateY(-1px);
+}
