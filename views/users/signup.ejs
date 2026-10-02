@@ -25,17 +25,23 @@
             <div class="signup-page-group">
                 <label for="email">Email</label>
                 <input name="email" type="email"
-                id="email" placeholder="Enter your email" required>                    <div class="invalid-feedback">
+                id="email" placeholder="Enter your email" required>
+                <div class="nvalid-feedback">
                     Please enter your email.
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="signup-page-group">
                 <label for="password">Password</label>
+                <div class="password-input-wrapper">
                     <input name="password" type="password"
-                    class="form-control rounded-3" id="password"
-                    placeholder="Enter password" required>
-                    <div class="invalid-feedback">enter a your password!</div>
-                </div>
+                    id="password" placeholder="Enter password" required>
+                    <button type="button" id="toggle-password">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                    <div class="invalid-feedback">
+                        Please enter your password.
+                    </div>
+            </div>
                 <button class="signup-btn">signUp</button>
             </form>
         </div>
