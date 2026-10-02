@@ -1,4 +1,6 @@
-/* login page */
+/* =========================
+    LOGIN PAGE
+========================= */
 
 .login-page{
     min-height: 80vh;
@@ -137,6 +139,9 @@
     color: #222;
 }
 
+/* =========================
+    SIGNUP PAGE
+========================= */
 .signup .form-control:focus{
     border-color: #fe424d !important;
     box-shadow: 0 0 0 0.15rem rgba(254, 66, 77, 0.15) !important;
