@@ -254,3 +254,26 @@
     background: #e31c5f;
     transform: translateY(-1px);
 }
+
+/* footer */
+.signup-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.signup-footer p{
+    margin: 0;
+    color: #6c6c6c;
+    font-size: 0.9rem;
+}
+
+.signup-footer a{
+    color: #222;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-footer a:hover{
+    text-decoration: underline;
+}
+
