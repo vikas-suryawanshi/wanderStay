@@ -277,3 +277,14 @@
     text-decoration: underline;
 }
 
+/* Mobile */
+
+@media (max-width: 480px) {
+    .signup-page {
+        padding: 2rem 1rem;
+    }
+
+    .signup-card {
+        padding: 1.5rem;
+    }
+}
