@@ -209,3 +209,30 @@
 .signup-page-group input::placeholder{
     color: #999;
 }
+
+/* password */
+.password-input-wrapper {
+    position: relative;
+}
+
+.password-input-wrapper input{
+    padding-right: 45px;
+}
+
+.password-input-wrapper button{
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #777;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.password-input-wrapper button:hover{
+    color: #222;
+}
+
+/* signup button */
