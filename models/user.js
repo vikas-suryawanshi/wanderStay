@@ -15,7 +15,8 @@ const userSchema = new Schema({
         trim:true,
     },
     wishlist: [{
-
+        type:  Schema.Types.ObjectId,
+        ref:"Listing"
     }],
 });
 
