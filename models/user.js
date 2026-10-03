@@ -14,6 +14,9 @@ const userSchema = new Schema({
         required:true,
         trim:true,
     },
+    wishlist: [{
+
+    }],
 });
 
 userSchema.plugin(passportLocalMongoose);
