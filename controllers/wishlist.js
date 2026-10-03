@@ -9,10 +9,10 @@ module.exports.addWishlist = async(req,res)=>{
     }
 
     let user = req.user;
-    if(!user.equals(user.wishlist.listing.id)){
-        req.flash("success","this listing is add in wishlist");
-        user.wishlist.push(listing);
-        user.save();
+    if(!user.wishlist.some(item => item.equals(listing._id))){
+        req.flash("success","Listing added to your wishlist.");
+        user.wishlist.push(listing._id);
+        await user.save();
     }
     res.redirect("/listings");
 };
