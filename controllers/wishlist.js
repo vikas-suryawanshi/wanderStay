@@ -18,5 +18,10 @@ module.exports.addWishlist = async(req,res)=>{
 };
 
 module.exports.removeWishlist = async(req,res)=>{
-    
+    let {id} = req.params.id;
+    const listing = await Listing.findById(id);
+    if(!listing){
+        req.flash("error","not found listing !");
+        return res.redirect("/listings");
+    }
 }
