@@ -6,3 +6,6 @@ const {isLoggedIn} = require("../middleware.js");
 
 router.route("/listings/:id/wishlist")
 .post(isLoggedIn,wrapAsync(wishlistController.addWishlist));
+
+router.route("/listings/:id/wishlist/remove")
+.post(isLoggedIn,wrapAsync(wishlistController.removeWishlist));
