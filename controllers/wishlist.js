@@ -24,4 +24,11 @@ module.exports.removeWishlist = async(req,res)=>{
         req.flash("error","not found listing !");
         return res.redirect("/listings");
     }
+    const user = req.user;
+    if(user.wishlist.filter(item => item.equals(listing._id))){
+        req.flash("success","listing remove from your wishlist.");
+        user.wishlist.pop(listing._id);
+        await user.save();
+    }
+    res.redirect("/listigs");
 }
