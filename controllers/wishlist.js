@@ -16,3 +16,7 @@ module.exports.addWishlist = async(req,res)=>{
     }
     res.redirect("/listings");
 };
+
+module.exports.removeWishlist = async(req,res)=>{
+    
+}
