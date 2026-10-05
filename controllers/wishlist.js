@@ -4,8 +4,10 @@ module.exports.addWishlist = async(req,res)=>{
     let {id} = req.params;
     const listing = await Listing.findById(id);
     if(!listing){
-        req.flash("error","listing not found");
-        return res.redirect("/listings");
+        return res.status(404).json({
+            success:false,
+            message:"Listing not found"
+        });
     }
 
     let user = req.user;
@@ -14,19 +16,26 @@ module.exports.addWishlist = async(req,res)=>{
         user.wishlist.push(listing._id);
         await user.save();
     }
-    res.redirect("/listings");
+    res.json({
+        success:true,
+        action:"added"
+    });
 };
 
 module.exports.removeWishlist = async(req,res)=>{
     let {id} = req.params;
     const listing = await Listing.findById(id);
     if(!listing){
-        req.flash("error","not found listing !");
-        return res.redirect("/listings");
+        return res.status(404).json({
+            success:false,
+            message:"Listing not found"
+        });
     }
     const user = req.user;
     user.wishlist = user.wishlist.filter(item => !item.equals(listing._id))
-    req.flash("success","listing remove from your wishlist.");
     await user.save();
-    res.redirect("/listings");
+    res.json({
+        success:true,
+        action:"removed"
+    });
 }
