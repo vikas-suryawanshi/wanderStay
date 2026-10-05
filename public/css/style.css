@@ -9,6 +9,7 @@
 @import url("./bookingDetails.css");
 @import url("./hostBookings.css");
 @import url("./hostBookingDetails.css");
+@import url("./wishlist.css");
 
 .btn{
     display: flex;
