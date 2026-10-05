@@ -1,9 +1,10 @@
 .wishlist-image{
     position: relative;
+    z-index: 5;
 }
 
 .wishlist-heart{
-    position: absolute;
+    pointer-events: auto;
     top: 12px;
     right: 12px;
     z-index: 10px;
