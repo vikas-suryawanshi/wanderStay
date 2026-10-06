@@ -15,9 +15,24 @@
     text-decoration: none !important;
     color: inherit;
 }
-/* card effect */
-.card-img-overlay{
-    opacity: 0;
+.price-view{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0.5rem;
+}
+.price-view p{
+    margin: 0;
+}
+.view-listing{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #222;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.view-listing:hover{
+    text-decoration: underline;
 }
 
 .card-img-overlay:hover{
