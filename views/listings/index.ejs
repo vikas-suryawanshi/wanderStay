@@ -66,8 +66,12 @@
             <% for(let listings of allListings){%>
                 <div class="card listing-card" data-category="<%= listings.category%>">
                     <div class="wishlist-image">
-                        <img src="<%= listings.image.url %>" class="card-img-top"
-                        alt="listings-image" style="height: 15rem;">
+                        <a href="/listings/<%= listings._id%>"
+                            class="listing-link rounded-3"
+                        >
+                            <img src="<%= listings.image.url %>" class="card-img-top"
+                            alt="listings-image" style="height: 15rem;">
+                        </a>
                         <button type="button" class="wishlist-heart"
                             data-listing-id="<%= listings._id %>"><i class="fa-regular fa-heart"></i>
                         </button>
@@ -75,12 +79,13 @@
                     <a href="/listings/<%=listings._id%>"
                     class="listing-link rounded-3"
                     >
-                        <div class="card-img-overlay"></div>
                         <div class="card-body">
                             <p class="card-text ms-2"><b><%= listings.title %></b><br/>&#8377;
                                 <i class="tax-info" data-price="<%= listings.price%>"><%= listings.price.toLocaleString("en-IN") %></i>/night
                             </p>
-
+                            <span class="view-listing">
+                                View Listing →
+                            </span>
                         </div>
                     </a>
                 </div>
