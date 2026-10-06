@@ -80,12 +80,15 @@
                     class="listing-link rounded-3"
                     >
                         <div class="card-body">
-                            <p class="card-text ms-2"><b><%= listings.title %></b><br/>&#8377;
-                                <i class="tax-info" data-price="<%= listings.price%>"><%= listings.price.toLocaleString("en-IN") %></i>/night
-                            </p>
-                            <span class="view-listing">
-                                View Listing →
-                            </span>
+                            <p class="card-text ms-2"><b><%= listings.title %></b></p>
+                            <div class="price-view">
+                                <p>
+                                &#8377;<i class="tax-info" data-price="<%= listings.price%>"><%= listings.price.toLocaleString("en-IN") %></i>/night
+                                </p>
+                                <span class="view-listing">
+                                    View Listing →
+                                </span>
+                            </div>
                         </div>
                     </a>
                 </div>
