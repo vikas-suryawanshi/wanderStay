@@ -1,6 +1,8 @@
 .listing-card{
     border: none !important;
+    background: transparent;
     margin-bottom: 2rem;
+    transition: transform 0.2s ease;
 }
 
 .card-body{
