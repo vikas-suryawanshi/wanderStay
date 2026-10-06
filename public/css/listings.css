@@ -5,6 +5,15 @@
     transition: transform 0.2s ease;
 }
 
+.listing-card:hover{
+    transform: translateY(-3px);
+}
+
+.wishlist-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
 .card-body{
     padding: 0 !important;
 }
