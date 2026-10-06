@@ -7,5 +7,8 @@ document.querySelectorAll(".wishlist-heart").forEach(button => {
 
     const data = await response.json();
     console.log(data);
+    if(data.action === "added"){
+        button.innerHTML = `<i class="fa-solid fa-heart"></i>`;
+    }
     })
 });
