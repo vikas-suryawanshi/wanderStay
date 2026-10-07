@@ -41,8 +41,6 @@ module.exports.removeWishlist = async(req,res)=>{
 
 module.exports.getWishlist = async(req,res)=>{
     let user = req.user;
-    let {id} = req.params;
-    let listing = await Listing.findById(id);
-    let userWishlist = await User.wishlist.findById(listing);
-    res.render("wishlist/index.ejs",{userWishlist});
+    let listings = await Listing.find({_id: {$in:user.wishlist}});
+    res.render("wishlist/index.ejs",{listings});
 }
