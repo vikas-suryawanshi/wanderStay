@@ -4,6 +4,11 @@
         <h2>My Wishlist</h2>
         <p>Your favorite stays, all in one place.</p>
     </div>
+    <% if(listings.length === 0) {%>
+        <div class="empty-bookings">
+            
+        </div>
+    <% } %>
     <% for(const listing of listings) {%>
         <div class="wishlist-card">
             <div class="wishlist-image">
