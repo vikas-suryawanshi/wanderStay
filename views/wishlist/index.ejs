@@ -13,22 +13,23 @@
             <p>Save your favorite stays and find them here.</p>
             <a href="/listings" class="btn btn-dark">Explore Stays</a>
         </div>
-    <% } %>
-    <% for(const listing of listings) {%>
-        <div class="wishlist-card">
-            <div class="wishlist-image">
-                <img src="<%= listing.image.url%>" alt="<%= listing.title%>">
+    <% } else {%>
+        <% for(const listing of listings) {%>
+            <div class="wishlist-card">
+                <div class="wishlist-image">
+                    <img src="<%= listing.image.url%>" alt="<%= listing.title%>">
+                </div>
+                <div class="card-body">
+                    <p><%= listing.title%></p>
+                    <span><%= listing.location%>,<%= listing.country%></span>
+                    <a href="/listings/<%= listing._id%>">
+                        View Listing →
+                    </a>
+                    <form method="post" action="/listings/<%=listing._id%>/wishlist/remove">
+                        <button>remove from wishlist</button>
+                    </form>
+                </div>
             </div>
-            <div class="card-body">
-                <p><%= listing.title%></p>
-                <span><%= listing.location%>,<%= listing.country%></span>
-                <a href="/listings/<%= listing._id%>">
-                    View Listing →
-                </a>
-                <form method="post" action="/listings/<%=listing._id%>/wishlist/remove">
-                    <button>remove from wishlist</button>
-                </form>
-            </div>
-        </div>
+        <% } %>
     <% } %>
 </div>
