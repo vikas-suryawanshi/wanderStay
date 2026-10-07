@@ -1,6 +1,8 @@
 <% layout("/layouts/boilerplate.ejs")  %>
 <div class="container">
-    <div class="wishlist-card">
-        
-    </div>
+    <% for(listing of listings) {%>
+        <div class="wishlist-card">
+            <img src="<%= listing.image.url%>" alt="<%= listing.title%>">
+        </div>
+    <% } %>
 </div>
