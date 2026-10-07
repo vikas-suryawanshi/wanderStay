@@ -10,4 +10,7 @@ router.route("/listings/:id/wishlist")
 router.route("/listings/:id/wishlist/remove")
 .post(isLoggedIn,wrapAsync(wishlistController.removeWishlist));
 
+router.route("/wishlist")
+.get(isLoggedIn)
+
 module.exports = router;
