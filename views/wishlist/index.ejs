@@ -1,15 +1,17 @@
-<% layout("/layouts/boilerplate.ejs")  %>
+<%-layout("/layouts/boilerplate.ejs") %>
 <div class="container">
-    <% for(listing of listings) {%>
-        <div class="wishlist-image">
-            <img src="<%= listing.image.url%>" alt="<%= listing.title%>">
-        </div>
-        <div class="card-body">
-            <p><%= listing.title%></p>
-            <span><%= listing.location%>,<%= listing.country%></span>
-            <form method="post" action="/listings/<%=listing._id/wishlist/remove">
-                <button>remove from wishlist</button>
-            </form>
-        </div>
-    <% } %>
+    <div class="wishlist-card">
+        <% for(const listing of listings) {%>
+            <div class="wishlist-image">
+                <img src="<%= listing.image.url%>" alt="<%= listing.title%>">
+            </div>
+            <div class="card-body">
+                <p><%= listing.title%></p>
+                <span><%= listing.location%>,<%= listing.country%></span>
+                <form method="post" action="/listings/<%=listing._id%>/wishlist/remove">
+                    <button>remove from wishlist</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
 </div>
