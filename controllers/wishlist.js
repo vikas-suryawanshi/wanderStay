@@ -12,7 +12,6 @@ module.exports.addWishlist = async(req,res)=>{
 
     let user = req.user;
     if(!user.wishlist.some(item => item.equals(listing._id))){
-        req.flash("success","Listing added to your wishlist.");
         user.wishlist.push(listing._id);
         await user.save();
     }
@@ -38,4 +37,12 @@ module.exports.removeWishlist = async(req,res)=>{
         success:true,
         action:"removed"
     });
+}
+
+module.exports.getWishlist = async(req,res)=>{
+    let user = req.user;
+    let {id} = req.params;
+    let listing = await Listing.findById(id);
+    let userWishlist = await User.wishlist.findById(listing);
+    res.render("wishlist/index.ejs",{userWishlist});
 }
