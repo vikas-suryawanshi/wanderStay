@@ -80,3 +80,21 @@
     object-fit: cover;
     display: block;
 }
+
+.wishlist-card .card-body{
+    padding: 0.7rem 0.25rem 0 !important;
+}
+
+.wishlist-card .card-body p{
+    margin: 0 0 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.wishlist-card .card-body span{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.88rem;
+    color: #666;
+}
