@@ -117,3 +117,35 @@
     gap: 12px;
     margin-top: 0.7rem;
 }
+
+.wishlist-view{
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #222;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.wishlist-view:hover{
+    text-decoration: underline;
+}
+.wishlist-remove{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: transparent;
+
+    color: #666;
+    font-size: 0.78rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.wishlist-remove:hover{
+    border-color: #fe424d;
+    color: #fe424d;
+    background: #fff5f5;
+}
