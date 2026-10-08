@@ -39,3 +39,17 @@
 
 
 /* wishlist index page  */
+.wishlist-header{
+    margin: 2.5rem 0 1.5rem;
+}
+.wishlist-header h2{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #222;
+}
+.wishlist-header p{
+    margin: 0.4rem 0 0;
+    color: #6c6c6c;
+    font-size: 0.95rem;
+}
