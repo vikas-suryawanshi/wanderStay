@@ -23,12 +23,14 @@
                     <div class="card-body">
                         <p><%= listing.title%></p>
                         <span><%= listing.location%>,<%= listing.country%></span>
-                        <a href="/listings/<%= listing._id%>">
-                            View Listing →
-                        </a>
-                        <form method="post" action="/listings/<%=listing._id%>/wishlist/remove">
-                            <button>remove from wishlist</button>
-                        </form>
+                        <div class="wishlist-actions">
+                            <a href="/listings/<%= listing._id%>">
+                                View Listing →
+                            </a>
+                            <form method="post" action="/listings/<%=listing._id%>/wishlist/remove">
+                                <button>remove from wishlist</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             <% } %>
