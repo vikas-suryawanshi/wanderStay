@@ -57,10 +57,6 @@
 .wishlist-card{
     width: 100%;
     margin-bottom: 2rem;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #fff;
-    transition: transform 0.2s ease;
 }
 
 .wishlist-card:hover{
@@ -86,7 +82,7 @@
 }
 
 .wishlist-card .card-body p{
-    margin: 0 0 0.3rem;
+    margin: 0 0 4px;
     font-size: 1rem;
     font-weight: 600;
     color: #222;
@@ -97,4 +93,19 @@
     margin-bottom: 0.5rem;
     font-size: 0.88rem;
     color: #666;
+}
+.wishlist-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.5rem;
+}
+@media (max-width: 992px) {
+    .wishlist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .wishlist-grid {
+        grid-template-columns: 1fr;
+    }
 }
