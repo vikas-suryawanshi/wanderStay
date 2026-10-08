@@ -53,3 +53,17 @@
     color: #6c6c6c;
     font-size: 0.95rem;
 }
+
+.wishlist-card{
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    transition: transform 0.2s ease;
+}
+
+.wishlist-card:hover{
+    opacity: 0.8;
+    background-color: white;
+}
