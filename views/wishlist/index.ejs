@@ -24,7 +24,7 @@
                         <p><%= listing.title%></p>
                         <span><%= listing.location%>,<%= listing.country%></span>
                         <div class="wishlist-actions">
-                            <a href="/listings/<%= listing._id%>">
+                            <a href="/listings/<%= listing._id%>" class="wishlist-view">
                                 View Listing →
                             </a>
                             <form method="post" action="/listings/<%=listing._id%>/wishlist/remove">
