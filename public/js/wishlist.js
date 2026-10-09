@@ -6,7 +6,10 @@ document.querySelectorAll(".wishlist-heart").forEach(button => {
             url = `/listings/${listingId}/wishlist/remove`;
         }
         const response = await fetch(url,{
-            method : "post"
+            method : "post",
+            headers: {
+                "Accept": "application/json"
+            }
         })
         if(response.redirected){
             window.location.href = response.url;
