@@ -13,4 +13,5 @@ router.route("/listings/:id/wishlist/remove")
 router.route("/wishlist")
 .get(isLoggedIn,wrapAsync(wishlistController.getWishlist));
 
+
 module.exports = router;
