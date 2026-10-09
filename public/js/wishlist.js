@@ -8,14 +8,17 @@ document.querySelectorAll(".wishlist-heart").forEach(button => {
         const response = await fetch(url,{
             method : "post"
         })
-
-    const data = await response.json();
-    if(data.action === "added"){
-        button.innerHTML = `<i class="fa-solid fa-heart"></i>`;
-    }
-    if(data.action === "removed"){
-        button.innerHTML = `<i class="fa-regular fa-heart"></i>`;
-    }
-    console.log(data);
+        if(response.redirected){
+            window.location.href = response.url;
+            return;
+        }
+        const data = await response.json();
+        if(data.action === "added"){
+            button.innerHTML = `<i class="fa-solid fa-heart"></i>`;
+        }
+        if(data.action === "removed"){
+            button.innerHTML = `<i class="fa-regular fa-heart"></i>`;
+        }
+        console.log(data);
     })
 });
