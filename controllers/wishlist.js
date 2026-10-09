@@ -34,13 +34,13 @@ module.exports.removeWishlist = async(req,res)=>{
     user.wishlist = user.wishlist.filter(item => !item.equals(listing._id))
     await user.save();
     if(req.headers.accept?.includes("application/json")){
-        res.json({
+        return res.json({
             success:true,
             action:"removed"
         });
     }
     req.flash("success","Listing removed from your wishlist");
-    res.redirect("/wishlist");
+    return res.redirect("/wishlist");
 }
 
 module.exports.getWishlist = async(req,res)=>{
