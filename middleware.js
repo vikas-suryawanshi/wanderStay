@@ -3,9 +3,14 @@ const Booking = require("./models/booking.js");
 const Review = require("./models/review.js");
 const {listingSchema,reviewSchema}=require("./Schema/Schema.js");
 const ExpressError=require("./utils/ExpressError.js");
+
 module.exports.isLoggedIn = (req,res,next)=>{
     if(!req.isAuthenticated()){
-        req.session.redirectUrl=req.originalUrl;
+        if(req.headers.accept?.includes("application/json")){
+            req.session.redirectUrl="/listings";
+        }else{
+            req.session.redirectUrl=req.originalUrl;
+        }
         req.flash("error",
             "You must be logged in to perform this action.Please log in and try again.");
             return res.redirect("/login");
