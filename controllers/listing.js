@@ -40,7 +40,8 @@ module.exports.index = async (req,res)=>{
             ]
         });
     }
-    res.render("listings/index.ejs",{allListings,search});
+    let wishlist = req.user? req.user.wishlist:[];
+    res.render("listings/index.ejs",{allListings,search,wishlist});
 };
 
 module.exports.renderNewForm = (req,res)=>{
