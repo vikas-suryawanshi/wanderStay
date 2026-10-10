@@ -43,6 +43,21 @@
     font-size: 15px;
     line-height: 1.5;
 }
+/* Responsive Heading */
+
+@media (max-width: 768px) {
+    .booking-details-page {
+        padding-top: 24px;
+    }
+
+    .booking-page-header h3 {
+        font-size: 27px;
+    }
+
+    .booking-page-header {
+        margin-bottom: 20px;
+    }
+}
 
 .booking-details-card .image-section{
     width: 380px;
