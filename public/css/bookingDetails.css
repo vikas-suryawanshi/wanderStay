@@ -37,6 +37,12 @@
     background: #ff385c;
     border-radius: 10px;
 }
+.booking-page-header p{
+    margin: 10px 0 0;
+    color: #717171;
+    font-size: 15px;
+    line-height: 1.5;
+}
 
 .booking-details-card .image-section{
     width: 380px;
