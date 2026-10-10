@@ -39,7 +39,7 @@ module.exports.createBooking = async(req,res)=>{
         }
     }
     let numberOfNights = (checkOut-checkIn)/(24*60*60*1000);
-    let totalPrice = listing.price * numberOfNights;
+    let totalPrice = (listing.price * numberOfNights)*1.18;
 
     let booking = new Booking({
         user:user,
