@@ -27,6 +27,17 @@
     letter-spacing: -0.6px;
 }
 
+.booking-page-header h3::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 4px;
+    background: #ff385c;
+    border-radius: 10px;
+}
+
 .booking-details-card .image-section{
     width: 380px;
     min-height: 420px;
