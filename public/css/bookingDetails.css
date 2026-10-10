@@ -8,6 +8,14 @@
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
 }
+/* booking details header */
+.booking-details-page{
+    padding-top: 2rem;
+}
+.booking-page-header{
+    margin: 0 0 24px;
+    padding-left: 0;
+}
 
 .booking-details-card .image-section{
     width: 380px;
