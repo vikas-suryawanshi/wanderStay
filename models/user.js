@@ -14,6 +14,33 @@ const userSchema = new Schema({
         required:true,
         trim:true,
     },
+    image:{
+        url:String,
+        filename:String,
+        required:true,
+    },
+    location:{
+        type:String,
+        required:true,
+    },
+    phone:{
+        type:Number,
+        min:10,
+        max:10,
+        required:true,
+    },
+    bio:{
+        type:String,
+        required:true,
+    },
+    dateOfBirth:{
+        type:String,
+        required:true,
+    },
+    gender:{
+        type:String,
+        required:true
+    },
     wishlist: [{
         type:  Schema.Types.ObjectId,
         ref:"Listing"
