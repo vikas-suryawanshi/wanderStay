@@ -28,6 +28,7 @@ const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const bookingRouter = require("./routes/booking.js");
 const wishlistRouter = require("./routes/wishlist.js");
+const profileRouter = require("./routes/profile.js");
 // express sesion
 const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
@@ -84,6 +85,7 @@ app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",userRouter);
 app.use("/",bookingRouter);
 app.use("/",wishlistRouter);
+app.use("/",profileRouter);
 
 // page not found middleware
 app.use((req,res,next)=>{
