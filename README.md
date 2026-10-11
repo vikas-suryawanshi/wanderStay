@@ -35,6 +35,7 @@ The project currently includes **user authentication, listing management, review
 * 🏷️ Category-wise listing filtering
 * 💰 GST toggle with updated price display
 * 📅 Booking & Reservation System
+* ❤️ Wishlist
 
 ---
 
@@ -164,7 +165,6 @@ I am continuously improving WanderStay and adding new features as I work on the 
 
 ## Future Plans
 
-* ❤️ Wishlist
 * 🏠 Host Dashboard
 * 👤 User Dashboard
 * 📆 Booking Availability Calendar
