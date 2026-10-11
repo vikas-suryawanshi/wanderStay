@@ -1,4 +1,3 @@
-const { required } = require("joi");
 const mongoose=require("mongoose");
 const { default: passportLocalMongoose } = require("passport-local-mongoose");
 
@@ -17,29 +16,22 @@ const userSchema = new Schema({
     image:{
         url:String,
         filename:String,
-        required:true,
     },
     location:{
         type:String,
-        required:true,
     },
     phone:{
-        type:Number,
-        min:10,
-        max:10,
-        required:true,
+        type:String,
+        match: /^[0-9]{10}$/,
     },
     bio:{
         type:String,
-        required:true,
     },
     dateOfBirth:{
-        type:String,
-        required:true,
+        type:Date,
     },
     gender:{
         type:String,
-        required:true
     },
     wishlist: [{
         type:  Schema.Types.ObjectId,
