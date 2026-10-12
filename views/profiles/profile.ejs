@@ -17,12 +17,12 @@
                         src="<%= user.image.url %>" alt="profile-photo" class="profile-avatar"
                     >
                 <% }else { %>
-                    <div class="profile avatar-placeholder">
+                    <div class="profile-avatar-placeholder">
                         <%= user.fullName? user.fullName.charAt(0).toUpperCase():"U"%>
                     </div>
                 <% } %>
                 <h2><%= user.fullName%></h2>
-                <p class="profile-username">@<%=        user.username%>
+                <p class="profile-username">@<%= user.username%>
                 </p>
             </div>
             <!-- profile information -->
@@ -34,23 +34,23 @@
                         <p><%= user.fullName || "Not added"%></p>
                     </div>
                     <div class="profile-info-item">
-                        <span class="profile.label">Username</span>
+                        <span class="profile-label">Username</span>
                         <p><%= user.username || "Not added"%></p>
                     </div>
                     <div class="profile-info-item">
-                        <span class="profile.label">Email Address</span>
+                        <span class="profile-label">Email Address</span>
                         <p><%= user.email || "Not added"%></p>
                     </div>
                     <div class="profile-info-item">
-                        <span class="profile.label">Phone Number</span>
+                        <span class="profile-label">Phone Number</span>
                         <p><%= user.phone || "Not added"%></p>
                     </div>
                     <div class="profile-info-item">
-                        <span class="profile.label">Location</span>
+                        <span class="profile-label">Location</span>
                         <p><%= user.location || "Not added"%></p>
                     </div>
                     <div class="profile-info-item">
-                        <span class="profile.label">Date Of Birth</span>
+                        <span class="profile-label">Date Of Birth</span>
                         <p>
                             <% if(user.dateOfBirth){ %>
                                 <%= new Date(user.dateOfBirth).toLocaleDateString("en-IN", {
@@ -73,8 +73,12 @@
                     <span class="profile-label">About Me</span>
                     <p><%= user.bio || "No bio added yet." %></p>
                 </div>
+                <div class="profile-actions">
+                    <button type="button" class="profile-edit-button">
+                        Edit Profile
+                    </button>
+                </div>
             </div>
-
         </div>
     </div>
 </div>
