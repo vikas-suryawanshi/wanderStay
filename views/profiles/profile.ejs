@@ -25,27 +25,31 @@
                 <p class="profile-username">@<%=        user.username%>
                 </p>
             </div>
+            <!-- profile information -->
             <div class="profile-details">
-                <img src="<%= user.image.url%>" alt="<%= user.image.filename%>">
-                <p><%= user.fullName%></p>
-                <p><%= user.username%></p>
-                <p><%= user.email%></p>
-                <% if(user.phone) {%>
-                    <p><%= user.phone%></p>
-                <% } else { %>
-                    <p>Not added</p>
-                <% } %>
-                <p><%= user.location%></p>
-                <% if(user.bio) {%>
-                    <p><%= user.bio%></p>
-                <% } else { %>
-                    <p>Not added</p>
-                <% } %>
-                <% if(user.dateOfBirth) {%>
-                    <p><%= user.dateOfBirth%></p>
-                <% } else { %>
-                    <p>Not added</p>
-                <% } %>
+                <h3>Personal Information</h3>
+                <div class="profile-info-grid">
+                    <div class="profile-info-item">
+                        <span class="profile-label">Full Name</span>
+                        <p><%= user.fullName || "Not added"%></p>
+                    </div>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile.label">Username</span>
+                    <p><%= user.username || "Not added"%></p>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile.label">Email Address</span>
+                    <p><%= user.email || "Not added"%></p>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile.label">Phone Number</span>
+                    <p><%= user.phone || "Not added"%></p>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile.label">Location</span>
+                    <p><%= user.location || "Not added"%></p>
+                </div>
                 <% if(user.gender){%>
                     <p><%= user.gender%></p>
                 <% } else { %>
