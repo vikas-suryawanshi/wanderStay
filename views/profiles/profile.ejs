@@ -33,32 +33,48 @@
                         <span class="profile-label">Full Name</span>
                         <p><%= user.fullName || "Not added"%></p>
                     </div>
+                    <div class="profile-info-item">
+                        <span class="profile.label">Username</span>
+                        <p><%= user.username || "Not added"%></p>
+                    </div>
+                    <div class="profile-info-item">
+                        <span class="profile.label">Email Address</span>
+                        <p><%= user.email || "Not added"%></p>
+                    </div>
+                    <div class="profile-info-item">
+                        <span class="profile.label">Phone Number</span>
+                        <p><%= user.phone || "Not added"%></p>
+                    </div>
+                    <div class="profile-info-item">
+                        <span class="profile.label">Location</span>
+                        <p><%= user.location || "Not added"%></p>
+                    </div>
+                    <div class="profile-info-item">
+                        <span class="profile.label">Date Of Birth</span>
+                        <p>
+                            <% if(user.dateOfBirth){ %>
+                                <%= new Date(user.dateOfBirth).toLocaleDateString("en-IN", {
+                                        day: "2-digit",
+                                        month: "long",
+                                        year: "numeric"
+                                }) %>
+                            <% } else { %>
+                                Not added
+                            <% } %>
+                        </p>
+                    </div>
+                    <div class="profile-info-item">
+                        <span class="profile-label">Gender</span>
+                        <p><%= user.gender || "Not added" %></p>
+                    </div>
                 </div>
-                <div class="profile-info-item">
-                    <span class="profile.label">Username</span>
-                    <p><%= user.username || "Not added"%></p>
+                <!-- bio -->
+                <div class="profile-bio">
+                    <span class="profile-label">About Me</span>
+                    <p><%= user.bio || "No bio added yet." %></p>
                 </div>
-                <div class="profile-info-item">
-                    <span class="profile.label">Email Address</span>
-                    <p><%= user.email || "Not added"%></p>
-                </div>
-                <div class="profile-info-item">
-                    <span class="profile.label">Phone Number</span>
-                    <p><%= user.phone || "Not added"%></p>
-                </div>
-                <div class="profile-info-item">
-                    <span class="profile.label">Location</span>
-                    <p><%= user.location || "Not added"%></p>
-                </div>
-                <% if(user.gender){%>
-                    <p><%= user.gender%></p>
-                <% } else { %>
-                    <p>Not added</p>
-                <% } %>
-                <form>
-                    <button>Edit profile</button>
-                </form>
             </div>
+
         </div>
     </div>
 </div>
