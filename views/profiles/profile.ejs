@@ -1,18 +1,34 @@
-<p%-layout("/layouts/boilerplate.ejs") %>
+<%-layout("/layouts/boilerplate.ejs") %>
 <div class="container">
     <div class="profile-header">
         <h1>My Profile</h1>
     </div>
     <div class="profile-details">
-        <p><%= user.image.url%></p>
+        <img src="<%= user.image.url%>" alt="<%= user.image.filename%>">
         <p><%= user.fullName%></p>
         <p><%= user.username%></p>
         <p><%= user.email%></p>
-        <p><%= user.phone%></p>
+        <% if(user.phone) {%>
+            <p><%= user.phone%></p>
+        <% } else { %>
+            <p>Not added</p>
+        <% } %>
         <p><%= user.location%></p>
-        <p><%= user.bio%></p>
-        <p><%= user.dateOfBirth%></p>
-        <p><%= user.gender%></p>
+        <% if(user.bio) {%>
+            <p><%= user.bio%></p>
+        <% } else { %>
+            <p>Not added</p>
+        <% } %>
+        <% if(user.dateOfBirth) {%>
+            <p><%= user.dateOfBirth%></p>
+        <% } else { %>
+            <p>Not added</p>
+        <% } %>
+        <% if(user.gender){%>
+            <p><%= user.gender%></p>
+        <% } else { %>
+            <p>Not added</p>
+        <% } %>
         <form>
             <button>Edit profile</button>
         </form>
