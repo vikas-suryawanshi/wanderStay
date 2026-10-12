@@ -1,36 +1,60 @@
 <%-layout("/layouts/boilerplate.ejs") %>
-<div class="container">
-    <div class="profile-header">
-        <h1>My Profile</h1>
-    </div>
-    <div class="profile-details">
-        <img src="<%= user.image.url%>" alt="<%= user.image.filename%>">
-        <p><%= user.fullName%></p>
-        <p><%= user.username%></p>
-        <p><%= user.email%></p>
-        <% if(user.phone) {%>
-            <p><%= user.phone%></p>
-        <% } else { %>
-            <p>Not added</p>
-        <% } %>
-        <p><%= user.location%></p>
-        <% if(user.bio) {%>
-            <p><%= user.bio%></p>
-        <% } else { %>
-            <p>Not added</p>
-        <% } %>
-        <% if(user.dateOfBirth) {%>
-            <p><%= user.dateOfBirth%></p>
-        <% } else { %>
-            <p>Not added</p>
-        <% } %>
-        <% if(user.gender){%>
-            <p><%= user.gender%></p>
-        <% } else { %>
-            <p>Not added</p>
-        <% } %>
-        <form>
-            <button>Edit profile</button>
-        </form>
+<div class="profile-page">
+    <div class="profile-container">
+        <!-- profile heading -->
+        <div class="profile-header">
+            <div>
+                <h1>My Profile</h1>
+                <p>Manage your personal information</p>
+            </div>
+        </div>
+        <!-- profile card -->
+        <div class="profile-card">
+            <!-- profile image -->
+            <div class="profile-image-section">
+                <% if(user.image && user.image.url) {%>
+                    <img
+                        src="<%= user.image.url %>" alt="profile-photo" class="profile-avatar"
+                    >
+                <% }else { %>
+                    <div class="profile avatar-placeholder">
+                        <%= user.fullName? user.fullName.charAt(0).toUpperCase():"U"%>
+                    </div>
+                <% } %>
+                <h2><%= user.fullName%></h2>
+                <p class="profile-username">@<%=        user.username%>
+                </p>
+            </div>
+            <div class="profile-details">
+                <img src="<%= user.image.url%>" alt="<%= user.image.filename%>">
+                <p><%= user.fullName%></p>
+                <p><%= user.username%></p>
+                <p><%= user.email%></p>
+                <% if(user.phone) {%>
+                    <p><%= user.phone%></p>
+                <% } else { %>
+                    <p>Not added</p>
+                <% } %>
+                <p><%= user.location%></p>
+                <% if(user.bio) {%>
+                    <p><%= user.bio%></p>
+                <% } else { %>
+                    <p>Not added</p>
+                <% } %>
+                <% if(user.dateOfBirth) {%>
+                    <p><%= user.dateOfBirth%></p>
+                <% } else { %>
+                    <p>Not added</p>
+                <% } %>
+                <% if(user.gender){%>
+                    <p><%= user.gender%></p>
+                <% } else { %>
+                    <p>Not added</p>
+                <% } %>
+                <form>
+                    <button>Edit profile</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
