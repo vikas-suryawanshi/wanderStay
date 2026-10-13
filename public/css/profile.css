@@ -100,3 +100,35 @@
     margin-bottom: 7px;
 }
 
+.profile-info-item p, .profile-bio p{
+    color: #222;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.profile-bio{
+    margin-top: 1.5rem;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 28px;
+}
+
+.profile-edit-btn {
+    background: #ff385c;
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.profile-edit-btn:hover{
+    background: #e31c5f;
+}
