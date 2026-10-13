@@ -132,3 +132,31 @@
 .profile-edit-btn:hover{
     background: #e31c5f;
 }
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+    .profile-page {
+        padding: 24px 12px;
+    }
+
+    .profile-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .profile-details {
+        padding: 22px 18px;
+    }
+
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .profile-actions {
+        justify-content: stretch;
+    }
+
+    .profile-edit-btn {
+        width: 100%;
+    }
+}
