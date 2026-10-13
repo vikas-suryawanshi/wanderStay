@@ -25,5 +25,36 @@
 }
 
 .profile-card{
-    bac
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.profile.photo-section{
+    text-align: center;
+    padding: 32px 20px;
+}
+
+.profile-avatar, .profile-avatar-placeholder {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+}
+
+.profile-avatar{
+    display: block;
+    object-fit: cover;
+    border: 3px solid #ffe1e6;
+}
+.profile-avatar-placeholder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff385c;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
