@@ -32,7 +32,7 @@
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
-.profile.photo-section{
+.profile-image-section{
     text-align: center;
     padding: 32px 20px;
 }
@@ -59,7 +59,7 @@
     font-weight: 700;
 }
 
-.profile-photo-section h2 {
+.profile-image-section h2 {
     font-size: 1.4rem;
     margin: 0 0 5px;
     color: #222;
@@ -73,6 +73,9 @@
 .profile-divider{
     height: 1px;
     background: #eee;
+}
+.profile-details {
+    padding: 28px;
 }
 
 .profile-details h3 {
@@ -118,7 +121,7 @@
     margin-top: 28px;
 }
 
-.profile-edit-btn {
+.profile-edit-button {
     background: #ff385c;
     color: #fff;
     border: none;
@@ -129,7 +132,7 @@
     transition: background 0.2s ease;
 }
 
-.profile-edit-btn:hover{
+.profile-edit-button:hover{
     background: #e31c5f;
 }
 
@@ -156,7 +159,7 @@
         justify-content: stretch;
     }
 
-    .profile-edit-btn {
+    .profile-edit-button {
         width: 100%;
     }
 }
