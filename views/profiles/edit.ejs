@@ -1,50 +1,62 @@
 <%-layout("/layouts/boilerplate.ejs") %>
 
 <div class="edit-profile-page">
-    <div class="edit-header">
-        <h1>Edit your profile</h1>
-        <p>few changes in youe profile</p>
+    <div class="edit-profile-container">
+        <!-- profile header -->
+        <div class="edit-header">
+            <h1>Edit Profile</h1>
+            <p>Update your personal information</p>
+        </div>
+        <div class="edit-profile-card">
+            <form action="/profile" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="profile-photo">Profile Photo</label>
+                    <input id="profile-photo" type="file" name="image" accept="image/*">
+                    <small>Choose a profile picture.</small>
+                </div>
+                <!-- basic information -->
+                <div class="form-section"></div>
+                    <h2>Basic Information</h2>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input id="fullName" type="text" name="fullName" placeholder="enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">phone Number</label>
+                        <input id="phone" type="tel" name="phone" placeholder="10-digit phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input id="location" type="text" name="location" placeholder="Enter your city">
+                    </div>
+                </div>
+
+                <!-- about you -->
+                    <div class="form-group">
+                        <label for="dateOfBirth">Add a date of birth</label>
+                        <input id="dateOfBirth" type="date">
+                    </div>
+                <div class="form-group">
+                    <label for="gender">Add a gender</label>
+                    <select name="" id="gender">
+                        <option value="">male</option>
+                        <option value="female">female</option>
+                        <option value="">non ot these</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bio">Add a bio</label>
+                    <textarea name="" id="bio"></textarea>
+                </div>
+                <div class="actions">
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <form action="" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="profile-photo">Add a profile photo</label>
-            <input id="profile-photo" type="file">
-        </div>
-        <div class="form-group">
-            <label for="fullname">Add a fullname</label>
-            <input id="fullname" type="text">
-        </div>
-        <div class="form-group">
-            <label for="email">Add a email</label>
-            <input id="email" type="email">
-        </div>
-        <div class="form-group">
-            <label for="phone">Add a phone</label>
-            <input id="phone" type="tel">
-        </div>
-        <div class="form-group">
-            <label for="location">Add a location</label>
-            <input id="location" type="text">
-        </div>
-        <div class="form-group">
-            <label for="dateOfBirth">Add a date of birth</label>
-            <input id="dateOfBirth" type="date">
-        </div>
-        <div class="form-group">
-            <label for="gender">Add a gender</label>
-            <select name="" id="gender">
-                <option value="">male</option>
-                <option value="female">female</option>
-                <option value="">non ot these</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="bio">Add a bio</label>
-            <textarea name="" id="bio"></textarea>
-        </div>
-        <div class="actions">
-            <button>Save</button>
-            <button>Cancel</button>
-        </div>
-    </form>
 </div>
