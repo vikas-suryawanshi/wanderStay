@@ -32,6 +32,7 @@ const userSchema = new Schema({
     },
     gender:{
         type:String,
+        enum:["male","female","other","prefer-to-not-say"],
     },
     wishlist: [{
         type:  Schema.Types.ObjectId,
