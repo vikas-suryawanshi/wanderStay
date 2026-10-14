@@ -7,4 +7,7 @@ const {isLoggedIn} = require("../middleware.js");
 router.route("/profile")
 .get(isLoggedIn,wrapAsync(profileController.profile));
 
+router.route("/profile/edit")
+.get(isLoggedIn,wrapAsync(profileController.editProfile));
+
 module.exports = router;
