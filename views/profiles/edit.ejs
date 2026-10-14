@@ -19,19 +19,19 @@
                     <h2>Basic Information</h2>
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
-                        <input id="fullName" type="text" name="fullName" placeholder="enter your full name" required>
+                        <input id="fullName" value="<%= user.fullName%>" type="text" name="fullName" placeholder="enter your full name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input id="email" type="email" name="email" placeholder="Enter your email" required>
+                        <input id="email" value="<%= user.email%>" type="email" name="email" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">phone Number</label>
-                        <input id="phone" type="tel" name="phone" placeholder="10-digit phone number">
+                        <input id="phone" value="<%= user.phone%>" type="tel" name="phone" placeholder="10-digit phone number">
                     </div>
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <input id="location" type="text" name="location" placeholder="Enter your city">
+                        <input id="location" value="<%= user.location%>" type="text" name="location" placeholder="Enter your city">
                     </div>
                 </div>
                 <!-- about you -->
@@ -39,21 +39,21 @@
                 <div class="form-section">
                     <div class="form-group">
                         <label for="dateOfBirth">Date of Birth</label>
-                        <input id="dateOfBirth" type="date" name="dateOfBirth">
+                        <input id="dateOfBirth" value="<%= user.dateOfBirth ? new Date(user.dateOfBirth).toISOString().split('T')[0] : '' %>" type="date" name="dateOfBirth">
                     </div>
                     <div class="form-group">
                         <label for="gender">Gender</label>
                         <select name="gender" id="gender">
                             <option value="">Select gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                            <option value="prefer-to-not-say">Prefer not to say</option>
+                            <option value="male" <%= user.gender === "male" ? "selected": ""%>>Male</option>
+                            <option value="female" <%= user.gender === "female" ? "selected": ""%>>Female</option>
+                            <option value="other" <%= user.gender === "other" ? "selected": ""%>>Other</option>
+                            <option value="prefer-to-not-say" <%= user.gender === "prefer-to-not-say" ? "selected": ""%>>Prefer not to say</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="bio">Bio</label>
-                        <textarea name="bio" id="bio" rows="4" maxlength="300" placeholder="tell us a little about your self"></textarea>
+                        <textarea name="bio" id="bio" rows="4" maxlength="300" placeholder="tell us a little about your self"><%= user.bio%></textarea>
                     </div>
                 </div>
                 <!-- from actions -->
