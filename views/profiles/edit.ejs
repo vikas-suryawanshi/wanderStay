@@ -15,7 +15,7 @@
                     <small>Choose a profile picture.</small>
                 </div>
                 <!-- basic information -->
-                <div class="form-section"></div>
+                <div class="form-section">
                     <h2>Basic Information</h2>
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
@@ -27,34 +27,39 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">phone Number</label>
-                        <input id="phone" type="tel" name="phone" placeholder="10-digit phone number" required>
+                        <input id="phone" type="tel" name="phone" placeholder="10-digit phone number">
                     </div>
                     <div class="form-group">
                         <label for="location">Location</label>
                         <input id="location" type="text" name="location" placeholder="Enter your city">
                     </div>
                 </div>
-
                 <!-- about you -->
+                <h2>About you</h2>
+                <div class="form-section">
                     <div class="form-group">
-                        <label for="dateOfBirth">Add a date of birth</label>
-                        <input id="dateOfBirth" type="date">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input id="dateOfBirth" type="date" name="dateOfBirth">
                     </div>
-                <div class="form-group">
-                    <label for="gender">Add a gender</label>
-                    <select name="" id="gender">
-                        <option value="">male</option>
-                        <option value="female">female</option>
-                        <option value="">non ot these</option>
-                    </select>
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender">
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            <option value="prefer-not-to-say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea name="bio" id="bio" rows="4" maxlength="300" placeholder="tell us a little about your self"></textarea>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="bio">Add a bio</label>
-                    <textarea name="" id="bio"></textarea>
-                </div>
-                <div class="actions">
-                    <button>Save</button>
-                    <button>Cancel</button>
+                <!-- from actions -->
+                <div class="edit-profile-actions">
+                    <button type="submit" class="save-profile-btn">Save changes</button>
+                    <a href="/profile" class="cancel-profile-btn">Cancel</a>
                 </div>
             </form>
         </div>
