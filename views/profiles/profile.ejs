@@ -74,9 +74,11 @@
                     <p><%= user.bio || "No bio added yet." %></p>
                 </div>
                 <div class="profile-actions">
-                    <button type="button" class="profile-edit-button">
-                        Edit Profile
-                    </button>
+                    <form action="/profile/edit" method="get">
+                        <button type="submit" class="profile-edit-button">
+                            Edit Profile
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
