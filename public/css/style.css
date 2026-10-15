@@ -11,6 +11,7 @@
 @import url("./hostBookingDetails.css");
 @import url("./wishlist.css");
 @import url("./profile.css");
+@import url("./editProfile.css");
 
 .btn{
     display: flex;

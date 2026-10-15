@@ -10,18 +10,6 @@ module.exports.editProfile = async(req,res)=>{
     res.render("profiles/edit.ejs",{user});
 }
 
-const User = require("../models/user");
-
-module.exports.profile = async (req, res) => {
-    const user = req.user;
-    res.render("profiles/profile.ejs", { user });
-};
-
-module.exports.editProfile = async (req, res) => {
-    const user = req.user;
-    res.render("profiles/edit.ejs", { user });
-};
-
 module.exports.updateProfile = async (req, res) => {
     const {
         fullName,
@@ -32,6 +20,7 @@ module.exports.updateProfile = async (req, res) => {
         dateOfBirth,
         gender
     } = req.body;
+
 
     const normalizedPhone = phone?.trim();
     const normalizedLocation = location?.trim();
