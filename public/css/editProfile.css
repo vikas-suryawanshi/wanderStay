@@ -1,0 +1,23 @@
+.edit-profile-page {
+    background: #f7f7f7;
+    min-height: 100vh;
+    padding: 50px 20px 70px;
+}
+
+.edit-profile-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.edit-profile-page .edit-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.edit-profile-page .edit-header h1 {
+    color: #222222;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
