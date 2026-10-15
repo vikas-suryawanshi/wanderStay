@@ -21,3 +21,29 @@
     margin-bottom: 10px;
     letter-spacing: -0.5px;
 }
+
+.edit-profile-page .edit-header p {
+    color: #717171;
+    font-size: 1rem;
+    margin: 0;
+}
+.edit-profile-page .edit-profile-card {
+    background: #ffffff;
+    padding: 38px;
+    border: 1px solid #ebebeb;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.edit-profile-page .form-section {
+    margin-top: 28px;
+    padding-top: 25px;
+    border-top: 1px solid #eeeeee;
+}
+.edit-profile-page .form-section h2,
+.edit-profile-page form > h2 {
+    color: #222222;
+    font-size: 1.2rem;
+    font-weight: 650;
+    margin: 0 0 22px;
+}
