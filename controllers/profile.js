@@ -11,9 +11,24 @@ module.exports.editProfile = async(req,res)=>{
 }
 
 module.exports.updateProfile = async(req,res)=>{
-    let user = req.user;
-    let newData = req.body;
-    let updateProfile = await User.findOneAndUpdate({user:newData});
-    await updateProfile.save();
+    const {
+        fullName,
+        email,
+        location,
+        phone,
+        bio,
+        dateOfBirth,
+        gender
+    } = req.body;
+    let newData = {
+        fullName:fullName,
+        email:email,
+        location:location,
+        phone:phone,
+        bio:bio,
+        dateOfBirth:dateOfBirth,
+        gender:gender,
+    };
+    let updateProfile = await User.findByIdAndUpdate(req.user._id,newData);
     res.redirect("/profile");
 }
