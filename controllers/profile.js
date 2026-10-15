@@ -9,3 +9,7 @@ module.exports.editProfile = async(req,res)=>{
     const user = req.user;
     res.render("profiles/edit.ejs",{user});
 }
+
+module.exports.updateProfile = async(req,res)=>{
+    
+}
