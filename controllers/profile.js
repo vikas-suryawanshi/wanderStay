@@ -11,5 +11,9 @@ module.exports.editProfile = async(req,res)=>{
 }
 
 module.exports.updateProfile = async(req,res)=>{
-    
+    let user = req.user;
+    let newData = req.body;
+    let updateProfile = await User.findOneAndUpdate({user:newData});
+    await updateProfile.save();
+    res.redirect("/profile");
 }
