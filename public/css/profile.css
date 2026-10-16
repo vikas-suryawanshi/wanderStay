@@ -2,7 +2,122 @@
 .profile-page{
     background: #f7f7f7;
     min-height: 80vh;
-    padding: 40px 20px;
+    padding: 32px 24px;
+    color: #222;
+}
+.profile-page * {
+    box-sizing: border-box;
+}
+
+.profile-page .profile-layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 260px minmax(0,1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+/* left sidebar */
+
+.profile-page .profile-sidebar {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 18px;
+    padding: 24px 18px;
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 24px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.profile-page .sidebar-brand {
+    padding: 0 10px 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-page .sidebar-brand h2 {
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: #ff385c;
+    margin: 0 0 5px;
+}
+
+.profile-page .sidebar-brand p {
+    color: #717171;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.profile-page .profile-navigation {
+    margin-top: 24px;
+}
+
+.profile-page .sidebar-heading {
+    color: #999;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0 10px 12px;
+}
+
+.profile-page .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.profile-page .sidebar-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.profile-page .sidebar-link:hover {
+    background: #fff0f3;
+    color: #ff385c;
+}
+
+.profile-page .sidebar-link.active {
+    background: #fff0f3;
+    color: #ff385c;
+    font-weight: 650;
+}
+
+.profile-page .sidebar-divider {
+    height: 1px;
+    background: #eee;
+    margin: 20px 0;
+}
+
+.profile-page .sidebar-host-section {
+    margin-top: 8px;
+}
+
+.profile-page .sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: auto;
+    padding: 18px 10px 0;
+    border-top: 1px solid #eee;
+    color: #717171;
+    font-size: 0.82rem;
+}
+
+.profile-page .sidebar-footer i {
+    color: #ff385c;
+    font-size: 1rem;
 }
 
 .profile-container{
