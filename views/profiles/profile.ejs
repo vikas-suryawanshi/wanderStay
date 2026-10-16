@@ -12,15 +12,16 @@
                     <i class="fa-regular fa-user"></i>
                     <span>My Profile</span>
                 </a>
-                <a href="/profile" class="sidebar-link active">
-                    <i class="fa-regular fa-calender-check"></i>
+                <a href="/bookings" class="sidebar-link">
+                    <i class="fa-regular fa-calendar-check"></i>
                     <span>My Bookings</span>
                 </a>
-                <a href="/profile" class="sidebar-link active">
+                <a href="/wishlist" class="sidebar-link">
                     <i class="fa-regular fa-heart"></i>
                     <span>Wishlist</span>
                 </a>
-                <div class="sidevar-divider">
+                <div class="sidebar-host-section">
+                    <div class="sidebar-divider"></div>
                     <p class="sidebar-heading">HOST</p>
                     <a href="/host/dashboard" class="sidebar-link">
                         <i class="fa-solid fa-house"></i>
@@ -119,7 +120,7 @@
                         <div class="profile-info-item">
                             <span class="profile-label">Gender</span>
                             <p>
-                                <% if(user.gender === "prefer-to-not-say") %>
+                                <% if(user.gender === "prefer-to-not-say") {%>
                                     Prefer not to say
                                 <% } else if (user.gender) {%>
                                     <%= user.gender.charAt(0).toUpperCase()+user.gender.slice(1)%>
