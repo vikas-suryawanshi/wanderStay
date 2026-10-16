@@ -75,7 +75,12 @@
 
                 <!-- personal information -->
                 <div class="profile-details">
-                    <h3>Personal Information</h3>
+                    <div class="profile-section-heading">
+                        <div>
+                            <h3>Personal Information</h3>
+                            <p>Your personal details and contact information</p>
+                        </div>
+                    </div>
                     <div class="profile-info-grid">
                         <div class="profile-info-item">
                             <span class="profile-label">Full Name</span>
@@ -113,22 +118,24 @@
                         </div>
                         <div class="profile-info-item">
                             <span class="profile-label">Gender</span>
-                            <p><%= user.gender || "Not added" %></p>
+                            <p>
+                                <% if(user.gender === "prefer-to-not-say") %>
+                                    Prefer not to say
+                                <% } else if (user.gender) {%>
+                                    <%= user.gender.charAt(0).toUpperCase()+user.gender.slice(1)%>
+                                <% }else { %>
+                                    Not added
+                                <% } %>
+                            </p>
                         </div>
                     </div>
-                    <!-- bio -->
+                    <!-- About me -->
                     <div class="profile-bio">
-                        <span class="profile-label">About Me</span>
+                        <h3>About Me</h3>
                         <p><%= user.bio || "No bio added yet." %></p>
-                    </div>
-                    <div class="profile-actions">
-                        <form action="/profile/edit" method="get">
-                            <button type="submit" class="profile-edit-button">
-                                Edit Profile
-                            </button>
-                        </form>
                     </div>
                 </div>
             </section>
         </main>
+    </div>
 </div>
