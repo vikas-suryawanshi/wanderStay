@@ -12,91 +12,123 @@
                     <i class="fa-regular fa-user"></i>
                     <span>My Profile</span>
                 </a>
-                
+                <a href="/profile" class="sidebar-link active">
+                    <i class="fa-regular fa-calender-check"></i>
+                    <span>My Bookings</span>
+                </a>
+                <a href="/profile" class="sidebar-link active">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <div class="sidevar-divider">
+                    <p class="sidebar-heading">HOST</p>
+                    <a href="/host/dashboard" class="sidebar-link">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Host Dashboard</span>
+                    </a>
+                    <a href="/listings/new" class="sidebar-link">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        <span>Add Property</span>
+                    </a>
+                </div>
             </nav>
+            <div class="sidebar-footer">
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Welcome to WanderStay</span>
+            </div>
         </aside>
-    </div>
-    <div class="profile-container">
-        <!-- profile heading -->
-        <div class="profile-header">
-            <div>
-                <h1>My Profile</h1>
-                <p>Manage your personal information</p>
+
+        <!-- main profile content -->
+        <main class="profile-main">
+            <!-- profile heading -->
+            <div class="profile-header">
+                <div>
+                    <h1>My Profile</h1>
+                    <p>Manage your personal information</p>
+                </div>
+                <a href="/profile/edit" class="profile-edit-button">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    Edit Profile
+                </a>
             </div>
-        </div>
-        <!-- profile card -->
-        <div class="profile-card">
-            <!-- profile image -->
-            <div class="profile-image-section">
-                <% if(user.image && user.image.url) {%>
-                    <img
-                        src="<%= user.image.url %>" alt="profile-photo" class="profile-avatar"
-                    >
-                <% }else { %>
-                    <div class="profile-avatar-placeholder">
-                        <%= user.fullName? user.fullName.charAt(0).toUpperCase():"U"%>
-                    </div>
-                <% } %>
-                <h2><%= user.fullName%></h2>
-                <p class="profile-username">@<%= user.username%>
-                </p>
-            </div>
-            <!-- profile information -->
-            <div class="profile-details">
-                <h3>Personal Information</h3>
-                <div class="profile-info-grid">
-                    <div class="profile-info-item">
-                        <span class="profile-label">Full Name</span>
-                        <p><%= user.fullName || "Not added"%></p>
-                    </div>
-                    <div class="profile-info-item">
-                        <span class="profile-label">Username</span>
-                        <p><%= user.username || "Not added"%></p>
-                    </div>
-                    <div class="profile-info-item">
-                        <span class="profile-label">Email Address</span>
-                        <p><%= user.email || "Not added"%></p>
-                    </div>
-                    <div class="profile-info-item">
-                        <span class="profile-label">Phone Number</span>
-                        <p><%= user.phone || "Not added"%></p>
-                    </div>
-                    <div class="profile-info-item">
-                        <span class="profile-label">Location</span>
-                        <p><%= user.location || "Not added"%></p>
-                    </div>
-                    <div class="profile-info-item">
-                        <span class="profile-label">Date Of Birth</span>
-                        <p>
-                            <% if(user.dateOfBirth){ %>
-                                <%= new Date(user.dateOfBirth).toLocaleDateString("en-IN", {
-                                        day: "2-digit",
-                                        month: "long",
-                                        year: "numeric"
-                                }) %>
-                            <% } else { %>
-                                Not added
-                            <% } %>
+            <!-- profile card -->
+            <section class="profile-card">
+                <!-- profile identity -->
+                <div class="profile-image-section">
+                    <% if(user.image && user.image.url) {%>
+                        <img
+                            src="<%= user.image.url %>" alt="profile-photo" class="profile-avatar"
+                        >
+                    <% }else { %>
+                        <div class="profile-avatar-placeholder">
+                            <%= user.fullName? user.fullName.charAt(0).toUpperCase():"U"%>
+                        </div>
+                    <% } %>
+
+                    <div class="profile-identity">
+                        <h2><%= user.fullName || "User"%></h2>
+                        <p class="profile-username">@<%= user.username || "User"%>
                         </p>
-                    </div>
-                    <div class="profile-info-item">
-                        <span class="profile-label">Gender</span>
-                        <p><%= user.gender || "Not added" %></p>
+                        <p class="profile-member-label">WanderStay Member</p>
                     </div>
                 </div>
-                <!-- bio -->
-                <div class="profile-bio">
-                    <span class="profile-label">About Me</span>
-                    <p><%= user.bio || "No bio added yet." %></p>
+
+                <!-- personal information -->
+                <div class="profile-details">
+                    <h3>Personal Information</h3>
+                    <div class="profile-info-grid">
+                        <div class="profile-info-item">
+                            <span class="profile-label">Full Name</span>
+                            <p><%= user.fullName || "Not added"%></p>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-label">Username</span>
+                            <p><%= user.username || "Not added"%></p>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-label">Email Address</span>
+                            <p><%= user.email || "Not added"%></p>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-label">Phone Number</span>
+                            <p><%= user.phone || "Not added"%></p>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-label">Location</span>
+                            <p><%= user.location || "Not added"%></p>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-label">Date Of Birth</span>
+                            <p>
+                                <% if(user.dateOfBirth){ %>
+                                    <%= new Date(user.dateOfBirth).toLocaleDateString("en-IN", {
+                                            day: "2-digit",
+                                            month: "long",
+                                            year: "numeric"
+                                    }) %>
+                                <% } else { %>
+                                    Not added
+                                <% } %>
+                            </p>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-label">Gender</span>
+                            <p><%= user.gender || "Not added" %></p>
+                        </div>
+                    </div>
+                    <!-- bio -->
+                    <div class="profile-bio">
+                        <span class="profile-label">About Me</span>
+                        <p><%= user.bio || "No bio added yet." %></p>
+                    </div>
+                    <div class="profile-actions">
+                        <form action="/profile/edit" method="get">
+                            <button type="submit" class="profile-edit-button">
+                                Edit Profile
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <div class="profile-actions">
-                    <form action="/profile/edit" method="get">
-                        <button type="submit" class="profile-edit-button">
-                            Edit Profile
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+            </section>
+        </main>
 </div>
