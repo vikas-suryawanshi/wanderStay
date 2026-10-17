@@ -53,8 +53,8 @@
 
 .profile-nav-link:hover, .profile-dropdown-toggle:hover{
     border-color: #ff385c;
-    color: #ff395c;
-    box-shadow: 0 2px 8px rgba(0.10);
+    color: #ff385c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
 }
 .navbar-profile-image {
     width: 100%;
@@ -73,7 +73,7 @@
 .profile-dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100%+10px);
+    top: 100%;
     right: 0;
     width: 170px;
     padding: 8px;
@@ -85,7 +85,7 @@
 }
 
 .profile-dropdown:hover .profile-dropdown-menu,
-.profile-dropdown:focus-within {
+.profile-dropdown:focus-within .profile-dropdown-menu {
     display: block;
 }
 
