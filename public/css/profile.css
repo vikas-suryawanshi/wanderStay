@@ -470,3 +470,43 @@
         font-size: 0.72rem;
     }
 }
+
+/* Sidebar Logout Button */
+.profile-page .sidebar-logout {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-top: 0;
+    border-radius: 10px;
+    color: #d9304f;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.profile-page .sidebar-logout i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.profile-page .sidebar-logout:hover {
+    background: #fff0f3;
+    color: #ff385c;
+}
+
+/* Logout Form */
+.profile-page .sidebar-logout-form {
+    margin: 20px 0 0;
+}
+
+/* Logout Button Reset */
+.profile-page .sidebar-logout {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: left;
+    font-family: inherit;
+}
