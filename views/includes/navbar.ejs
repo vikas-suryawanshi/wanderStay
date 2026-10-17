@@ -36,11 +36,20 @@
             <% } %>
           </a>
         <% } else { %>
-          
-          <a class="nav-link" aria-current="page"
-          href="/signup"><b>Sign Up</b></a>
-          <a class="nav-link" href="/login"><b>login</b></a>
+          <div class="profile-dropdown">
+            <button type="button" class="profile-dropdown-toggle" aria-label="Open account menu"
+            aria-expanded="false">
+              <i class="fa-regular fa-circle-user profile-default-icon"></i>
+            </button>
+            <div class="profile-dropdown-menu">
+              <a class="dropdown-login"
+                href="/login">Log In
+              </a>
+              <a class="dropdown-signup" href="/signup">Sign Up</a>
+            </div>
+          </div>
         <% } %>
+        <a href="/listings/new" class="nav-link">Start Hosting</a>
       </div>
     </div>
   </div>
