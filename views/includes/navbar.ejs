@@ -23,6 +23,7 @@
         </form>
       </div>
       <div class="navbar-nav ms-auto align-items-md-center navbar-account">
+        <a href="/listings/new" class="nav-link">Start Hosting</a>
         <% if(currUser) {%>
           <a class="profile-nav-link" href="/profile" aria-label="My Profile" title="My Profile">
             <% if(currUser.image && currUser.image.url) {%>
@@ -49,7 +50,6 @@
             </div>
           </div>
         <% } %>
-        <a href="/listings/new" class="nav-link">Start Hosting</a>
       </div>
     </div>
   </div>
