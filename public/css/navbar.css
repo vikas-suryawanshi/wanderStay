@@ -107,3 +107,19 @@
 .profile-dropdown-menu .dropdown-login {
     font-weight: 700;
 }
+
+
+/* Mobile navbar */
+
+@media (max-width: 767px) {
+    .navbar-account {
+        align-items: flex-start !important;
+        gap: 8px;
+        padding-top: 12px;
+    }
+
+    .profile-dropdown-menu {
+        left: 0;
+        right: auto;
+    }
+}
