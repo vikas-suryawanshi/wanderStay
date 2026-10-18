@@ -151,3 +151,7 @@ module.exports.showHostBooking = async(req,res)=>{
     }
     res.render("bookings/hostBookingsDetails",{booking});
 }
+
+module.exports.renderHostPage = async(req,res)=>{
+    res.render("host/hostDashboard.ejs");
+}

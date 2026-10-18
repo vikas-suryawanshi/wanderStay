@@ -26,5 +26,7 @@ router.route("/host/bookings/:id")
 
 router.route("/host/bookings/:id/status")
 .post(isLoggedIn,isBookingOwner,wrapAsync(bookingController.updateHostBookingStatus));
+router.route("/host/Dashboard")
+.get(isLoggedIn,wrapAsync(bookingController.renderHostPage));
 
 module.exports=router;
