@@ -36,6 +36,7 @@ The project currently includes **user authentication, listing management, review
 * 💰 GST toggle with updated price display
 * 📅 Booking & Reservation System
 * ❤️ Wishlist
+* 👤 User Profile & Account Management
 
 ---
 
