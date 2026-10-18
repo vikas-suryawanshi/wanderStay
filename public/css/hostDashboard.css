@@ -112,3 +112,80 @@
     color: #b7791f;
 }
 
+/* ===== Quick Actions ===== */
+
+.dashboard-quick-actions {
+    margin-bottom: 40px;
+}
+
+.dashboard-quick-actions h2,
+.recent-bookings-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.quick-action-card {
+    position: relative;
+    display: block;
+    padding: 24px;
+    color: #222222;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.quick-action-card > i:first-child {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background-color: #fff0f3;
+    color: #ff385c;
+    font-size: 1.2rem;
+}
+
+.quick-action-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.quick-action-card p {
+    color: #717171;
+    font-size: 0.9rem;
+    margin: 0;
+    padding-right: 12px;
+}
+
+.quick-action-card .action-arrow {
+    position: absolute;
+    right: 22px;
+    bottom: 24px;
+    color: #ff385c;
+    transition: transform 0.2s ease;
+}
+
+.quick-action-card:hover {
+    color: #222222;
+    border-color: #ffb8c6;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px);
+}
+
+.quick-action-card:hover .action-arrow {
+    transform: translateX(4px);
+}
