@@ -12,6 +12,7 @@
 @import url("./wishlist.css");
 @import url("./profile.css");
 @import url("./editProfile.css");
+@import url("./hostDashboard.css");
 
 .btn{
     display: flex;
