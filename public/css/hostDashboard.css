@@ -189,3 +189,145 @@
 .quick-action-card:hover .action-arrow {
     transform: translateX(4px);
 }
+
+/* ===== Recent Bookings ===== */
+
+.dashboard-recent-bookings {
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    margin-bottom: 40px;
+}
+
+.recent-bookings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.recent-bookings-header h2 {
+    margin-bottom: 8px;
+}
+
+.recent-bookings-header p {
+    color: #717171;
+    margin: 0;
+}
+
+.view-all-bookings {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ff385c;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.view-all-bookings:hover {
+    color: #e31c5f;
+}
+
+.empty-bookings-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 16px;
+    background-color: #fafafa;
+    border-radius: 12px;
+}
+
+.empty-bookings-state > i {
+    font-size: 2.5rem;
+    color: #ff8da1;
+    margin-bottom: 16px;
+}
+
+.empty-bookings-state h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.empty-bookings-state p {
+    color: #717171;
+    margin: 0;
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 1000px) {
+    .dashboard-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .host-dashboard {
+        margin: 24px auto;
+        padding: 0 16px;
+    }
+
+    .host-dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .dashboard-header-content h1 {
+        font-size: 1.65rem;
+    }
+
+    .add-property-btn {
+        width: 100%;
+    }
+
+    .dashboard-overview {
+        gap: 12px;
+    }
+
+    .overview-card {
+        padding: 16px 12px;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+
+    .overview-card-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .overview-card-info p {
+        font-size: 0.8rem;
+    }
+
+    .overview-card-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .quick-action-card {
+        padding: 20px;
+    }
+
+    .dashboard-recent-bookings {
+        padding: 18px 14px;
+    }
+
+    .recent-bookings-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
