@@ -102,7 +102,7 @@
     background-color: #eaf2ff;
     color: #3478f6;
 }
-.confirmed-icon {
+.completed-icon {
     background-color: #e8f8ef;
     color: #218659;
 }
@@ -259,6 +259,107 @@
     margin: 0;
 }
 
+
+/* ===== Recent Bookings Table ===== */
+
+.recent-bookings-content {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+}
+
+.recent-bookings-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.recent-bookings-table thead {
+    background-color: #f8f8f8;
+}
+
+.recent-bookings-table th {
+    padding: 16px 18px;
+    color: #717171;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.recent-bookings-table td {
+    padding: 17px 18px;
+    color: #484848;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+    white-space: nowrap;
+}
+
+.recent-bookings-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.recent-bookings-table tbody tr:hover {
+    background-color: #fff8f9;
+}
+
+.recent-bookings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.recent-bookings-table td:first-child {
+    color: #222222;
+    font-weight: 600;
+}
+
+.recent-bookings-table td:last-child {
+    color: #222222;
+    font-weight: 700;
+}
+
+/* Booking status badges */
+
+.booking-status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.booking-status.confirmed {
+    background-color: #e8f8ef;
+    color: #218659;
+}
+
+.booking-status.completed {
+    background-color: #eaf2ff;
+    color: #3478f6;
+}
+
+.booking-status.pending {
+    background-color: #fff4df;
+    color: #b7791f;
+}
+
+.booking-status.cancelled {
+    background-color: #fff0f3;
+    color: #e31c5f;
+}
+
+/* Empty message inside the table */
+
+.recent-bookings-table .empty-bookings-state {
+    background-color: #fafafa;
+    border-radius: 0;
+    white-space: normal;
+}
+
 /* ===== Responsive Design ===== */
 
 @media (max-width: 1000px) {
@@ -324,6 +425,10 @@
 
     .dashboard-recent-bookings {
         padding: 18px 14px;
+    }
+    .recent-bookings-table th,
+    .recent-bookings-table td {
+        padding: 14px 15px;
     }
 
     .recent-bookings-header {
