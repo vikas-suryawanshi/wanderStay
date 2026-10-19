@@ -7,7 +7,7 @@
             <h1>Host Dashboard</h1>
             <p>Manage your properties and bookings</p>
         </div>
-        <a href="listings/new" class="add-property-btn">
+        <a href="/listings/new" class="add-property-btn">
             <i class="fa-solid fa-plus"></i>
             Add Property
         </a>
@@ -18,7 +18,7 @@
         <div class="overview-card">
             <div class="overview-card-info">
                 <p>Total Properties</p>
-                <h3>0</h3>
+                <h3><%= totalProperties%></h3>
             </div>
             <div class="overview-card-icon properties-icon">
                 <i class="fa-solid fa-house"></i>
@@ -27,7 +27,7 @@
         <div class="overview-card">
             <div class="overview-card-info">
                 <p>Total Bookings</p>
-                <h3>0</h3>
+                <h3><%= totalBookings%></h3>
             </div>
             <div class="overview-card-icon bookings-icon">
                 <i class="fa-solid fa-calendar-check"></i>
@@ -36,8 +36,8 @@
 
         <div class="overview-card">
             <div class="overview-card-info">
-                <p>Confirmed Bookings</p>
-                <h3>0</h3>
+                <p>Completed Bookings</p>
+                <h3><%= completedBookings%></h3>
             </div>
             <div class="overview-card-icon confirmed-icon">
                 <i class="fa-solid fa-circle-check"></i>
@@ -46,7 +46,7 @@
         <div class="overview-card">
             <div class="overview-card-info">
                 <p>Total Earnings</p>
-                <h3>₹0</h3>
+                <h3>₹<%= totalEarnings.toLocaleString("en-IN")%></h3>
             </div>
             <div class="overview-card-icon earnings-icon">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
@@ -95,12 +95,56 @@
         </div>
 
         <div class="recent-bookings-content">
-            <!-- Booking records will be displayed here later -->
-            <div class="empty-bookings-state">
-                <i class="fa-solid fa-calendar-days"></i>
-                <h3>No Recent Bookings</h3>
-                <p>Your recent reservations will appear here.</p>
-            </div>
+            <table class="recent-bookings-table">
+                <thead>
+                    <tr>
+                        <th>Guest</th>
+                        <th>Property</th>
+                        <th>Check-in</th>
+                        <th>Check-out</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(recentBookings.length >0) {%>
+                        <% recentBookings.forEach(booking => {%>
+                            <tr>
+                                <td>
+                                    <%= booking.user.fullName %>
+                                </td>
+                                <td>
+                                    <%= booking.listing.title %>
+                                </td>
+                                <td>
+                                    <%= booking.checkIn.toLocaleDateString("en-IN") %>
+                                </td>
+                                <td>
+                                    <%= booking.checkOut.toLocaleDateString("en-IN") %>
+                                </td>
+                                <td>
+                                    <span class="booking-status <%= booking.status %>">
+                                        <%= booking.status %>
+                                    </span>
+                                </td>
+                                <td>
+                                    ₹<%= booking.totalPrice.toLocaleString("en-IN") %>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="6">
+                                <div class="empty-bookings-state">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <h3>No Recent Bookings</h3>
+                                    <p>Your recent reservations will appear here.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
         </div>
     </section>
 </div>
