@@ -18,5 +18,5 @@ module.exports.renderHostDashboard = async(req,res)=>{
     // get the latest five bookings
     const recentBookings = bookings.slice(0,5);
 
-    res.render("host/hostDashboard.ejs", {totalProperties,totalBookings,totalEarning,recentBookings,confirmedBookings});
+    res.render("host/hostDashboard.ejs", {totalProperties,totalBookings,totalEarnings,recentBookings,confirmedBookings});
 }
