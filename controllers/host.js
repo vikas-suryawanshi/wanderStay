@@ -12,11 +12,11 @@ module.exports.renderHostDashboard = async(req,res)=>{
     // calculate the dashboard statitics
     const totalProperties = listings.length;
     const totalBookings = bookings.length;
-    const confirmedBookings = bookings.filter(booking => booking.status === "confirmed").length;
+    const completedBookings = bookings.filter(booking => booking.status === "completed").length;
     const totalEarnings = bookings.filter(booking => ["confirmed","completed"].includes(booking.status)).reduce((total,booking)=> total+booking.totalPrice , 0);
 
     // get the latest five bookings
     const recentBookings = bookings.slice(0,5);
 
-    res.render("host/hostDashboard.ejs", {totalProperties,totalBookings,totalEarnings,recentBookings,confirmedBookings});
+    res.render("host/hostDashboard.ejs", {totalProperties,totalBookings,totalEarnings,recentBookings,completedBookings});
 }
