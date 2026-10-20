@@ -13,6 +13,7 @@
 @import url("./profile.css");
 @import url("./editProfile.css");
 @import url("./hostDashboard.css");
+@import url("./myProperties.css");
 
 .btn{
     display: flex;
