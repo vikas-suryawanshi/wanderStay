@@ -98,6 +98,10 @@ module.exports.updateListing = async(req,res)=>{
         updateListing.image={url ,filename};
         await updateListing.save();
     };
+    if(req.query.source == "myProperties"){
+        req.flash("success","listing update successfully!");
+        return res.redirect("/host/properties");
+    }
     req.flash("success","listing update successfully!");
     res.redirect(`/listings/${id}`)
 
@@ -107,6 +111,10 @@ module.exports.updateListing = async(req,res)=>{
 module.exports.destroyListing = async(req,res)=>{
     let {id}=req.params;
     const deleteLsiting=await Listing.findByIdAndDelete(id);
+    if(req.query.source == "myProperties"){
+        req.flash("success","delete listing succesfully!");
+        return res.redirect("/host/properties");
+    }
     req.flash("success","delete listing succesfully!");
     res.redirect("/listings");
 };
