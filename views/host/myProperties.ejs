@@ -41,14 +41,16 @@
                             </div>
                             <div class="property-card-divider"></div>
                             <div class="property-card-actions">
-                                <a href="#" class="edit-property-btn">
+                                <a href="/listings/<%= listing._id%>/edit" class="edit-property-btn">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                     Edit
                                 </a>
-                                <button type="button" class="delete-property-btn">
-                                    <i class="fa-regular fa-trash-can"></i>
-                                    Delete
-                                </button>
+                                <form method="post" action="/listings/<%= listing._id%>?_method=DELETE">
+                                    <button type="submit" class="delete-property-btn">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                        Delete
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
