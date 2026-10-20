@@ -20,3 +20,8 @@ module.exports.renderHostDashboard = async(req,res)=>{
 
     res.render("host/hostDashboard.ejs", {totalProperties,totalBookings,totalEarnings,recentBookings,completedBookings});
 }
+
+module.exports.renderMyPropertiesPage = async(req,res)=>{
+    const listings = await Listing.find({owner:req.user._id})
+    res.render("host/myProperties.ejs",{listings});
+}
