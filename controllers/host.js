@@ -22,6 +22,6 @@ module.exports.renderHostDashboard = async(req,res)=>{
 }
 
 module.exports.renderMyPropertiesPage = async(req,res)=>{
-    const listings = await Listing.find({owner:req.user._id})
+    const listings = await Listing.find({owner:req.user._id}).sort( { createdAt:-1 });
     res.render("host/myProperties.ejs",{listings});
 }
