@@ -20,11 +20,15 @@
                     class="listing-link rounded-3">
                     <div class="myBooking-card">
                         <div class="myBooking-image-section">
-                            <img alt="booking-image" src="<%= booking.listing.image.url %>">
+                            <% if(booking.listing) {%>
+                                <img alt="booking-image" src="<%= booking.listing.image.url %>">
+                            <% }else { %>
+                                <img alt="Property unavailable" src="/images/default-property.jpg">
+                            <% } %>
                         </div>
                         <div class="myBooking-content">
-                            <h4><%= booking.listing.title %></h4>
-                            <p>Location: <%= booking.listing.location %>, Country: <%= booking.listing.country %></p>
+                            <h4><%= booking.listing?booking.listing.title:"Property no longer available" %></h4>
+                            <p>Location: <%= booking.listing?booking.listing.location:"N/A" %>, Country: <%= booking.listing?booking.listing.country:"N/A" %></p>
                             <div class="myBooking-information-section">
                                 <span>
                                     <small>Check-in</small>
