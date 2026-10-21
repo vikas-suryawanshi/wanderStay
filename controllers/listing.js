@@ -45,7 +45,7 @@ module.exports.index = async (req,res)=>{
 };
 
 module.exports.renderNewForm = (req,res)=>{
-    res.render("listings/new.ejs");
+    res.render("listings/new.ejs",{source: req.query.source});
 };
 
 module.exports.newListing = async (req,res)=>{
@@ -61,7 +61,14 @@ module.exports.newListing = async (req,res)=>{
     newListing.owner=req.user._id;
     newListing.geometry=responce.body.features[0].geometry;
     await newListing.save();
-    req.flash("success","new listing created!");
+    if(req.query.source == "myProperties"){
+        req.flash("success", "Congratulations! Your property is now live on WanderStay.");
+        return res.redirect("/host/properties");
+    }else if(req.query.source == "hostDashboard"){
+        req.flash("success", "Congratulations! Your property is now live on WanderStay.");
+        return res.redirect("/host/dashboard");
+    }
+    req.flash("success", "Congratulations! Your property is now live on WanderStay.");
     res.redirect("/listings");
 };
 
