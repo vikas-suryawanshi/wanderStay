@@ -6,14 +6,14 @@
     </div>
     <div class="booking-details-card">
         <div class="image-section">
-            <% if(booking.listing) {%>
+            <% if(booking.listing && booking.listing.image && booking.listing.image.url) {%>
                 <img alt="booking-image" src="<%= booking.listing.image.url %>">
             <% }else { %>
                 <img alt="Property unavailable" src="/images/default-property.jpg">
             <% } %>
         </div>
         <div class="content-section">
-            <h4><%= booking.listing?booking.listing.title:"No property longer avalable" %></h4>
+            <h4><%= booking.listing?booking.listing.title:"Property no longer available" %></h4>
             <p>Location: <%= booking.listing?booking.listing.location:"N/A" %>, <%= booking.listing?booking.listing.country:"N/A" %></p>
             <div class="booking-information">
                 <span>
@@ -47,7 +47,7 @@
                 <span class="myBooking-status <%= booking.status%>">
                     Status: <%= booking.status%>
                 </span>
-                <% if(currUser._id.equals(booking.user._id)) {%>
+                <% if(booking.user && currUser._id.equals(booking.user._id)) {%>
                     <div class="guest-actions">
                         <% if(booking.status === "pending" || booking.status === "confirmed") {%>
                             <form method="post" action="/bookings/<%= booking._id %>/cancel">
@@ -56,7 +56,6 @@
                         <% } %>
                     </div>
                 <%}%>
-
             </div>
         </div>
     </div>
