@@ -9,4 +9,7 @@ router.route("/host/dashboard")
 router.route("/host/properties")
 .get(isLoggedIn,wrapAsync(hostController.renderMyPropertiesPage));
 
+router.route("/host/earnings")
+.get(isLoggedIn,wrapAsync(hostController.renderMyEarningSummary));
+
 module.exports = router;
