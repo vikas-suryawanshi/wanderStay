@@ -25,3 +25,19 @@ module.exports.renderMyPropertiesPage = async(req,res)=>{
     const listings = await Listing.find({owner:req.user._id}).sort( { createdAt:-1 });
     res.render("host/myProperties.ejs",{listings});
 }
+
+module.exports.renderMyEarningSummary = async(req,res)=>{
+    const listings = await Listing.find({owner:req.user._id});
+    const listingIds = listings.map(listing => listing._id);
+    const bookings = await Booking.find({listing: {$in:listingIds}, status:{$ne:"cancelled"}})
+    const totalEarning = bookings.filter(booking => ["completed","confirmed"].includes(booking.status).reduce((total,booking) => total+booking.totalprice,0));
+    const currentMonth = new Date().getMonth();
+    const currentYear = new Date().getFullYear();
+
+    const monthlyEarning = bookings.filter
+    (booking => ["completed"],["confirmed"].includes(booking.status) &&
+        new Date(booking.createdAt).getMonth() === currentMonth &&
+        new Date(booking.createdAt).getFullYear() === currentYear
+    ).reduce((total,booking) => total+booking.totalPrice,0);
+    res.render("host/earningSummary.ejs",{listings,totalEarning,monthlyEarning});
+}
