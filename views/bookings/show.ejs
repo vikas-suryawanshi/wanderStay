@@ -6,11 +6,15 @@
     </div>
     <div class="booking-details-card">
         <div class="image-section">
-            <img alt="booking-image" src="<%= booking.listing.image.url %>">
+            <% if(booking.listing) {%>
+                <img alt="booking-image" src="<%= booking.listing.image.url %>">
+            <% }else { %>
+                <img alt="Property unavailable" src="/images/default-property.jpg">
+            <% } %>
         </div>
         <div class="content-section">
-            <h4><%= booking.listing.title %></h4>
-            <p>Location: <%= booking.listing.location %>, <%= booking.listing.country %></p>
+            <h4><%= booking.listing?booking.listing.title:"No property longer avalable" %></h4>
+            <p>Location: <%= booking.listing?booking.listing.location:"N/A" %>, <%= booking.listing?booking.listing.country:"N/A" %></p>
             <div class="booking-information">
                 <span>
                     <small>Check-in</small>
