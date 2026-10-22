@@ -171,7 +171,6 @@ I am continuously improving WanderStay and adding new features as I work on the 
 * 📆 Booking Availability Calendar
 * 💳 Payment Integration
 * 🔔 Notifications System
-* 👤 User Profiles
 * 🧠 Property Recommendation System
 * 📊 Host Property Analytics
 * 🤖 AI-based travel features
