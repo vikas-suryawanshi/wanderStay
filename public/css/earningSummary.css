@@ -1,0 +1,227 @@
+.earning-summary-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px 40px;
+    color: #222222;
+}
+
+.earning-page-header {
+    margin-bottom: 35px;
+}
+
+.back-dashboard-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+    color: #555555;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-dashboard-link:hover {
+    color: #ff385c;
+}
+
+.earning-page-header h2 {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 15px;
+    padding-bottom: 12px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.earning-page-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 75px;
+    height: 4px;
+    background: #ff385c;
+    border-radius: 10px;
+}
+
+.earning-page-header > p {
+    margin: 0;
+    color: #717171;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.earning-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.earning-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    min-width: 0;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.earning-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd1da;
+    box-shadow: 0 12px 28px rgba(255, 56, 92, 0.10);
+}
+.earning-card-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    color: #ff385c;
+    background: #fff0f3;
+    border-radius: 16px;
+    font-size: 25px;
+}
+.earning-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.earning-card-content h3 {
+    margin: 3px 0 15px;
+    color: #555555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.earning-amount {
+    margin: 0 0 12px;
+    color: #222222;
+    font-size: clamp(25px, 3vw, 36px);
+    font-weight: 750;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.earning-card-description {
+    margin: 0;
+    color: #858585;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.earning-info-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 24px;
+    background: #fff7f8;
+    border: 1px solid #ffe0e6;
+    border-radius: 14px;
+}
+
+.earning-info-section > i {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #ff385c;
+    font-size: 21px;
+}
+
+.earning-info-section h4 {
+    margin: 0 0 8px;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.earning-info-section p {
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.8;
+}
+@media (max-width: 768px) {
+
+    .earning-summary-page {
+        margin-top: 28px;
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .earning-page-header h2 {
+        font-size: 28px;
+    }
+
+    .earning-cards-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .earning-card {
+        padding: 25px;
+    }
+
+}
+@media (max-width: 480px) {
+
+    .earning-summary-page {
+        margin-top: 20px;
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .earning-page-header {
+        margin-bottom: 25px;
+    }
+
+    .earning-page-header h2 {
+        font-size: 25px;
+    }
+
+    .earning-page-header > p {
+        font-size: 14px;
+    }
+
+    .earning-card {
+        gap: 15px;
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .earning-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 21px;
+    }
+
+    .earning-card-content h3 {
+        font-size: 14px;
+    }
+
+    .earning-amount {
+        font-size: 27px;
+    }
+
+    .earning-card-description {
+        font-size: 12px;
+    }
+
+    .earning-info-section {
+        gap: 11px;
+        padding: 18px 15px;
+    }
+
+    .earning-info-section p {
+        font-size: 13px;
+    }
+}
