@@ -16,11 +16,15 @@
     <% } else {%>
         <div class="my-bookings-grid">
             <% for(const booking of myBookings) {%>
-                <a href="/bookings/<%= booking._id %>"
-                    class="listing-link rounded-3">
+                <% if(booking.listing) {%>
+                    <a href="/bookings/<%= booking._id %>"
+                        class="listing-link rounded-3">
+                    <% } else { %>
+                        <div class="listing-link rounded-3">
+                    <% } %>
                     <div class="myBooking-card">
                         <div class="myBooking-image-section">
-                            <% if(booking.listing) {%>
+                            <% if(booking.listing && booking.listing.image && booking.listing.image.url) {%>
                                 <img alt="booking-image" src="<%= booking.listing.image.url %>">
                             <% }else { %>
                                 <img alt="Property unavailable" src="/images/default-property.jpg">
@@ -64,7 +68,11 @@
                             </span>
                         </div>
                     </div>
-                </a>
+                <% if(booking.listing) {%>
+                    </a>
+                <% } else { %>
+                    </div>
+                <% } %>
             <% } %>
         </div>
     <% } %>
