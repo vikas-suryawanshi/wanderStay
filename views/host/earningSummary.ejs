@@ -1,1 +1,62 @@
 <%-layout("/layouts/boilerplate.ejs") %>
+
+<div class="earning-summary-page">
+    <!--Page Header-->
+    <div class="earning-page-header">
+        <a href="/host/dashboard" class="back-dashboard-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Dashboard
+        </a>
+        <h2>Earnings Summary</h2>
+        <p>
+            Track your earnings from your WanderStay properties.
+        </p>
+    </div>
+
+    <!-- Earnings Cards Container -->
+    <div class="earning-cards-container">
+        <!--Total Earnings-->
+        <div class="earning-card total-earning-card">
+            <div class="earning-card-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <div class="earning-card-content">
+                <h3>Total Earnings</h3>
+                <p class="earning-amount">
+                    ₹<%= Number(totalEarning || 0).toLocaleString("en-IN") %>
+                </p>
+                <p class="earning-card-description">
+                    From all confirmed and completed bookings
+                </p>
+            </div>
+        </div>
+        <!--Current Month Earnings-->
+        <div class="earning-card monthly-earning-card">
+            <div class="earning-card-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div class="earning-card-content">
+                <h3>This Month's Earnings</h3>
+                <p class="earning-amount">
+                    ₹<%= Number(monthlyEarning || 0).toLocaleString("en-IN") %>
+                </p>
+                <p class="earning-card-description">
+                    From bookings created this month
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Information Section -->
+    <div class="earning-info-section">
+        <i class="fa-solid fa-circle-info"></i>
+        <div>
+            <h4>About Your Earnings</h4>
+            <p>
+                Earnings are calculated using the total amounts of
+                confirmed and completed bookings. These figures represent
+                booking totals, not necessarily the amount already paid
+                out to your bank account.
+            </p>
+        </div>
+    </div>
+</div>
