@@ -53,4 +53,7 @@ module.exports.renderUserDashboard = async(req,res)=>{
         booking.checkIn >= today && ["pending","confirmed"].includes(booking.status)
     );
     const totalBookings = bookings.length;
+    const upcomingTrips = upcomingBookings.length;
+    const wishlistCount = req.user.wishlist.length;
+    res.render("user/userDashboard.ejs",{totalBookings,upcomingBookings,upcomingTrips,wishlistCount});
 };
