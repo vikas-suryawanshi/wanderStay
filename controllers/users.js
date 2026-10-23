@@ -43,3 +43,9 @@ module.exports.logOut = async(req,res,next)=>{
         res.redirect("/listings");
     });
 };
+
+module.exports.renderUserDashboard = async(req,res)=>{
+    const bookings = await Booking.find({user:req.user._id}).populate("listing");
+    let date = new.date();
+
+}
