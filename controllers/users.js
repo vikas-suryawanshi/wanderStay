@@ -45,11 +45,12 @@ module.exports.logOut = async(req,res,next)=>{
 };
 
 module.exports.renderUserDashboard = async(req,res)=>{
-    const bookings = await Booking.find({user:req.user._id}).populate("listing");
-    const today = new.Date();
+    const bookings = await Booking.find({user:req.user._id}).populate("listing").sort({createdAt:-1});
+    const today = new Date();
     today.setHours(0,0,0,0);
 
     const upcomingBookings = bookings.filter(booking =>
         booking.checkIn >= today && ["pending","confirmed"].includes(booking.status)
     );
-}
+    const totalBookings = bookings.length;
+};
