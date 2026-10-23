@@ -23,4 +23,6 @@ router.route("/login")
 
 router.post("/logout",userController.logOut);
 
+router.route("/dashboard")
+.get(isLoggedIn,wrapAsync(userController.renderUserDashboard));
 module.exports=router;
