@@ -1,4 +1,5 @@
 const User = require("../models/user.js");
+const Booking = require("../models/booking");
 
 module.exports.getSignupForm = (req,res)=>{
     res.render("users/signup.ejs");
