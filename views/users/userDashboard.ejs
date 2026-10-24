@@ -105,7 +105,72 @@
                 <% } %>
             </div>
         <% } else { %>
-
+            <div class="user-empty-bookings">
+                <div class="user-empty-icon">
+                    <i class="fa-solid fa-suitcase-rolling"></i>
+                </div>
+                <h3>No Upcoming Trips</h3>
+                <p>Your next adventure starts with finding the perfect stay.</p>
+                <a href="/listings" class="user-primary-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Explore Stays
+                </a>
+            </div>
         <% } %>
+        <!-- Quick Actions -->
+    <section class="user-dashboard-section user-quick-actions-section">
+        <div class="user-section-heading">
+            <div>
+                <h2>Quick Actions</h2>
+                <p>Everything you need, just one click away.</p>
+            </div>
+        </div>
+        <div class="user-quick-actions-grid">
+            <!-- My Bookings -->
+            <a href="/bookings" class="user-quick-action-card">
+                <div class="user-action-icon action-bookings">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div class="user-action-content">
+                    <h3>My Bookings</h3>
+                    <p>View and manage your reservations.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right user-action-arrow"></i>
+            </a>
+            <!-- My Wishlist -->
+            <a href="/users/wishlist" class="user-quick-action-card">
+                <div class="user-action-icon action-wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="user-action-content">
+                    <h3>My Wishlist</h3>
+                    <p>Explore the stays you have saved.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right user-action-arrow"></i>
+            </a>
+            <!-- Explore Stays -->
+            <a href="/listings" class="user-quick-action-card">
+                <div class="user-action-icon action-explore">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+                <div class="user-action-content">
+                    <h3>Explore Stays</h3>
+                    <p>Discover your next favourite destination.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right user-action-arrow"></i>
+            </a>
+            <!-- My Profile -->
+            <a href="/users/profile" class="user-quick-action-card">
+                <div class="user-action-icon action-profile">
+                    <i class="fa-solid fa-user-pen"></i>
+                </div>
+                <div class="user-action-content">
+                    <h3>My Profile</h3>
+                    <p>View and update your account details.</p>
+                </div>
+                <i class="fa-solid fa-arrow-right user-action-arrow"></i>
+            </a>
+        </div>
+    </section>
     </div>
 </div>
