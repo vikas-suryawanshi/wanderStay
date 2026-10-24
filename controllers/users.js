@@ -55,5 +55,5 @@ module.exports.renderUserDashboard = async(req,res)=>{
     const totalBookings = bookings.length;
     const upcomingTrips = upcomingBookings.length;
     const wishlistCount = req.user.wishlist.length;
-    res.render("user/userDashboard.ejs",{totalBookings,upcomingBookings,upcomingTrips,wishlistCount});
+    res.render("users/userDashboard.ejs",{totalBookings,upcomingBookings,upcomingTrips,wishlistCount});
 };
