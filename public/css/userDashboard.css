@@ -162,3 +162,221 @@
     gap: 12px;
     color: #e31c5f;
 }
+
+/* user upcoming card */
+.user-upcoming-bookings {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.user-upcoming-card {
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.user-upcoming-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.user-upcoming-image {
+    flex: 0 0 38%;
+    min-width: 0;
+    min-height: 230px;
+    background-color: #f7f7f7;
+}
+
+.user-upcoming-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 230px;
+    object-fit: cover;
+}
+
+.user-no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 230px;
+    color: #b0b0b0;
+    font-size: 42px;
+}
+
+.user-upcoming-details {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+}
+
+.user-booking-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.user-booking-title-row h3 {
+    margin-bottom: 0;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.user-booking-status {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.status-confirmed {
+    color: #16803d;
+    background-color: #e9f8ee;
+}
+
+.status-pending {
+    color: #9a6700;
+    background-color: #fff5d6;
+}
+
+.status-cancelled {
+    color: #c62828;
+    background-color: #ffebee;
+}
+
+.status-completed {
+    color: #1769aa;
+    background-color: #e8f3ff;
+}
+
+.user-booking-location {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 17px;
+    color: #717171;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.user-booking-location i {
+    margin-top: 3px;
+    color: #ff385c;
+}
+
+.user-booking-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.user-booking-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #555555;
+    font-size: 12px;
+}
+
+.user-booking-info i {
+    color: #ff385c;
+}
+
+.user-booking-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eeeeee;
+}
+
+.user-booking-footer p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 0;
+    color: #717171;
+    font-size: 13px;
+}
+
+.user-booking-footer strong {
+    color: #222222;
+    font-size: 19px;
+    font-weight: 750;
+}
+
+/* empty bookings */
+.user-empty-bookings {
+    padding: 45px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px dashed #dddddd;
+    border-radius: 20px;
+}
+
+.user-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 20px;
+    color: #ff385c;
+    background-color: #fff0f3;
+    border-radius: 50%;
+    font-size: 32px;
+}
+
+.user-empty-bookings h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 750;
+}
+
+.user-empty-bookings p {
+    margin-bottom: 22px;
+    color: #717171;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.user-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 12px 22px;
+    color: #ffffff;
+    background-color: #ff385c;
+    border: 1px solid #ff385c;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.user-primary-btn:hover {
+    color: #ffffff;
+    background-color: #e31c5f;
+    border-color: #e31c5f;
+    transform: translateY(-2px);
+}
