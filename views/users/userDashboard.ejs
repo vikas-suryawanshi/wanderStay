@@ -5,7 +5,7 @@
     <div class="user-dashboard-header">
         <div class="">
             <p class="user-dashboard-subtitle">WANDERSTAY / YOUR ACCOUNT</p>
-            <h1>Welcome back, <%= currentUser.fullname%>!</h1>
+            <h1>Welcome back, <%= currUser.fullname%>!</h1>
             <p>Manage your bookings and plan your next adventure.</p>
         </div>
         <div class="user-dashboard-header-icon">
@@ -41,5 +41,71 @@
                 <h2><%= wishlistCount%></h2>
             </div>
         </div>
+    </div>
+    <!-- upcoming trips -->
+    <div class="user-dashboard-section">
+        <div class="user-section-heading">
+            <div class="">
+                <h2>Your Upcoming Trips</h2>
+                <p>Your next adventures are waiting for you.</p>
+            </div>
+            <a href="/bookings" class="user-view-all-link">View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <% if(upcomingBookings.length >0) {%>
+            <div class="user-upcoming-bookings">
+                <% for(let booking of upcomingBookings) {%>
+                    <div class="user-upcoming-card">
+                        <div class="user-upcoming-image">
+                            <% if(booking.listing && booking.listing.image && booking.listing.image.url) {%>
+                                <img src="<%= booking.listing.image.url%>" alt="<%= booking.listing.title%>">
+                            <% } else { %>
+                                <div class="user-no-image">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="user-upcoming-details">
+                            <div class="user-booking-title-row">
+                                <h3>
+                                    <%= booking.listing? booking.listing.title:"Property Unavailable"%>
+                                </h3>
+                                <span class="user-booking-status status-<%= booking.status%>">
+                                    <%= booking.status%>
+                                </span>
+                            </div>
+                            <p class="user-booking-location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <%= booking.listing? booking.listing.location:"Location unavailable"%>
+                            </p>
+                            <div class="user-booking-info">
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <%= new Date(booking.checkIn).toLocaleDateString("en-IN",{
+                                        day:"numeric",
+                                        month:"short",
+                                        year: "numeric"
+                                    })%>
+                                </span>
+                                <span>
+                                    <i class="fa-solid fa-users"></i>
+                                    <%= booking.guests%> Guests
+                                </span>
+                            </div>
+                            <div class="user-booking-footer">
+                                <p>Total Price:
+                                    <strong>
+                                        ₹<%= booking.totalPrice.toLocaleString("en-IN") %>
+                                    </strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        <% } else { %>
+
+        <% } %>
     </div>
 </div>
