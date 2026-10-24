@@ -54,3 +54,111 @@
     font-size: 38px;
     box-shadow: 0 8px 22px rgba(255, 56, 92, 0.08);
 }
+
+/* statiticks card */
+.user-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+.user-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.user-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.user-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    font-size: 23px;
+}
+
+.booking-icon {
+    color: #ff385c;
+    background-color: #fff0f3;
+}
+
+.trip-icon {
+    color: #2477d4;
+    background-color: #edf5ff;
+}
+
+.wishlist-icon {
+    color: #e84c85;
+    background-color: #fff0f6;
+}
+
+.user-stat-card p {
+    margin-bottom: 7px;
+    color: #717171;
+    font-size: 14px;
+}
+
+.user-stat-card h2 {
+    margin-bottom: 0;
+    color: #222222;
+    font-size: 30px;
+    font-weight: 750;
+}
+
+/* common dashboard section */
+.user-dashboard-section {
+    margin-bottom: 45px;
+}
+
+.user-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.user-section-heading h2 {
+    margin-bottom: 8px;
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.user-section-heading p {
+    margin-bottom: 0;
+    color: #717171;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.user-view-all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    color: #ff385c;
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+
+.user-view-all-link:hover {
+    gap: 12px;
+    color: #e31c5f;
+}
