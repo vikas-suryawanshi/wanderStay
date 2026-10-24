@@ -12,4 +12,34 @@
             <i class="fa-solid fa-suitcase-rolling"></i>
         </div>
     </div>
+    <!-- statitics -->
+    <div class="user-dashboard-stats">
+        <div class="user-stat-card">
+            <div class="user-stat-icon booking-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="">
+                <p>Total Bookings</p>
+                <h2><%= totalBookings%></h2>
+            </div>
+        </div>
+        <div class="user-stat-card">
+            <div class="user-stat-icon trip-icon">
+                <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <div class="">
+                <p>Upcoming Trips</p>
+                <h2><%= upcomingTrips%></h2>
+            </div>
+        </div>
+        <div class="user-stat-card">
+            <div class="user-stat-icon wishlist-icon">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="">
+                <p>Wishlist</p>
+                <h2><%= wishlistCount%></h2>
+            </div>
+        </div>
+    </div>
 </div>
