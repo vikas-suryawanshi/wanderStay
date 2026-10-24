@@ -37,6 +37,7 @@ The project currently includes **user authentication, listing management, review
 * 📅 Booking & Reservation System
 * ❤️ Wishlist
 * 👤 User Profile & Account Management
+* 🏠 Host Dashboard
 
 ---
 
@@ -166,7 +167,6 @@ I am continuously improving WanderStay and adding new features as I work on the 
 
 ## Future Plans
 
-* 🏠 Host Dashboard
 * 👤 User Dashboard
 * 📆 Booking Availability Calendar
 * 💳 Payment Integration
