@@ -11,7 +11,7 @@ module.exports.getAvailability = async(req,res)=>{
     const listing = await Listing.findById(id);
 
     if(!listing){
-        return res.status(400).json({
+        return res.status(404).json({
             error:"Listing not found."
         })
     }
