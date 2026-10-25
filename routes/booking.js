@@ -8,6 +8,9 @@ router.route("/listings/:id/book")
 .get(isLoggedIn,wrapAsync(bookingController.getBookingForm))
 .post(isLoggedIn,wrapAsync(bookingController.createBooking));
 
+router.route("/listings/:id/availability")
+.get(isLoggedIn,wrapAsync(bookingController.getAvailability));
+
 router.route("/bookings")
 .get(isLoggedIn,wrapAsync(bookingController.myBookings));
 
