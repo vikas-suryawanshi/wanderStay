@@ -8,8 +8,22 @@ module.exports.getBookingForm = async(req,res)=>{
 
 module.exports.getAvailability = async(req,res)=>{
     let {id} = req.params;
-    const listing = await
+    const listing = await Listing.findById(id);
+
+    if(!listing){
+        return res.status(400).json({
+            error:"Listing not found."
+        })
+    }
+    const bookings = await Booking.find({listing:id, status:{$ne:"cancelled"}}).select("checkIn checkOut");
+
+    const unAvailableDates = bookings.map(booking => ({
+        checkIn : booking.checkIn,
+        checkOut:booking.checkOut
+    }));
+    res.json({unAvailableDates});
 }
+
 
 module.exports.createBooking = async(req,res)=>{
     let listing = await Listing.findById(req.params.id);
