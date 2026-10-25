@@ -6,6 +6,11 @@ module.exports.getBookingForm = async(req,res)=>{
     res.render("listings/booking.ejs",{listings});
 };
 
+module.exports.getAvailability = async(req,res)=>{
+    let {id} = req.params;
+    const listing = await
+}
+
 module.exports.createBooking = async(req,res)=>{
     let listing = await Listing.findById(req.params.id);
     if(!listing){
