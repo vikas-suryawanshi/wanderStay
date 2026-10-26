@@ -168,7 +168,6 @@ I am continuously improving WanderStay and adding new features as I work on the 
 
 ## Future Plans
 
-* 📆 Booking Availability Calendar
 * 💳 Payment Integration
 * 🔔 Notifications System
 * 🧠 Property Recommendation System
