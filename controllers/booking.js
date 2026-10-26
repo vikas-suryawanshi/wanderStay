@@ -42,7 +42,7 @@ module.exports.createBooking = async(req,res)=>{
 
     if(checkIn>=checkOut){
         req.flash("error","Please select valid check-in and check-out dates.");
-        return res.redirect(`/listings/${req.params.id}`);
+        return res.redirect(`/listings/${req.params.id}/book`);
     }
 
     let existingBookings = await Booking.find({
