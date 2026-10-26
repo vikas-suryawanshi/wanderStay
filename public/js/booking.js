@@ -52,6 +52,24 @@ async function loadUnavailableDates() {
         const disableDate = (date)=> isUnavailable(date);
         checkInPicker.set("disable",[disableDate]);
         checkOutPicker.set("disable",[disableDate]);
+
+        checkInPicker.set("onChange",function(selectedDates){
+            if(selectedDates.length === 0) return;
+            const selectedCheckIn = selectedDates[0];
+            checkOutPicker.set("minDate",selectedCheckIn);
+
+            checkOutPicker.set("disable",[
+                function(date){
+                    return isUnavailable(date) || (
+                        date > selectedCheckIn && unavailableDates.some((booking)=> {
+                            const bookingStart = new Date(booking.checkIn);
+                            const bookingEnd = new Date(booking.checkOut);
+                            const start
+                        })
+                    )
+                }
+            ])
+        })
     } catch (error) {
         console.error("Availability loading error:",error);
     }
