@@ -84,8 +84,7 @@ async function loadUnavailableDates() {
                             bookingCheckOut.getDate()
                         );
                         return selectedStart < end &&
-                        selectedCheckout > start &&
-                        selectedCheckout < end ;
+                        selectedCheckout > start;
                     });
                 }
             ]);
