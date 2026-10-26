@@ -60,16 +60,36 @@ async function loadUnavailableDates() {
 
             checkOutPicker.set("disable",[
                 function(date){
-                    return isUnavailable(date) || (
-                        date > selectedCheckIn && unavailableDates.some((booking)=> {
-                            const bookingStart = new Date(booking.checkIn);
-                            const bookingEnd = new Date(booking.checkOut);
-                            const start
-                        })
-                    )
+                    const selectedCheckout = new Date(
+                        date.getFullYear(),
+                        date.getMonth(),
+                        date.getDate()
+                    );
+                    const selectedStart = new Date(
+                        selectedCheckIn.getFullYear(),
+                        selectedCheckIn.getMonth(),
+                        selectedCheckIn.getDate()
+                    );
+                    return unavailableDates.some((booking)=> {
+                        const bookingCheckIn = new Date(booking.checkIn);
+                        const bookingCheckOut = new Date(booking.checkOut);
+                        const start = new Date(
+                            bookingCheckIn.getFullYear(),
+                            bookingCheckIn.getMonth(),
+                            bookingCheckIn.getDate()
+                        );
+                        const end = new Date(
+                            bookingCheckOut.getFullYear(),
+                            bookingCheckOut.getMonth(),
+                            bookingCheckOut.getDate()
+                        );
+                        return selectedStart < end &&
+                        selectedCheckout > start &&
+                        selectedCheckout < end ;
+                    });
                 }
-            ])
-        })
+            ]);
+        });
     } catch (error) {
         console.error("Availability loading error:",error);
     }
