@@ -24,14 +24,16 @@
       </div>
       <div class="navbar-nav ms-auto align-items-md-center navbar-account">
         <a href="/listings/new" class="nav-link">Start Hosting</a>
-        <a href="/notifications" class="notification-nav-link" aria-lebel="Notifications" title="Notifications">
-          <i class="fa-regular fa-bell"></i>
-          <% if(unreadCount > 0) {%>
-            <span class="notification-badge">
-              <%= unreadCount%>
-            </span>
-          <% } %>
-        </a>
+        <% if(currUser) {%>
+          <a href="/notifications" class="notification-nav-link" aria-lebel="Notifications" title="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <% if(unreadCount > 0) {%>
+              <span class="notification-badge">
+                <%= unreadCount%>
+              </span>
+            <% } %>
+          </a>
+        <% } %>
         <% if(currUser) {%>
           <a class="profile-nav-link" href="/profile" aria-label="My Profile" title="My Profile">
             <% if(currUser.image && currUser.image.url) {%>
