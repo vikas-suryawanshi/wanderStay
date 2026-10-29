@@ -76,10 +76,18 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use((req,res,next)=>{
+app.use(async(req,res,next)=>{
     res.locals.success=req.flash("success");
     res.locals.error=req.flash("error");
     res.locals.currUser=req.user;
+    if(req.user){
+        res.locals.unreadCount = await Notification.countDocuments({
+            recipient:req.user._id,
+            isRead:false,
+        });
+    }else{
+        res.locals.unreadCount = 0;
+    }
     next();
 })
 
