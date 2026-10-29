@@ -22,6 +22,7 @@ app.engine("ejs",ejsMate);
 // require utils folder
 const wrapAsync=require("./utils/wrapAsync.js");
 const ExpressError=require("./utils/ExpressError.js");
+const Notification = require("./models/notification.js");
 // require routes folder
 const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
