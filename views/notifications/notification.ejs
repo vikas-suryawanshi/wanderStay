@@ -13,16 +13,37 @@
             </button>
         <% } %>
     </div>
-    <% if(notifications.length === 0) {%>
-        <p>You don't have any notification yet.</p>
-    <% } else {%>
-        <% for(const notification of notifications) {%>
-            <div class="notification-item">
-                <p><%= notification.message%></p>
-                <small>
-                    <%= notification.createdAt.toLocaleString()%>
-                </small>
+    <div class="notification-list">
+        <% if(notifications.length === 0) {%>
+            <!-- empty state -->
+            <div class="notification-empty">
+                <i class="fa-regular fa-bell"></i>
+                <h3>No notification yet</h3>
+                <p>when you recive notifications, they will appear here.</p>
             </div>
+        <% } else {%>
+            <% for(const notification of notifications) {%>
+                <a href="<%= notification.link || '/notifications'%>" class="notification-item <%= notification.isRead? 'read':'unread'%>">
+
+                </a>
+                <div class="notification-icon">
+                    <% if(notification.type === "booking") {%>
+                        <i class="fa-regular fa-calendar-check"></i>
+                    <% } else if (notification.type === "cancellation"){%>
+                        <i class="fa-regular fa-calendar-xmark"></i>
+                    <% } else if (notification.type === "booking_update") {%>
+                        <i class="fa-solid fa-rotate"></i>
+                    <% } else{ %>
+                        <i class="fa-regular fa-bell"></i>
+                    <% } %>
+                </div>
+                <!-- notification content -->
+                <div class="notification-item">
+                    <p><%= notification.message%></p>
+                    <small>
+                        <%= notification.createdAt.toLocaleString()%>
+                    </small>
+                </div>
+            <% } %>
         <% } %>
-    <% } %>
 </div>
