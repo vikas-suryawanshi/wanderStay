@@ -61,3 +61,54 @@
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
     color: #222;
 }
+
+.notification-item.unread {
+    background-color: #fff5f6;
+    border-color: #ffdce2;
+}
+
+.notification-item.read {
+    background-color: #fff;
+}
+
+.notification-icon {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff0f2;
+    color: #ff385c;
+    border-radius: 50%;
+}
+
+.notification-icon i {
+    font-size: 1.2rem;
+}
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+.notification-message {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 6px;
+    line-height: 1.5;
+}
+
+.notification-time {
+    font-size: 0.8rem;
+    color: #717171;
+}
+
+.unread-dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    background-color: #ff385c;
+    border-radius: 50%;
+}
+
