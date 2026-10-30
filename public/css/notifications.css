@@ -36,3 +36,28 @@
     color:#d90b3e;
     text-decoration: underline;
 }
+
+/* notification list */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.notification-item{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1px solid #ebebeb;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #222;
+    transition: all 0.25s ease;
+}
+
+.notification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    color: #222;
+}
