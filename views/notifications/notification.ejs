@@ -1,7 +1,18 @@
 <%-layout("/layouts/boilerplate.ejs") %>
 
-<div class="container mt-4">
-    <h2>My Notifications</h2>
+<div class="container notification-page">
+    <!-- page header -->
+    <div class="notification-header">
+        <div>
+            <h2>Notifications</h2>
+            <p>Stay updated with your bookings and activities.</p>
+        </div>
+        <% if(notifications.some(n => !n.isRead)) {%>
+            <button type="button" class="mark-all-read-btn">
+                Mark as all read
+            </button>
+        <% } %>
+    </div>
     <% if(notifications.length === 0) {%>
         <p>You don't have any notification yet.</p>
     <% } else {%>
