@@ -112,3 +112,28 @@
     border-radius: 50%;
 }
 
+.notification-empty {
+    text-align: center;
+    padding: 70px 20px;
+    border: 1px solid #ebebeb;
+    border-radius: 16px;
+    background-color: #fff;
+}
+
+.notification-empty i {
+    font-size: 3rem;
+    color: #ff385c;
+    margin-bottom: 18px;
+}
+
+.notification-empty h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 8px;
+}
+.notification-empty p {
+    font-size: 0.9rem;
+    color: #717171;
+    margin: 0;
+}
