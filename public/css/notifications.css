@@ -1,0 +1,38 @@
+.notification-page{
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.notification-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 6px;
+}
+.notification-header p {
+    color: #717171;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.mark-all-read-btn {
+    border: none;
+    background: transparent;
+    color: #ff385c;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.mark-all-read-btn :hover {
+    color:#d90b3e;
+    text-decoration: underline;
+}
