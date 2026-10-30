@@ -16,6 +16,7 @@
 @import url("./myProperties.css");
 @import url("./earningSummary.css");
 @import url("./userDashboard.css");
+@import url("./notifications.css");
 
 .btn{
     display: flex;
