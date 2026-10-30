@@ -9,7 +9,7 @@
         </div>
         <% if(notifications.some(n => !n.isRead)) {%>
             <button type="button" class="mark-all-read-btn">
-                Mark as all read
+                Mark all as read
             </button>
         <% } %>
     </div>
@@ -19,7 +19,7 @@
             <div class="notification-empty">
                 <i class="fa-regular fa-bell"></i>
                 <h3>No notification yet</h3>
-                <p>when you recive notifications, they will appear here.</p>
+                <p>When you recive notifications, they will appear here.</p>
             </div>
         <% } else {%>
             <% for(const notification of notifications) {%>
@@ -47,7 +47,7 @@
                                 month:"short",
                                 year:"numeric",
                                 hour:"2-digit",
-                                minute:"2-digit",
+                                minute:"2-digit"
                             })%>
                         </small>
                     </div>
