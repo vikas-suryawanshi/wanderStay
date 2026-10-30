@@ -137,3 +137,46 @@
     color: #717171;
     margin: 0;
 }
+
+/* Responsive Design */
+
+@media (max-width: 576px) {
+
+    .notification-page {
+        margin: 25px auto;
+        padding: 0 14px;
+    }
+
+    .notification-header {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 22px;
+    }
+
+    .notification-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .notification-item {
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .notification-icon {
+        min-width: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .notification-message {
+        font-size: 0.88rem;
+    }
+
+    .notification-time {
+        font-size: 0.75rem;
+    }
+
+    .notification-empty {
+        padding: 50px 15px;
+    }
+}
