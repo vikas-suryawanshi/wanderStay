@@ -25,25 +25,38 @@
             <% for(const notification of notifications) {%>
                 <a href="<%= notification.link || '/notifications'%>" class="notification-item <%= notification.isRead? 'read':'unread'%>">
 
-                </a>
-                <div class="notification-icon">
-                    <% if(notification.type === "booking") {%>
-                        <i class="fa-regular fa-calendar-check"></i>
-                    <% } else if (notification.type === "cancellation"){%>
-                        <i class="fa-regular fa-calendar-xmark"></i>
-                    <% } else if (notification.type === "booking_update") {%>
-                        <i class="fa-solid fa-rotate"></i>
-                    <% } else{ %>
-                        <i class="fa-regular fa-bell"></i>
+                    <div class="notification-icon">
+                        <% if(notification.type === "booking") {%>
+                            <i class="fa-regular fa-calendar-check"></i>
+                        <% } else if (notification.type === "cancellation"){%>
+                            <i class="fa-regular fa-calendar-xmark"></i>
+                        <% } else if (notification.type === "booking_update") {%>
+                            <i class="fa-solid fa-rotate"></i>
+                        <% } else{ %>
+                            <i class="fa-regular fa-bell"></i>
+                        <% } %>
+                    </div>
+                    <!-- notification content -->
+                    <div class="notification-content">
+                        <p class="notification-message">
+                            <%= notification.message%>
+                        </p>
+                        <small class="notification-time">
+                            <%= notification.createdAt.toLocaleString("en-IN",{
+                                day:"2-digit",
+                                month:"short",
+                                year:"numeric",
+                                hour:"2-digit",
+                                minute:"2-digit",
+                            })%>
+                        </small>
+                    </div>
+                    <!-- unread indicator -->
+                    <% if(!notification.isRead) {%>
+                        <span class="unread-dot"></span>
                     <% } %>
-                </div>
-                <!-- notification content -->
-                <div class="notification-item">
-                    <p><%= notification.message%></p>
-                    <small>
-                        <%= notification.createdAt.toLocaleString()%>
-                    </small>
-                </div>
+                </a>
             <% } %>
         <% } %>
+    </div>
 </div>
