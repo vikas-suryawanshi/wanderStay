@@ -8,9 +8,11 @@
             <p>Stay updated with your bookings and activities.</p>
         </div>
         <% if(notifications.some(n => !n.isRead)) {%>
-            <button type="button" class="mark-all-read-btn">
-                Mark all as read
-            </button>
+            <form action="/notifications/mark-all-read" method="post">
+                <button type="button" class="mark-all-read-btn">
+                    Mark all as read
+                </button>
+            </form>
         <% } %>
     </div>
     <div class="notification-list">
