@@ -138,6 +138,19 @@
     margin: 0;
 }
 
+.explore-stays-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    padding: 12px 22px;
+    background-color: #ff385c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
 /* Responsive Design */
 
 @media (max-width: 576px) {
