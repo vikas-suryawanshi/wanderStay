@@ -120,7 +120,7 @@
     background-color: #fff;
 }
 
-.notification-empty i {
+.notification-empty > i {
     font-size: 3rem;
     color: #ff385c;
     margin-bottom: 18px;
