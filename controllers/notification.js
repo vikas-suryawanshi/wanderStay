@@ -7,7 +7,7 @@ module.exports.getNotifications = async (req,res)=>{
 
 module.exports.markAsRead = async (req,res)=>{
     let {id} = req.params;
-    const notifications = await Notification.findById({_id:id , recipient:req.params._id});
+    const notifications = await Notification.findOne({_id:id , recipient:req.user._id});
     if(!notifications){
         req.flash("error","not found notifications");
         return res.redirect("/profile");
