@@ -10,7 +10,9 @@ module.exports.markAsRead = async (req,res)=>{
     const notifications = await Notification.findOne({_id:id , recipient:req.user._id});
     if(!notifications){
         req.flash("error","not found notifications");
-        return res.redirect("/profile");
+        return res.redirect("/notifications");
     }
-    
-}
+    notifications.isRead = true;
+    await notifications.save();
+    return res.redirect(notifications.link || "/notifications");
+};
