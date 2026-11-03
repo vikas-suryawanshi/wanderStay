@@ -29,7 +29,7 @@
             </div>
         <% } else {%>
             <% for(const notification of notifications) {%>
-                <a href="<%= notification.link || '/notifications'%>" class="notification-item <%= notification.isRead? 'read':'unread'%>">
+                <form action="/notifications/<%= notification._id%>/read" class="notification-item <%= notification.isRead? 'read':'unread'%>">
                     <div class="notification-icon">
                         <% if(notification.type === "booking") {%>
                             <i class="fa-regular fa-calendar-check"></i>
@@ -60,7 +60,7 @@
                     <% if(!notification.isRead) {%>
                         <span class="unread-dot"></span>
                     <% } %>
-                </a>
+                </>
             <% } %>
         <% } %>
     </div>
