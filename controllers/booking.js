@@ -26,7 +26,7 @@ module.exports.getAvailability = async(req,res)=>{
 
 
 module.exports.createBooking = async(req,res)=>{
-    let listing = await Listing.findById(req.params.id).populate(owner);
+    let listing = await Listing.findById(req.params.id).populate("owner");
     if(!listing){
         req.flash("error","This listing is no longer available.");
         return res.redirect("/listings");
@@ -62,7 +62,7 @@ module.exports.createBooking = async(req,res)=>{
 
     let booking = new Booking({
         user:user,
-        listing:listing,
+        listing:listing._id,
         checkIn:checkIn,
         checkOut:checkOut,
         guests: guests,
