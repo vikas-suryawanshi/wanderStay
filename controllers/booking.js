@@ -78,8 +78,11 @@ module.exports.createBooking = async(req,res)=>{
         link:`/bookings/${booking._id}`,
     }),
     await Notification.create({
-        
-    })
+        recipient:listing.owner._id,
+        type:"booking",
+        message:"You have received booking!",
+        link:`/host/bookings/${booking._id}`
+    }),
     req.flash("success","Your booking was created successfully!");
     return res.redirect(`/listings/${req.params.id}`);
 }
