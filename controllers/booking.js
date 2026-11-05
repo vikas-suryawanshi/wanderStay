@@ -26,7 +26,7 @@ module.exports.getAvailability = async(req,res)=>{
 
 
 module.exports.createBooking = async(req,res)=>{
-    let listing = await Listing.findById(req.params.id);
+    let listing = await Listing.findById(req.params.id).populate(owner);
     if(!listing){
         req.flash("error","This listing is no longer available.");
         return res.redirect("/listings");
