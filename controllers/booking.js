@@ -111,7 +111,7 @@ module.exports.showBooking = async(req,res)=>{
 module.exports.cancelBooking = async(req,res)=>{
     let {id} = req.params;
     let user = req.user._id;
-    const booking = await Booking.findOne({_id:id,user:user})
+    const booking = await Booking.findOne({_id:id,user:user}).populate({path:"listing",populate:{path:"owner"}});
     if(!booking){
         req.flash("error", "Booking not found. Please try again.");
         return res.redirect(`/bookings`);
