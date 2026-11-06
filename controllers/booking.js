@@ -148,6 +148,9 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
         if(status === "confirmed" || status === "cancelled"){
             booking.status = status;
             await booking.save();
+            if(status === "cancelled"){
+                
+            }
             req.flash("success","Booking status updated successfully.");
         }else{
             req.flash("error","This status change is not allowed.");
