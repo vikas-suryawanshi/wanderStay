@@ -119,6 +119,12 @@ module.exports.cancelBooking = async(req,res)=>{
     if(booking.status === "pending" || booking.status === "confirmed"){
         booking.status = "cancelled";
         await booking.save();
+        await Notification.create({
+            recipient:booking.listing.owner._id,
+            type:"cancellation",
+            message:"A guest has cancelled their booking.",
+            link:`/host/bookings/${booking._id}`,
+        })
         req.flash("success", "Your booking has been cancelled successfully.");
     }else{
         req.flash("error", "This booking cannot be cancelled.");
