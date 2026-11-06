@@ -140,6 +140,7 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
         req.flash("error","Booking not found. Please try again.");
         return res.redirect(`/host/bookings/${req.params.id}`);
     }
+    let previousStatus = booking.status;
     if(booking.status === status){
         req.flash("error","The booking is already in this status.");
         return res.redirect(`/host/bookings/${req.params.id}`);
@@ -163,6 +164,14 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
         }
     }else {
         req.flash("error", "This status change is not allowed.");
+    }
+    if(status === "cancelled" && previousStatus !== "cancelled" && booking.status === "cancelled"){
+        await Notification.create({
+            recipient:booking.user._id,
+            type:"cancellation",
+            message:"Your reservation has been cancelled by the host. Please review your booking details.",
+            link:`/bookings/${booking._id}`,
+        });
     }
     res.redirect(`/host/bookings/${req.params.id}`);
 }
