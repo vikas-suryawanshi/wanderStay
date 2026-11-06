@@ -135,7 +135,7 @@ module.exports.cancelBooking = async(req,res)=>{
 module.exports.updateHostBookingStatus = async(req,res)=>{
     let {id} = req.params;
     let status = req.body.status;
-    const booking = await Booking.findById(id);
+    const booking = await Booking.findById(id).populate("user");
     if(!booking){
         req.flash("error","Booking not found. Please try again.");
         return res.redirect(`/host/bookings/${req.params.id}`);
