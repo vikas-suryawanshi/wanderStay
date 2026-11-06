@@ -135,10 +135,14 @@ module.exports.cancelBooking = async(req,res)=>{
 module.exports.updateHostBookingStatus = async(req,res)=>{
     let {id} = req.params;
     let status = req.body.status;
-    const booking = await Booking.findById(id).populate("user");
+    const booking = await Booking.findById(id).populate("user").populate({path:"listing",populate:{path:"owner"}});
     if(!booking){
         req.flash("error","Booking not found. Please try again.");
         return res.redirect(`/host/bookings/${req.params.id}`);
+    }
+    if(booking.listing.owner._id.toString() !== req.user._id.toString()){
+        req.flash("error","You are not authorized to update this booking.");
+        return res.redirect("/host/bookings");
     }
     let previousStatus = booking.status;
     if(booking.status === status){
