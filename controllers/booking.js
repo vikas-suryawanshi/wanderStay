@@ -182,7 +182,7 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
             recipient:booking.user._id,
             type:"booking_update",
             message:"Great news! Your reservation confirmed by the host.",
-            link:`/bookings/${booking_id}`,
+            link:`/bookings/${booking._id}`,
         });
     };
     res.redirect(`/host/bookings/${req.params.id}`);
