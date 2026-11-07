@@ -178,7 +178,9 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
         });
     }
     if(status === "confirmed" && previousStatus === "pending" && booking.status === "confirmed"){
-        
+        await Notification.create({
+            
+        })
     }
     res.redirect(`/host/bookings/${req.params.id}`);
 }
