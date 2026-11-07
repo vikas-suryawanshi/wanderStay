@@ -177,6 +177,9 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
             link:`/bookings/${booking._id}`,
         });
     }
+    if(status === "confirmed" && previousStatus === "pending" && booking.status === "confirmed"){
+        
+    }
     res.redirect(`/host/bookings/${req.params.id}`);
 }
 
