@@ -181,7 +181,7 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
         await Notification.create({
             recipient:booking.user._id,
             type:"booking_update",
-            message:"Great news! Your reservation confirmed by the host.",
+            message:"Great news! Your reservation has been confirmed by the host.",
             link:`/bookings/${booking._id}`,
         });
     };
