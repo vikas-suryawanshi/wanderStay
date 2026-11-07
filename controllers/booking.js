@@ -179,9 +179,12 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
     }
     if(status === "confirmed" && previousStatus === "pending" && booking.status === "confirmed"){
         await Notification.create({
-            
-        })
-    }
+            recipient:booking.user._id,
+            type:"booking_update",
+            message:"Great news! Your reservation confirmed by the host.",
+            link:`/bookings/${booking_id}`,
+        });
+    };
     res.redirect(`/host/bookings/${req.params.id}`);
 }
 
