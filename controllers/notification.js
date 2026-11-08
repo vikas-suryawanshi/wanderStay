@@ -24,4 +24,7 @@ module.exports.markAllRead = async (req,res)=> {
         req.flash("error","notifications not found");
         return res.redirect("/notifications");
     }
+    notifications.isRead = true;
+    await notifications.save();
+    res.redirect(notifications.link || "/notifications");
 }
