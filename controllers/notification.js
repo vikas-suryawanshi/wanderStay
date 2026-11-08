@@ -22,9 +22,9 @@ module.exports.markAllRead = async (req,res)=> {
         {
             recipient:req.user._id,
             isRead:false,
-        }
+        },
         {
             $set: {isRead:true},
         }
-    )
+    );
 };
