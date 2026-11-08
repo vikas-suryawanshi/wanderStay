@@ -16,3 +16,7 @@ module.exports.markAsRead = async (req,res)=>{
     await notifications.save();
     return res.redirect(notifications.link || "/notifications");
 };
+
+module.exports.markAllRead = async (req,res)=> {
+    let {id}
+}
