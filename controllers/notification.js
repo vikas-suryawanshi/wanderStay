@@ -18,13 +18,13 @@ module.exports.markAsRead = async (req,res)=>{
 };
 
 module.exports.markAllRead = async (req,res)=> {
-    let {id} = req.params;
-    const notifications = await Notification.find(id);
-    if(!notifications){
-        req.flash("error","notifications not found");
-        return res.redirect("/notifications");
-    }
-    notifications.isRead = true;
-    await notifications.save();
-    res.redirect(notifications.link || "/notifications");
-}
+    await Notification.updateMany(
+        {
+            recipient:req.user._id,
+            isRead:false,
+        }
+        {
+            $set: {isRead:true},
+        }
+    )
+};
