@@ -9,4 +9,6 @@ router.route("/notifications")
 
 router.route("/notifications/:id/read")
 .post(isLoggedIn,wrapAsync(notificationController.markAsRead));
+
+router.route("/notifications/:id/markAllRead")
 module.exports = router;
