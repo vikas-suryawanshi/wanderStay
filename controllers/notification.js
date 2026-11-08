@@ -18,5 +18,10 @@ module.exports.markAsRead = async (req,res)=>{
 };
 
 module.exports.markAllRead = async (req,res)=> {
-    let {id}
+    let {id} = req.params;
+    const notifications = await Notification.find(id);
+    if(!notifications){
+        req.flash("error","notifications not found");
+        return res.redirect("/notifications");
+    }
 }
