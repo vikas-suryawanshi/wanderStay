@@ -170,7 +170,6 @@ I am continuously improving WanderStay and adding new features as I work on the 
 ## Future Plans
 
 * 💳 Payment Integration
-* 🔔 Notifications System
 * 🧠 Property Recommendation System
 * 📊 Host Property Analytics
 * 🤖 AI-based travel features
