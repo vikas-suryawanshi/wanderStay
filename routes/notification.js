@@ -7,9 +7,10 @@ const notificationController = require("../controllers/notification.js");
 router.route("/notifications")
 .get(isLoggedIn,wrapAsync(notificationController.getNotifications));
 
+router.route("/notifications/read-all")
+.post(isLoggedIn,wrapAsync(notificationController.markAllRead));
+
 router.route("/notifications/:id/read")
 .post(isLoggedIn,wrapAsync(notificationController.markAsRead));
 
-router.route("/notifications/read-all")
-.post(isLoggedIn,wrapAsync(notificationController.markAllRead));
 module.exports = router;
