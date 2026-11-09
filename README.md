@@ -40,6 +40,7 @@ The project currently includes **user authentication, listing management, review
 * 🏠 Host Dashboard
 * 👤 User Dashboard
 * 📆 Booking Availability Calendar
+* 🔔 Notifications System
 
 ---
 
