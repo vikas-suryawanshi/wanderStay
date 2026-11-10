@@ -125,7 +125,7 @@ module.exports.cancelBooking = async(req,res)=>{
             message:"A guest has cancel their reservation.",
             link:`/host/bookings/${booking._id}`,
         })
-        req.flash("success", "Your booking has been cancelled successfully.");
+        req.flash("success", "Your reservation has been cancelled by succesfully.");
     }else{
         req.flash("error", "This booking cannot be cancelled.");
     }
