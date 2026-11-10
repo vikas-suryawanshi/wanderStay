@@ -127,7 +127,7 @@ module.exports.cancelBooking = async(req,res)=>{
         })
         req.flash("success", "Your reservation has been cancelled by succesfully.");
     }else{
-        req.flash("error", "This booking cannot be cancelled.");
+        req.flash("error", "This reservation cannot be canclled.");
     }
     res.redirect(`/bookings/${req.params.id}`);
 }
