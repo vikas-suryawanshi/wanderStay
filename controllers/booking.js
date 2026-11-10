@@ -74,7 +74,7 @@ module.exports.createBooking = async(req,res)=>{
     await Notification.create({
         recipient:user,
         type:"booking",
-        message:"Your booking has been successfully created. Thank you for choosing WanderStay!",
+        message:"Your reservation has been succesfully created. Thank you for choosing wanderStay!",
         link:`/bookings/${booking._id}`,
     });
     await Notification.create({
