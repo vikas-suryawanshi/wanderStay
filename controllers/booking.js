@@ -80,7 +80,7 @@ module.exports.createBooking = async(req,res)=>{
     await Notification.create({
         recipient:listing.owner._id,
         type:"booking",
-        message:"You have received a new booking request! Review the reservation details and manage your booking.",
+        message:"New booking request recived. Please review the details!",
         link:`/host/bookings/${booking._id}`
     });
     req.flash("success","Your booking was created successfully!");
