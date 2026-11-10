@@ -83,7 +83,7 @@ module.exports.createBooking = async(req,res)=>{
         message:"New booking request recived. Please review the details!",
         link:`/host/bookings/${booking._id}`
     });
-    req.flash("success","Your booking was created successfully!");
+    req.flash("success","Your reservation has been confirmed by succesfully.");
     return res.redirect(`/listings/${req.params.id}`);
 }
 
