@@ -122,7 +122,7 @@ module.exports.cancelBooking = async(req,res)=>{
         await Notification.create({
             recipient:booking.listing.owner._id,
             type:"cancellation",
-            message:"A guest has cancelled their reservation. Please review the booking details.",
+            message:"A guest has cancel their reservation.",
             link:`/host/bookings/${booking._id}`,
         })
         req.flash("success", "Your booking has been cancelled successfully.");
