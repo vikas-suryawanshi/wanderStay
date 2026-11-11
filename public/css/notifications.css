@@ -49,28 +49,37 @@
 }
 
 .notification-item{
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 18px 20px;
+    gap: 18px;
+    padding: 20px;
+    background: #fff;
     border: 1px solid #ebebeb;
-    border-radius: 14px;
-    text-decoration: none;
+    border-radius: 16px;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
     color: #222;
     transition: all 0.25s ease;
 }
 
 .notification-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+    background-color: #dcdcdc;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     color: #222;
 }
 
 .notification-item.unread {
-    background-color: #fff5f6;
-    border-color: #ffdce2;
+    background-color: #fff8f9;
+    border-color: #ffdce3;
 }
 
+.notification-item.unread:hover {
+    background: #fff3f5;
+    border-color: #ffb9c8;
+}
 .notification-item.read {
     background-color: #fff;
 }
