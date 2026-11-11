@@ -187,14 +187,15 @@
 @media (max-width: 576px) {
 
     .notification-page {
-        margin: 25px auto;
+        margin: 30px auto;
         padding: 0 14px;
     }
 
     .notification-header {
         align-items: flex-start;
         flex-direction: column;
-        margin-bottom: 22px;
+        margin-bottom: 24px;
+        gap: 16px;
     }
 
     .notification-header h2 {
