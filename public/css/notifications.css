@@ -119,35 +119,43 @@
 }
 
 .unread-dot {
-    width: 10px;
-    height: 10px;
-    min-width: 10px;
-    background-color: #ff385c;
+    flex-shrink: 0;
+    width: 9px;
+    height: 9px;
+    background: #ff385c;
+    box-shadow: 0 0 0 4px #ffe7ec;
     border-radius: 50%;
 }
 
 .notification-empty {
     text-align: center;
-    padding: 70px 20px;
+    padding: 75px 20px;
     border: 1px solid #ebebeb;
-    border-radius: 16px;
-    background-color: #fff;
+    border-radius: 18px;
+    background: #fff;
 }
 
 .notification-empty > i {
-    font-size: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    font-size: 2rem;
+    background: #fff0f3;
     color: #ff385c;
-    margin-bottom: 18px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .notification-empty h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: #222;
-    margin-bottom: 8px;
+    margin: 0 0 10px;
 }
 .notification-empty p {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: #717171;
     margin: 0;
 }
