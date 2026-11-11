@@ -108,13 +108,14 @@
     font-size: 0.95rem;
     font-weight: 600;
     color: #222;
-    margin: 0 0 6px;
+    margin: 0 0 7px;
     line-height: 1.5;
 }
 
 .notification-time {
+    display: block;
     font-size: 0.8rem;
-    color: #717171;
+    color: #858585;
 }
 
 .unread-dot {
