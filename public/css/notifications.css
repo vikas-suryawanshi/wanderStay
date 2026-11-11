@@ -199,29 +199,47 @@
     }
 
     .notification-header h2 {
-        font-size: 1.5rem;
+        font-size: 1.65rem;
     }
 
-    .notification-item {
+    .notification-header p{
+        font-size: 0.88rem;
+    }
+    .mark-all-read-btn {
+        padding: 9px 13px;
+    }
+    .notification-list {
         gap: 12px;
-        padding: 14px;
+    }
+    .notification-item {
+        gap: 13px;
+        padding: 15px;
+        border-radius: 13px;
     }
 
     .notification-icon {
-        min-width: 42px;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
     }
 
     .notification-message {
-        font-size: 0.88rem;
+        font-size: 0.87rem;
     }
 
     .notification-time {
-        font-size: 0.75rem;
+        font-size: 0.74rem;
     }
 
+    .notification-empty > i{
+        width: 65px;
+        height: 65px;
+        font-size: 1.7rem;
+    }
     .notification-empty {
-        padding: 50px 15px;
+        padding: 55px 15px;
+    }
+    .notification-empty h3 {
+        font-size: 1.2rem;
     }
 }
