@@ -85,19 +85,19 @@
 }
 
 .notification-icon {
-    min-width: 48px;
-    width: 48px;
-    height: 48px;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff0f2;
+    background: #fff0f3;
     color: #ff385c;
-    border-radius: 50%;
+    border-radius: 14px;
 }
 
 .notification-icon i {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 .notification-content {
