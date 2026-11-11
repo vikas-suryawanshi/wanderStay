@@ -24,15 +24,19 @@
     margin: 0;
 }
 .mark-all-read-btn {
-    border: none;
-    background: transparent;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 16px;
     color: #ff385c;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
 }
 .mark-all-read-btn :hover {
+    background: #fff0f3;
+    border-color: #ff385c;
     color:#d90b3e;
     text-decoration: underline;
 }
