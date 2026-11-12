@@ -16,6 +16,8 @@ const startBookingSchedular = ()=>{
                 }
             );
             console.log(`${result.modifieldCount} bookings automatically completed.`);
+        } catch(err) {
+            console.log("Booking scheduler error:",err);
         }
     });
-}
+};
