@@ -21,3 +21,5 @@ const startBookingSchedular = ()=>{
         }
     });
 };
+
+module.exports = startBookingSchedular;
