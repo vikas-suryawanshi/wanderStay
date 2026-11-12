@@ -11,7 +11,11 @@ const startBookingSchedular = ()=>{
                     status:"confirmed",
                     checkOut: {$it: today}
                 },
-            )
+                {
+                    $set: {status: "completed"}
+                }
+            );
+            console.log(`${result.modifieldCount} bookings automatically completed.`);
         }
     });
 }
