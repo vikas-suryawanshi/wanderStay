@@ -10,13 +10,13 @@ const startBookingSchedular = ()=>{
             const result = await Booking.updateMany(
                 {
                     status:"confirmed",
-                    checkOut: {$it: today}
+                    checkOut: {$lt:today}
                 },
                 {
                     $set: {status: "completed"}
                 }
             );
-            console.log(`${result.modifieldCount} bookings automatically completed.`);
+            console.log(`${result.modifiedCount} bookings automatically completed.`);
         } catch(err) {
             console.log("Booking scheduler error:",err);
         }
