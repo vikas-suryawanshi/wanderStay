@@ -45,6 +45,8 @@ const User = require("./models/user.js");
 main()
 .then(()=>{
     console.log("connected succesfully");
+    startBookingSchedular();
+    console.log("Booking schedular started succesfully");
 }).catch((err)=>{
     console.log(err);
 })
