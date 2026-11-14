@@ -2,7 +2,7 @@ const cron = require("node-cron");
 const Booking = require("../models/booking");
 
 const startBookingSchedular = ()=>{
-    cron.schedule ("5 0 * * *", async ()=>{
+    cron.schedule ("* * * * *", async ()=>{
         try {
             const today = new Date();
             today.setHours(0,0,0,0);
