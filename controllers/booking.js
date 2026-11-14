@@ -164,7 +164,7 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
             req.flash("success","Booking status updated successfully.");
         }
         else{
-            req.flash("error","Completed status is update automatically after checkout.");
+            req.flash("error","Booking will be marked as completed automatically after checkout.");
         }
     }else {
         req.flash("error", "This status change is not allowed.");
