@@ -187,10 +187,6 @@ module.exports.updateHostBookingStatus = async(req,res)=>{
     };
     res.redirect(`/host/bookings/${req.params.id}`);
 }
-
-
-
-
 module.exports.hostBookings = async(req,res)=>{
     let owner = req.user._id;
     const hostListings = await Listing.find({owner:owner});
