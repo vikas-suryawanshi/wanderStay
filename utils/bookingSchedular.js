@@ -10,16 +10,21 @@ const startBookingSchedular = ()=>{
                 status:"confirmed", checkOut:{ $lt: today}.populate("user").populate({path:"listing", populate: {path: "owner"}
                 })
             });
-            const result = await Booking.updateMany(
-                {
-                    status:"confirmed",
-                    checkOut: {$lt:today}
-                },
-                {
-                    $set: {status: "completed"}
+            let completedCount = 0;
+            for(const booking of bookings){
+                const result = await Booking.updateOne(
+                    {
+                        _id: booking._id,
+                        checkOut: {$lt:today}
+                    },
+                    {
+                        $set: {status: "completed"}
+                    }
+                );
+                if(result.modifiedCount === 1){
+                    
                 }
-            );
-            console.log(`${result.modifiedCount} bookings automatically completed.`);
+            }
         } catch(err) {
             console.log("Booking scheduler error:",err);
         }
