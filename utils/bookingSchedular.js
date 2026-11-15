@@ -22,7 +22,11 @@ const startBookingSchedular = ()=>{
                     }
                 );
                 if(result.modifiedCount === 1){
-                    
+                    await Notification.create ([
+                        {
+                            
+                        }
+                    ])
                 }
             }
         } catch(err) {
