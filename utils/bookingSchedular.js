@@ -6,7 +6,9 @@ const startBookingSchedular = ()=>{
         try {
             const today = new Date();
             today.setHours(0,0,0,0);
-
+            const bookings = await Booking.find({
+                
+            })
             const result = await Booking.updateMany(
                 {
                     status:"confirmed",
