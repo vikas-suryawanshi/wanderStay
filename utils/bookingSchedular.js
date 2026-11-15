@@ -24,7 +24,9 @@ const startBookingSchedular = ()=>{
                 if(result.modifiedCount === 1){
                     await Notification.create ([
                         {
-                            
+                            recipient: booking.user._id,
+                            type:"booking_update",
+                            message:"Your stay has been succesfully completed. Thank you for choosing WanderStay!"
                         }
                     ])
                 }
