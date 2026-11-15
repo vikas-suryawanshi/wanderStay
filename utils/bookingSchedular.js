@@ -26,14 +26,16 @@ const startBookingSchedular = ()=>{
                         {
                             recipient: booking.user._id,
                             type:"booking_update",
-                            message:"Your stay has been succesfully completed. Thank you for choosing WanderStay!"
+                            message:"Your stay has been succesfully completed. Thank you for choosing WanderStay!",
+                            link: `/bookings/${booking._id}`,
                         },
                         {
                             recipient:booking.listing.owner._id,
                             type:"booking_update",
-                            message:"A reseration for your property has been succesfully completed."
+                            message:"A reseration for your property has been succesfully completed.",
+                            link:`/host/bookings/${booking._id}`,
                         }
-                    ])
+                    ]);
                 }
             }
         } catch(err) {
