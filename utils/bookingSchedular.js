@@ -32,7 +32,7 @@ const startBookingSchedular = ()=>{
                         {
                             recipient:booking.listing.owner._id,
                             type:"booking_update",
-                            message:"A reseration for your property has been succesfully completed.",
+                            message:"The reservation for your property has been successfully completed. Thank you for hosting with WanderStay!",
                             link:`/host/bookings/${booking._id}`,
                         }
                     ]);
