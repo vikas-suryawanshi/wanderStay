@@ -26,7 +26,7 @@ const startBookingSchedular = ()=>{
                         {
                             recipient: booking.user._id,
                             type:"booking_update",
-                            message:"Your stay has been succesfully completed. Thank you for choosing WanderStay!",
+                            message:"Your reservation has been successfully completed. Thank you for choosing WanderStay. we hope you had a wonderful stay!",
                             link: `/bookings/${booking._id}`,
                         },
                         {
