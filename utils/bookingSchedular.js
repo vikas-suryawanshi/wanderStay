@@ -36,7 +36,6 @@ const startBookingSchedular = ()=>{
                             link:`/host/bookings/${booking._id}`,
                         }
                     ]);
-                    completedCount++;
                     console.log(`${completedCount} bookings automatically completed.`)
                 }
             }
