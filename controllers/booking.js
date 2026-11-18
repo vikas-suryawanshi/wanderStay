@@ -209,9 +209,3 @@ module.exports.showHostBooking = async(req,res)=>{
     }
     res.render("bookings/hostBookingsDetails",{booking});
 }
-
-
-
-
-
-
