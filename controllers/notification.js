@@ -30,7 +30,3 @@ module.exports.markAllRead = async (req,res)=> {
     req.flash("success","All notifications mark as read.")
     res.redirect("/notifications");
 };
-
-
-
-
