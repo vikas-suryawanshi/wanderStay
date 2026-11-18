@@ -42,12 +42,3 @@ module.exports.renderMyEarningSummary = async(req,res)=>{
     ).reduce((total,booking) => total+booking.totalPrice,0);
     res.render("host/earningSummary.ejs",{totalEarning,monthlyEarning});
 }
-
-
-
-
-
-
-
-
-
