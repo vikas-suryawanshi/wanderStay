@@ -21,12 +21,13 @@ module.exports.recommendedForYou = async (req,res) => {
     }
     const preferredCategories = Object.entries(categoryScores).sort((a,b) => b[1]-a[1]).map(item => item[0]);
 
-    const recommendedListings = [];
+    let recommendedListings = [];
     if(preferredCategories.length > 0){
         recommendedListings = await Listing.find({
             category:{$in:preferredCategories},
             _id:{$nin: user.wishlist.map(listing => listing._id)},
             owner:{$ne: req.user._id}
         })
+        .limit(4);
     }
 }
