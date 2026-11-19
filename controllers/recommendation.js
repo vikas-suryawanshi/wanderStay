@@ -6,4 +6,16 @@ const Booking = require("../models/booking.js");
 module.exports.recommendedForYou = async (req,res) => {
     const user = await User.findById(req.user._id).populate("wishlist");
     const bookings = await Booking.findById({user:req.user._id , status:"completed"}).populate("listing");
+    
+    const categoryScores = {};
+    for(const listing of user.wishlist){
+        if(!listing) continue;
+        const category = listing.category;
+        categoryScores[category] = (categoryScores[category] || 0)+5;
+    }
+    for(const booking of bookings){
+        if(!booking.listing) continue;
+        const category = booking.listing.category;
+        categoryScores[category] = (categoryScores[category] || 0)+3;
+    }
 }
