@@ -19,5 +19,5 @@ module.exports.recommendedForYou = async (req,res) => {
         const category = booking.listing.category;
         categoryScores[category] = (categoryScores[category] || 0)+3;
     }
-    const prefferedCategories = object.entries(categoryScores);
+    const preferredCategories = Object.entries(categoryScores).sort((a,b) => b[1]-a[1]).map(item => item[0]);
 }
