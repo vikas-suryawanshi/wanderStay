@@ -1,6 +1,7 @@
 const Listing = require("../models/listing.js");
 const User = require("../models/user.js");
 const Booking = require("../models/booking.js");
+const { object } = require("joi");
 
 
 module.exports.recommendedForYou = async (req,res) => {
@@ -18,4 +19,5 @@ module.exports.recommendedForYou = async (req,res) => {
         const category = booking.listing.category;
         categoryScores[category] = (categoryScores[category] || 0)+3;
     }
+    const prefferedCategories = object.entries(categoryScores);
 }
