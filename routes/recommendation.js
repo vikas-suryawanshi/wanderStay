@@ -6,3 +6,5 @@ const wrapAsync = require("../utils/wrapAsync.js");
 
 router.route("/recommendations")
 .get(isLoggedIn,wrapAsync(recommendationRouter.recommendedForYou));
+
+module.exports = router;
