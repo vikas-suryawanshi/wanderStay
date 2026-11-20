@@ -31,6 +31,6 @@ module.exports.recommendedForYou = async (req,res) => {
         .limit(4);
     }
     recommendedListings.sort((a,b)=> {
-        
+        return preferredCategories.indexOf(a.category)-preferredCategories.indexOf(b.category);
     })
 }
