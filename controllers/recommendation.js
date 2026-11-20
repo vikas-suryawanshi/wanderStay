@@ -33,4 +33,5 @@ module.exports.recommendedForYou = async (req,res) => {
         return preferredCategories.indexOf(a.category)-preferredCategories.indexOf(b.category);
     })
     recommendedListings = recommendedListings.slice(0,4);
+    res.render("recommendations/index.ejs",{recommendedListings});
 }
