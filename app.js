@@ -33,6 +33,7 @@ const wishlistRouter = require("./routes/wishlist.js");
 const profileRouter = require("./routes/profile.js");
 const hostRouter = require("./routes/host.js");
 const notificationRouter = require("./routes/notification.js");
+const recommendationRouter = require("./routes/recommendation.js");
 // express sesion
 const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
@@ -102,6 +103,7 @@ app.use("/",wishlistRouter);
 app.use("/",profileRouter);
 app.use("/",hostRouter);
 app.use("/",notificationRouter);
+app.use("/",recommendationRouter);
 
 // page not found middleware
 app.use((req,res,next)=>{
