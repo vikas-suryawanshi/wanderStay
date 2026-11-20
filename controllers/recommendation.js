@@ -6,7 +6,7 @@ const { object } = require("joi");
 
 module.exports.recommendedForYou = async (req,res) => {
     const user = await User.findById(req.user._id).populate("wishlist");
-    const bookings = await Booking.findById({user:req.user._id , status:"completed"}).populate("listing");
+    const bookings = await Booking.find({user:req.user._id , status:"completed"}).populate("listing");
     
     const categoryScores = {};
     for(const listing of user.wishlist){
@@ -27,10 +27,10 @@ module.exports.recommendedForYou = async (req,res) => {
             category:{$in:preferredCategories},
             _id:{$nin: user.wishlist.map(listing => listing._id)},
             owner:{$ne: req.user._id}
-        })
-        .limit(4);
+        });
     }
     recommendedListings.sort((a,b)=> {
         return preferredCategories.indexOf(a.category)-preferredCategories.indexOf(b.category);
     })
+    recommendedListings = recommendedListings.slice(0,4);
 }
