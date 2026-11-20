@@ -6,6 +6,9 @@ const { object } = require("joi");
 
 module.exports.recommendedForYou = async (req,res) => {
     const user = await User.findById(req.user._id).populate("wishlist");
+    if(!user){
+        return res.redirect("/login");
+    }
     const bookings = await Booking.find({user:req.user._id , status:"completed"}).populate("listing");
     
     const categoryScores = {};
@@ -25,7 +28,7 @@ module.exports.recommendedForYou = async (req,res) => {
     if(preferredCategories.length > 0){
         recommendedListings = await Listing.find({
             category:{$in:preferredCategories},
-            _id:{$nin: user.wishlist.map(listing => listing._id)},
+            _id:{$nin: user.wishlist.filter(listing => listing).map(listing => listing._id)},
             owner:{$ne: req.user._id}
         });
     }
