@@ -30,4 +30,7 @@ module.exports.recommendedForYou = async (req,res) => {
         })
         .limit(4);
     }
+    recommendedListings.sort((a,b)=> {
+        
+    })
 }
