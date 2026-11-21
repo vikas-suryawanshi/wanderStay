@@ -8,6 +8,6 @@ router.route("/recommendations")
 .get(isLoggedIn,wrapAsync(recommendationController.recommendedForYou));
 
 router.route("/simi")
-.get
+.get(isLoggedIn,wrapAsync(recommendationController.similarProperties));
 
 module.exports = router;
