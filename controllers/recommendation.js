@@ -40,5 +40,9 @@ module.exports.recommendedForYou = async (req,res) => {
 }
 
 module.exports.similarProperties = async(req,res) => {
-    
+    let listing = await Listing.findById(req.params.id);
+    if(!listing){
+        req.flash("error","listing not found!");
+        return res.redirect("/listings");
+    }
 }
