@@ -38,3 +38,7 @@ module.exports.recommendedForYou = async (req,res) => {
     recommendedListings = recommendedListings.slice(0,4);
     res.render("recommendations/index.ejs",{recommendedListings});
 }
+
+module.exports.similarProperties = async(req,res) => {
+    
+}
