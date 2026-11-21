@@ -7,4 +7,7 @@ const wrapAsync = require("../utils/wrapAsync.js");
 router.route("/recommendations")
 .get(isLoggedIn,wrapAsync(recommendationController.recommendedForYou));
 
+router.route("/simi")
+.get
+
 module.exports = router;
