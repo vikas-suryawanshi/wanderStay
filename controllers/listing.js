@@ -81,7 +81,9 @@ module.exports.showListing = async(req,res)=>{
         req.flash("error","if you requested listings are does not exist!")
         return res.redirect(`/listings`)
     }
-    res.render("listings/show.ejs",{listings});
+    let similarProperties = await Listing.find({_id:{$ne: listings._id},location: listings.location, price:{$gte: listings.price-1000, $lte: listings.price+1000},category:listings.category});
+    similarProperties = similarProperties.slice(0,4);
+    res.render("listings/show.ejs",{listings,similarProperties});
 };
 
 module.exports.renderEditForm = async(req,res)=>{
