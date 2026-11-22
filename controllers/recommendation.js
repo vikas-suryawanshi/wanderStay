@@ -38,14 +38,3 @@ module.exports.recommendedForYou = async (req,res) => {
     recommendedListings = recommendedListings.slice(0,4);
     res.render("recommendations/index.ejs",{recommendedListings});
 }
-
-module.exports.getSimilarProperties = async(listing) => {
-    let listing = await Listing.findById(req.params.id);
-    if(!listing){
-        req.flash("error","listing not found!");
-        return res.redirect("/listings");
-    }
-    let similarListings = await Listing.find({_id:{$ne:listing._id},location:listing.location, price:{ $gte: listing.price-1000, $lte: listing.price+1000}, category:listing.category});
-    similarListings = similarListings.slice(0,4);
-    return similarListings;
-}
