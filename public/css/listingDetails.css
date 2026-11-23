@@ -32,3 +32,19 @@
     margin-left: 16.666667%;
     margin-top: 2rem;
 }
+
+.similar-properties-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+.similar-properties-container{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 1.5rem;
+}
+.similar-properties-link{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
