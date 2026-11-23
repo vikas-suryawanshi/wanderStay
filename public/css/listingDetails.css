@@ -53,7 +53,7 @@
     border: none;
     background: transparent;
     height: 100%;
-    transition: transform 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 .similar-properties-card:hover{
     opacity: 0.85;
