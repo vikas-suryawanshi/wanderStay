@@ -24,3 +24,11 @@
     height: 300px;
     border-radius: 1rem;
 }
+
+/* similar properties */
+.similar-properties {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    margin-left: 16.666667%;
+    margin-top: 2rem;
+}
