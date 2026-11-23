@@ -46,29 +46,33 @@
             </div>
         <% } %>
         <% if(similarProperties.length > 0) {%>
-            <h3 class="fw-semibold mb-3">Similar Properties</h3>
-            <div class="row g-4">
-                <% for(let properties of similarProperties) {%>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <div class="card h-100 shadow-sm">
-                            <img src="<%= properties.image.url%>" class="card-img-top" alt="<%= properties.title%>" style="height: 200px; object-fit: cover;">
-                            <div class="card-body">
-                                <h5 class="card-title fw-semibold">
-                                    <%= properties.title%>
-                                </h5>
-                                <p class="card-text text-muted small">
-                                    <i class="fa-solid fa-location-dot me-1"></i>
-                                    <%= properties.location%>, <%= properties.country%>
-                                </p>
-                                <p class="card-text fw-bold">
-                                    ₹ <%= properties.price.toLocaleString("en-IN") %>
-                                    <span class="fw-normal text-muted">/night</span>
-                                </p>
-                            </div>
+            <section>
+                <h3 class="similar-properties-title">Similar Properties</h3>
+                <div class="similar-properties-container">
+                    <% for(let properties of similarProperties) {%>
+                        <div class="similar-properties-item">
+                            <a href="/listings/<%= properties._id%>" class="similar-properties-link">
+                                <div class="similar-properties-card">
+                                    <img src="<%= properties.image.url%>" class="similar-properties-image" alt="<%= properties.title%>">
+                                    <div class="similar-properties-body">
+                                        <h5 class="similar-properties-name">
+                                            <%= properties.title%>
+                                        </h5>
+                                        <p class="similar-properties-location">
+                                            <i class="fa-solid fa-location-dot me-1"></i>
+                                            <%= properties.location%>, <%= properties.country%>
+                                        </p>
+                                        <p class="similar-properties-price">
+                                            ₹ <%= properties.price.toLocaleString("en-IN") %>
+                                            <span class="fw-normal text-muted">/night</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-                <% } %>
-            </div>
+                    <% } %>
+                </div>
+            </section>
         <% } %>
             <div class="col-12 col-md-8 offset-md-2">
                 <% if(currUser) {%>
