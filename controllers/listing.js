@@ -42,6 +42,12 @@ module.exports.index = async (req,res)=>{
             ]
         });
     }
+    let recommendedListings = [];
+    if(req.user){
+        const user = await User.findById(req.user._id).populate("wishlist");
+        const bookings = await Booking.find({user:req.user._id, status:"completed"}).populate("listing");
+        const categoryScores = {};
+    }
     let wishlist = req.user? req.user.wishlist:[];
     res.render("listings/index.ejs",{allListings,search,wishlist});
 };
