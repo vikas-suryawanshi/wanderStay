@@ -47,6 +47,13 @@ module.exports.index = async (req,res)=>{
         const user = await User.findById(req.user._id).populate("wishlist");
         const bookings = await Booking.find({user:req.user._id, status:"completed"}).populate("listing");
         const categoryScores = {};
+        for(const listing of user.wishlist){
+            if(!listing){
+                continue;
+            }
+            const category = listing.category;
+            categoryScores[category] = (categoryScores[category] || 0)+5;
+        }
     }
     let wishlist = req.user? req.user.wishlist:[];
     res.render("listings/index.ejs",{allListings,search,wishlist});
