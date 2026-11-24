@@ -62,9 +62,23 @@ module.exports.index = async (req,res)=>{
             categoryScores[category] = (categoryScores[category] || 0)+3;
         }
         const preferedCategories = Object.entries(categoryScores).sort((a,b)=> b[1]-a[1]).map(item => item[0]);
+        let recommendedListings = [];
+        if(preferedCategories.length > 0){
+            recommendedListings = await Listing.find(
+                {
+                    category:{$in: preferedCategories},
+                    _id:{$nin: user.wishlist.filter(listing => listing).map(listing => listing._id)},
+                    owner:{$ne: req.user._id},
+                }
+            );
+        }
+        recommendedListings.sort((a,b)=>{
+            return preferedCategories.indexOf(a.category)-preferedCategories.indexOf(b.category)
+        });
+        recommendedListings.slice(0,4);
     }
     let wishlist = req.user? req.user.wishlist:[];
-    res.render("listings/index.ejs",{allListings,search,wishlist});
+    res.render("listings/index.ejs",{allListings,search,wishlist,recommendedListings});
 };
 
 module.exports.renderNewForm = (req,res)=>{
