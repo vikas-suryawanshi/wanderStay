@@ -2,6 +2,8 @@ const Listing = require("../models/listing");
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
+const Booking = require("../models/booking.js");
+const User = require("../models/user.js");
 
 
 module.exports.index = async (req,res)=>{
