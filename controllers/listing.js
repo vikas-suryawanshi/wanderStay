@@ -54,6 +54,13 @@ module.exports.index = async (req,res)=>{
             const category = listing.category;
             categoryScores[category] = (categoryScores[category] || 0)+5;
         }
+        for(const booking of bookings){
+            if(!booking.listing){
+                continue;
+            }
+            const category = booking.listing.category;
+            categoryScores[category] = (categoryScores[category] || 0)+3;
+        }
     }
     let wishlist = req.user? req.user.wishlist:[];
     res.render("listings/index.ejs",{allListings,search,wishlist});
