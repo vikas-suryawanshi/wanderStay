@@ -65,7 +65,12 @@
                         </button>
                         <a href="/listings/<%= listings._id%>" class="listing-link rounded-3">
                             <div class="card-body">
-                                
+                                <p class="card-"><b><%= listings.title%></b></p>
+                                <div class="price-view">
+                                    <p>
+                                        &#8377;<i class="tax-info" data-price="<%= listings.price %>"><%= listings.price.toLocaleString("en-IN") %></i>/night
+                                    </p>
+                                </div>
                             </div>
                         </a>
                     </div>
