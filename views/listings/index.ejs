@@ -53,7 +53,13 @@
     <section class="recommended-section">
         <h2 class="recommended-title">Recommended For You</h2>
         <div class="recommended-container">
-            
+            <% for(listings of recommendedListings) {%>
+                <div class="card listing-card" data-category="<%= listings.category%>">
+                    <div class="wishlist-image">
+                        
+                    </div>
+                </div>
+            <% } %>
         </div>
     </section>
 <% } %>
