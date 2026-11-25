@@ -56,7 +56,10 @@
             <% for(listings of recommendedListings) {%>
                 <div class="card listing-card" data-category="<%= listings.category%>">
                     <div class="wishlist-image">
-                        
+                        <a href="/listings/<%= listings._id%>"
+                            class="listing-link rounded-3">
+                            <img src="<%= listings.image.url %>" class="card-img-top" alt="<%= listings.title%>">
+                        </a>
                     </div>
                 </div>
             <% } %>
