@@ -49,11 +49,11 @@
         </div>
     </div>
 </div>
-<% if(search && recommendedListings.length >0) {%>
+<% if(!search && recommendedListings.length >0) {%>
     <section class="recommended-section">
         <h2 class="recommended-title">Recommended For You</h2>
         <div class="recommended-container">
-            <% for(listings of recommendedListings) {%>
+            <% for(let listings of recommendedListings) {%>
                 <div class="card listing-card" data-category="<%= listings.category%>">
                     <div class="wishlist-image">
                         <a href="/listings/<%= listings._id%>"
@@ -63,6 +63,7 @@
                         <button type="button" class="wishlist-heart" data-listing-id="<%= listings._id%>">
                             <i class="<%= wishlist.some(id => id.equals(listings._id))?'fa-solid fa-heart':'fa-regular fa-heart'%>"></i>
                         </button>
+                    </div>
                         <a href="/listings/<%= listings._id%>" class="listing-link rounded-3">
                             <div class="card-body">
                                 <p class="card-"><b><%= listings.title%></b></p>
@@ -76,7 +77,6 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
                 </div>
             <% } %>
         </div>
