@@ -63,6 +63,11 @@
                         <button type="button" class="wishlist-heart" data-listing-id="<%= listings._id%>">
                             <i class="<%= wishlist.some(id => id.equals(listings._id))?'fa-solid fa-heart':'fa-regular fa-heart'%>"></i>
                         </button>
+                        <a href="/listings/<%= listings._id%>" class="listing-link rounded-3">
+                            <div class="card-body">
+                                
+                            </div>
+                        </a>
                     </div>
                 </div>
             <% } %>
