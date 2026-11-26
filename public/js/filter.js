@@ -1,3 +1,4 @@
+let recommendedSection = document.getElementById("recommended-section");
 // for Trending filter
     let Trending = document.getElementById("TrendingFilter");
     let allListing = document.getElementsByClassName("listing-card");
@@ -5,6 +6,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Trending"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -18,6 +20,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Villa"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -31,6 +34,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Rooms"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -44,6 +48,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Castles"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -57,6 +62,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Iconic Cities"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -70,6 +76,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Beach"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -83,6 +90,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Mountain City"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -96,6 +104,7 @@
         Array.from(allListing).forEach((listing)=>{
             if(listing.dataset.category == "Camping"){
                 listing.style.display = "block";
+                recommendedSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -108,5 +117,6 @@
     all.addEventListener("click",()=>{
         Array.from(allListing).forEach((listing)=>{
             listing.style.display = "block";
+            recommendedSection.style.display = "block";
         })
     })
