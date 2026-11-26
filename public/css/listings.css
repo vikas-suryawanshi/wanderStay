@@ -68,6 +68,23 @@
     text-decoration: underline;
 }
 
+/* recommended listings */
+/* Recommended for You */
+.recommended-section {
+    margin: 2rem 0;
+}
+
+.recommended-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.recommended-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+}
 /* filters style */
 #filters{
     display: flex;
