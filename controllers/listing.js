@@ -62,17 +62,6 @@ module.exports.index = async (req,res)=>{
             categoryScores[category] = (categoryScores[category] || 0)+3;
         }
         const preferedCategories = Object.entries(categoryScores).sort((a,b)=> b[1]-a[1]).map(item => item[0]);
-        console.log("Wishlisted Listing IDs:",
-    user.wishlist.map(listing => listing._id)
-);
-
-console.log("Current User ID:", req.user._id);
-
-console.log("Matching Categories Count:",
-    await Listing.countDocuments({
-        category: { $in: preferedCategories }
-    })
-);
         if(preferedCategories.length > 0){
             recommendedListings = await Listing.find(
                 {
@@ -86,15 +75,6 @@ console.log("Matching Categories Count:",
             return preferedCategories.indexOf(a.category)-preferedCategories.indexOf(b.category)
         });
         recommendedListings = recommendedListings.slice(0,4);
-        console.log("Wishlist Categories:",
-            user.wishlist.map(listing => listing?.category)
-        );
-
-        console.log("Category Scores:", categoryScores);
-
-        console.log("Preferred Categories:", preferedCategories);
-
-        console.log("Recommended Listings Count:", recommendedListings.length);
     }
     let wishlist = req.user? req.user.wishlist:[];
     res.render("listings/index.ejs",{allListings,search,wishlist,recommendedListings});
