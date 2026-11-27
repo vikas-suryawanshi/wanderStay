@@ -77,8 +77,14 @@ module.exports.index = async (req,res)=>{
         recommendedListings = recommendedListings.slice(0,4);
     }
     let popularListings = [];
-    if(req.user){
-        
+    if(!search){
+        const bookings = await Booking.find({status:"completed"}).select("listing");
+        const bookingCounts = {};
+        for(const booking of bookings){
+            if(!booking.listing) continue;
+            const listingId = booking.listing.toString();
+            bookingCounts[listingId] = (bookingCounts[listingId]||0)+1;
+        }
     }
     let wishlist = req.user? req.user.wishlist:[];
     res.render("listings/index.ejs",{allListings,search,wishlist,recommendedListings});
