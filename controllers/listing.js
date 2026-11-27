@@ -85,6 +85,22 @@ module.exports.index = async (req,res)=>{
             const listingId = booking.listing.toString();
             bookingCounts[listingId] = (bookingCounts[listingId]||0)+1;
         }
+        const allPopularListings = await Listing.find({}).populate("reviews");
+
+        for(const listing of allPopularListings){
+            const completedBookings = bookingCounts[listing._id.toString()] || 0;
+
+            const reviewCount = listing.reviews.length;
+            let averageRating = 0;
+            if(reviewCount > 0){
+                const totalRating = listing.reviews.reduce((sum,review) => {
+                    return sum+review.rating;
+                },0);
+                averageRating = totalRating/reviewCount;
+            }
+            listing.popularityScore = (completedBookings*5)+(averageRating*5)+reviewCount;
+        }
+        
     }
     let wishlist = req.user? req.user.wishlist:[];
     res.render("listings/index.ejs",{allListings,search,wishlist,recommendedListings});
