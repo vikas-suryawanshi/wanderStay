@@ -82,6 +82,39 @@
         </div>
     </section>
 <% } %>
+<% if(!search && popularListings.length >0) {%>
+    <section class="recommended-section" id="recommended-section">
+        <h2 class="recommended-title">Popular Properties</h2>
+        <div class="recommended-container">
+            <% for(let listings of popularListings) {%>
+                <div class="card listing-card" data-category="<%= listings.category%>">
+                    <div class="wishlist-image">
+                        <a href="/listings/<%= listings._id%>"
+                            class="listing-link rounded-3">
+                            <img src="<%= listings.image.url %>" class="card-img-top" alt="<%= listings.title%>">
+                        </a>
+                        <button type="button" class="wishlist-heart" data-listing-id="<%= listings._id%>">
+                            <i class="<%= wishlist.some(id => id.equals(listings._id))?'fa-solid fa-heart':'fa-regular fa-heart'%>"></i>
+                        </button>
+                    </div>
+                        <a href="/listings/<%= listings._id%>" class="listing-link rounded-3">
+                            <div class="card-body">
+                                <p class="card-text"><b><%= listings.title%></b></p>
+                                <div class="price-view">
+                                    <p>
+                                        &#8377;<i class="tax-info" data-price="<%= listings.price %>"><%= listings.price.toLocaleString("en-IN") %></i>/night
+                                    </p>
+                                    <span class="view-listing">
+                                        View Listing →
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                </div>
+            <% } %>
+        </div>
+    </section>
+<% } %>
     <%if(search && allListings.length>0){%>
         <p class="ms-3 mt-3">Show listings for "<%= search %>"</p>
     <%}%>
