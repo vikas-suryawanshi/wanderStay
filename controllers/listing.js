@@ -76,6 +76,10 @@ module.exports.index = async (req,res)=>{
         });
         recommendedListings = recommendedListings.slice(0,4);
     }
+    let popularListings = [];
+    if(req.user){
+        
+    }
     let wishlist = req.user? req.user.wishlist:[];
     res.render("listings/index.ejs",{allListings,search,wishlist,recommendedListings});
 };
