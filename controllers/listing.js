@@ -100,10 +100,12 @@ module.exports.index = async (req,res)=>{
             }
             listing.popularityScore = (completedBookings*5)+(averageRating*5)+reviewCount;
         }
-        
+        const recommendedIds = recommendedListings.map(listing => listing._id.toString());
+
+        popularListings = allPopularListings.filter(listing => !recommendedIds.includes(listing._id.toString())).sort((a,b) => b.popularityScore - a.popularityScore).slice(0,4);
     }
     let wishlist = req.user? req.user.wishlist:[];
-    res.render("listings/index.ejs",{allListings,search,wishlist,recommendedListings});
+    res.render("listings/index.ejs",{allListings,search,wishlist,recommendedListings,popularListings});
 };
 
 module.exports.renderNewForm = (req,res)=>{
