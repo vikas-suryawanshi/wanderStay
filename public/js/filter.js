@@ -1,4 +1,5 @@
 let recommendedSection = document.getElementById("recommended-section");
+let popularSection = document.getElementById("popular-section");
 // for Trending filter
     let Trending = document.getElementById("TrendingFilter");
     let allListing = document.getElementsByClassName("listing-card");
@@ -7,6 +8,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Trending"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -21,6 +23,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Villa"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -35,6 +38,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Rooms"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -49,6 +53,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Castles"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -63,6 +68,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Iconic Cities"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -77,6 +83,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Beach"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -91,6 +98,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Mountain City"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -105,6 +113,7 @@ let recommendedSection = document.getElementById("recommended-section");
             if(listing.dataset.category == "Camping"){
                 listing.style.display = "block";
                 recommendedSection.style.display = "none";
+                popularSection.style.display = "none";
             }else{
                 listing.style.display = "none";
             }
@@ -118,5 +127,6 @@ let recommendedSection = document.getElementById("recommended-section");
         Array.from(allListing).forEach((listing)=>{
             listing.style.display = "block";
             recommendedSection.style.display = "block";
+            popularSection.style.display = "block";
         })
     })
