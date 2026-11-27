@@ -83,9 +83,9 @@
     </section>
 <% } %>
 <% if(!search && popularListings.length >0) {%>
-    <section class="recommended-section" id="popular-section">
-        <h2 class="recommended-title">Guest Favorites</h2>
-        <div class="recommended-container">
+    <section class="popular-section" id="popular-section">
+        <h2 class="popular-title">Guest Favorites</h2>
+        <div class="popular-container">
             <% for(let listings of popularListings) {%>
                 <div class="card listing-card" data-category="<%= listings.category%>">
                     <div class="wishlist-image">
