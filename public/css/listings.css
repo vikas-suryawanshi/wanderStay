@@ -70,18 +70,18 @@
 
 /* recommended listings */
 /* Recommended for You */
-.recommended-section {
+.recommended-section, .popular-section {
     margin: 2rem 0;
 }
 
-.recommended-title {
+.recommended-title, .popular-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.2rem;
     margin-left: 1rem;
 }
 
-.recommended-container {
+.recommended-container, .popular-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.5rem;
