@@ -41,6 +41,7 @@ The project currently includes **user authentication, listing management, review
 * 👤 User Dashboard
 * 📆 Booking Availability Calendar
 * 🔔 Notifications System
+* 🧠 Property Recommendation System
 
 ---
 
